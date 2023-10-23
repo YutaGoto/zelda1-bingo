@@ -10,9 +10,13 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  build:
-    name: Build page
+  deploy:
+    name: deploy page
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -26,19 +30,12 @@ jobs:
         run: yarn install
       - name: build
         run: yarn build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: "./dist"
-
-  deploy:
-    name: deploy page
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
