@@ -20,14 +20,16 @@ jobs:
       - name: setup nodejs
         uses: actions/setup-node@v3
         with:
-          cache: 'yarn'
+          cache: "yarn"
           node-version: 20
+      - name: Install dependencies
+        run: yarn install
       - name: build
         run: yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './dist'
+          path: "./dist"
 
   deploy:
     name: deploy page
