@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { Box, Button, Heading, SimpleGrid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import { boardList } from "./utils/boardList";
 import { shuffle } from "./utils/shuffle";
 
-import "./App.css";
+import { Counter } from "./ui/Counter";
 
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
@@ -54,7 +61,7 @@ function App() {
   };
 
   return (
-    <>
+    <Container maxW="2xl" marginTop={2}>
       <Heading as="h1" mb={3}>
         Zelda1 Bingo Card
       </Heading>
@@ -74,7 +81,10 @@ function App() {
                 onClick={() => toggle(i, j)}
                 className="cell"
               >
-                {shuffledBoardList[i + j * 5].name}
+                <Text>{shuffledBoardList[i + j * 5].name}</Text>
+                {!!shuffledBoardList[i + j * 5].count && (
+                  <Counter goal={shuffledBoardList[i + j * 5].count || 0} />
+                )}
               </Box>
             ))}
           </div>
@@ -87,7 +97,7 @@ function App() {
       <Button mt={5} colorScheme="yellow" onClick={() => resetSeed()}>
         reset seed
       </Button>
-    </>
+    </Container>
   );
 }
 
