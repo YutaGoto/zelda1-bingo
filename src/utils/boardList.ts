@@ -31,11 +31,11 @@ export const boardList: Z1Board[] = [
   { name: "赤ライネルを5体倒す", category: "monster", count: 5 },
   { name: "ピーハットを5体倒す", category: "monster", count: 5 },
   { name: "ゾーラを3体倒す", category: "monster", count: 3 },
-  { name: "ギーニを1画面に12体出現させる", category: "monster" },
+  { name: "ギーニを1画面に11体出現させる", category: "monster" },
   { name: "アモスを倒さずに1画面で10体触れて動かす", category: "monster" },
   { name: "ウォールマスターに捕まる", category: "monster" },
   { name: "モリブリンの槍の攻撃を10回防ぐ", category: "monster", count: 10 },
-  { name: "岩に5回あたる", category: "monster" },
+  { name: "ロックに5回あたる", category: "monster", count: 5 },
 
   {
     name: "ドアの修理代請求おじいさんに2回会う",
