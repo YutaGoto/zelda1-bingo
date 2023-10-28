@@ -75,6 +75,11 @@ function App() {
     navigate(`/zelda1-bingo/${e.target.value}/?seed=${params.get("seed")}`);
   };
 
+  if (lang !== "ja" && lang !== "en") {
+    navigate(`/zelda1-bingo/ja/?seed=${params.get("seed")}`);
+    return
+  }
+
   useEffect(() => {
     if (lang === "en") {
       i18n.changeLanguage("en");
