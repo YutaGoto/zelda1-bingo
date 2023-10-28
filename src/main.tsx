@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  ColorModeScript,
+  ThemeConfig,
+  extendTheme,
+} from "@chakra-ui/react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,11 +16,9 @@ import App from "./App.tsx";
 import "./index.css";
 import "./i18n.ts";
 
-const theme = {
-  config: {
-    initialColorMode: "dark",
-    useSystemColorMode: false,
-  },
+const config: ThemeConfig = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
 };
 
 const router = createBrowserRouter([
@@ -37,7 +40,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ChakraProvider theme={extendTheme(theme)}>
+    <ChakraProvider theme={extendTheme({ config })}>
+      <ColorModeScript initialColorMode={config.initialColorMode} />
       <RouterProvider router={router} />
     </ChakraProvider>
     ,

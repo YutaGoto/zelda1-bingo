@@ -7,7 +7,6 @@ import {
   Select,
   SimpleGrid,
   Text,
-  useColorMode,
 } from "@chakra-ui/react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -44,7 +43,6 @@ function App() {
     [false, false, false, false, false],
   ]);
 
-  const { colorMode, toggleColorMode } = useColorMode();
   const { lang } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -77,7 +75,7 @@ function App() {
 
   if (lang !== "ja" && lang !== "en") {
     navigate(`/zelda1-bingo/ja/?seed=${params.get("seed")}`);
-    return
+    return;
   }
 
   useEffect(() => {
@@ -87,12 +85,6 @@ function App() {
       i18n.changeLanguage("ja");
     }
   }, [lang, i18n]);
-
-  useEffect(() => {
-    if (colorMode === "light") {
-      toggleColorMode();
-    }
-  }, [colorMode, toggleColorMode]);
 
   return (
     <Container maxW="2xl" marginTop={2}>
