@@ -1,30 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
+import "./i18n.ts";
 
 const theme = {
   config: {
-    initialColorMode: "dark", // ダークモードをデフォルトに設定
-    useSystemColorMode: false, // OSの設定を使わせない
-  },
-  styles: {
-    global: {
-      body: {
-        backgroundColor: "gray.600",
-      },
-      h1: {
-        color: "white",
-      },
-    },
+    initialColorMode: "dark",
+    useSystemColorMode: false,
   },
 };
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Outlet,
+    children: [
+      {
+        path: "/:app/:lang/*",
+        Component: App,
+      },
+      {
+        path: "/:app/*",
+        element: <Navigate to="/zelda1-bingo/ja" />,
+      },
+    ],
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ChakraProvider theme={extendTheme(theme)}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </ChakraProvider>,
+  <React.StrictMode>
+    <ChakraProvider theme={extendTheme(theme)}>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+    ,
+  </React.StrictMode>,
 );
