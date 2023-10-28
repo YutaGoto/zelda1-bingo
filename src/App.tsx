@@ -84,11 +84,10 @@ function App() {
   }, [lang, i18n]);
 
   useEffect(() => {
-    console.log("colorMode", colorMode);
     if (colorMode === "light") {
       toggleColorMode();
     }
-  }, []);
+  }, [colorMode, toggleColorMode]);
 
   return (
     <Container maxW="2xl" marginTop={2}>
