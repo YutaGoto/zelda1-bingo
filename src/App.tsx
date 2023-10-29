@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import {
   Box,
   Button,
   Container,
   Heading,
+  Select,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { boardList } from "./utils/boardList";
+import { useParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { taskList } from "./utils/taskList";
 import { shuffle } from "./utils/shuffle";
 
 import { Counter } from "./ui/Counter";
@@ -29,7 +32,7 @@ function getRandomNum(seed: string | null): number {
   return currentSeed % 10000;
 }
 
-const shuffledBoardList = shuffle(boardList, getRandomNum(paramsSeed));
+const shuffledTaskList = shuffle(taskList, getRandomNum(paramsSeed));
 
 function App() {
   const [hits, setHits] = useState([
@@ -39,6 +42,10 @@ function App() {
     [false, false, false, false, false],
     [false, false, false, false, false],
   ]);
+
+  const { lang } = useParams();
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   const toggle = (i: number, j: number) => {
     const newHits = [...hits];
@@ -60,10 +67,29 @@ function App() {
     window.location.reload();
   };
 
+  const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value === lang) return;
+
+    navigate(`/zelda1-bingo/${e.target.value}/?seed=${params.get("seed")}`);
+  };
+
+  if (lang !== "ja" && lang !== "en") {
+    navigate(`/zelda1-bingo/ja/?seed=${params.get("seed")}`);
+    return;
+  }
+
+  useEffect(() => {
+    if (lang === "en") {
+      i18n.changeLanguage("en");
+    } else {
+      i18n.changeLanguage("ja");
+    }
+  }, [lang, i18n]);
+
   return (
     <Container maxW="2xl" marginTop={2}>
       <Heading as="h1" mb={3}>
-        Zelda1 Bingo Card
+        {t("Z1Bingo")}
       </Heading>
       <SimpleGrid id="bingoCard" columns={5}>
         {hits.map((row, i) => (
@@ -71,19 +97,23 @@ function App() {
             {row.map((hit, j) => (
               <Box
                 key={j}
-                bg={hit ? "green.600" : "gray.600"}
+                bg={hit ? "green.600" : "gray.800"}
                 width={140}
                 height={140}
-                p={2}
+                py={2}
+                px={3}
                 border="1px"
                 borderColor="white"
                 color="white"
                 onClick={() => toggle(i, j)}
+                whiteSpace="unset"
                 className="cell"
               >
-                <Text>{shuffledBoardList[i + j * 5].name}</Text>
-                {!!shuffledBoardList[i + j * 5].count && (
-                  <Counter goal={shuffledBoardList[i + j * 5].count || 0} />
+                <Text fontSize={14} wordBreak="break-word">
+                  {shuffledTaskList[i + j * 5].name[lang]}
+                </Text>
+                {!!shuffledTaskList[i + j * 5].count && (
+                  <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
                 )}
               </Box>
             ))}
@@ -95,8 +125,15 @@ function App() {
       </Box>
 
       <Button mt={5} colorScheme="yellow" onClick={() => resetSeed()}>
-        reset seed
+        {t("resetSeed")}
       </Button>
+
+      <Box mt={5} maxW="xs">
+        <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </Select>
+      </Box>
     </Container>
   );
 }

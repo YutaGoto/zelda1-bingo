@@ -1,6 +1,6 @@
-import type { Z1Board } from "../types/Z1Board";
+import type { Z1Task } from "../types/Z1Task";
 
-export function shuffle(array: Z1Board[], seed: number) {
+export function shuffle(array: Z1Task[], seed: number) {
   let currentIndex = array.length;
   let temporaryValue;
   let randomIndex;
