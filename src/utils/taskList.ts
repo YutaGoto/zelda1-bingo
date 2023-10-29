@@ -208,7 +208,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "ギャンブルでお金を増やす",
-      en: "win at the Money-Making-Game",
+      en: "win at the Money-Making Game",
     },
     category: "sightseeing",
   },
@@ -232,7 +232,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "「ユキドマリノキニハ　ヒミツガアル」",
-      en: '"SECRET IS IN THE TREE AT THE DEAD-END."',
+      en: '"A SECRET IS IN THE TREE AT THE DEAD-END."',
     },
     category: "hint",
   },
