@@ -72,7 +72,7 @@ export const taskList: Z1Task[] = [
     category: "shopping",
   },
   {
-    name: { ja: "マジカルシールドを購入する", en: "MAGICAL SHIELD" },
+    name: { ja: "マジカルシールドを購入する", en: "buy MAGICAL SHIELD" },
     category: "shopping",
   },
   {
@@ -117,22 +117,22 @@ export const taskList: Z1Task[] = [
   },
 
   {
-    name: { ja: "赤オクタロックを20体倒す", en: "kill 20 OCTAROK" },
+    name: { ja: "赤オクタロックを20体倒す", en: "defeat 20 OCTAROK" },
     category: "monster",
     count: 20,
   },
   {
-    name: { ja: "赤ライネルを5体倒す", en: "kill 5 red LYNEL" },
+    name: { ja: "赤ライネルを5体倒す", en: "defeat 5 red LYNEL" },
     category: "monster",
     count: 5,
   },
   {
-    name: { ja: "ピーハットを5体倒す", en: "kill 5 PEAHAT" },
+    name: { ja: "ピーハットを5体倒す", en: "defeat 5 PEAHAT" },
     category: "monster",
     count: 5,
   },
   {
-    name: { ja: "ゾーラを3体倒す", en: "kill 3 ZOLA" },
+    name: { ja: "ゾーラを3体倒す", en: "defeat 3 ZOLA" },
     category: "monster",
     count: 3,
   },
@@ -146,7 +146,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "アモスを倒さずに1画面で10体触れて動かす",
-      en: "touch and move 10 AMOS on one screen without killing",
+      en: "touch and move 10 AMOS on one screen without defeating",
     },
     category: "monster",
   },
@@ -255,7 +255,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "「デスマウンテンデ　ヤヲ　サガセ」",
-      en: '"SPECACLE ROCK IS AN ENTRANCE TO DEATH."',
+      en: '"SPECTACLE ROCK IS AN ENTRANCE TO DEATH."',
     },
     category: "hint",
   },
