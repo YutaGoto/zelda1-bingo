@@ -111,9 +111,17 @@ export const taskList: Z1Task[] = [
     count: 3,
   },
   {
-    name: { ja: "キーを10個集める", en: "correct 10 KEYs" },
+    name: { ja: "キーを15個集める", en: "correct 15 KEYs" },
     category: "correcting",
-    count: 10,
+    count: 15,
+  },
+  {
+    name: {
+      ja: "妖精を3体取得する",
+      en: "get 3 FAIRIES",
+    },
+    category: "correcting",
+    count: 3,
   },
 
   {
@@ -156,6 +164,20 @@ export const taskList: Z1Task[] = [
   },
   {
     name: {
+      ja: "テスチタート(MANHANDLA)を剣攻撃・剣ビーム攻撃のみで倒す",
+      en: "defeat MANHANDLA with sword or sword beam only",
+    },
+    category: "monster",
+  },
+  {
+    name: {
+      ja: "ダンジョンの地下通路・地下アイテム部屋のキースを4体全て倒す",
+      en: "defeat all 4 KEESE in dungeon's underground passage or underground item room",
+    },
+    category: "monster",
+  },
+  {
+    name: {
       ja: "モリブリンの槍の攻撃を10回防ぐ",
       en: "prevented 10 attacks by MOBLIN's spear ",
     },
@@ -167,6 +189,13 @@ export const taskList: Z1Task[] = [
     category: "monster",
     count: 5,
   },
+  {
+    name: {
+      ja: "ライクライクに食べられる",
+      en: "be eaten by a LIKE-LIKE",
+    },
+    category: "monster",
+  },
 
   {
     name: {
@@ -177,7 +206,10 @@ export const taskList: Z1Task[] = [
     count: 2,
   },
   {
-    name: { ja: "ギャンブルでお金を増やす", en: "win at the Money-Making-Game" },
+    name: {
+      ja: "ギャンブルでお金を増やす",
+      en: "win at the Money-Making-Game",
+    },
     category: "sightseeing",
   },
   {
@@ -185,10 +217,32 @@ export const taskList: Z1Task[] = [
     category: "sightseeing",
   },
   {
+    name: {
+      ja: "ダンジョンの壁をボムで7回破壊する",
+      en: "break 7 walls with BOMB in dungeon",
+    },
+    category: "sightseeing",
+    count: 7,
+  },
+  {
     name: { ja: "Level 9に行く", en: "visit Level-9's dungeon" },
     category: "sightseeing",
   },
 
+  {
+    name: {
+      ja: "「ユキドマリノキニハ　ヒミツガアル」",
+      en: '"SECRET IS IN THE TREE AT THE DEAD-END."',
+    },
+    category: "hint",
+  },
+  {
+    name: {
+      ja: "「ハカバノジイサンニアエ」",
+      en: '"MEET THE OLD MAN AT THE GRAVE."',
+    },
+    category: "hint",
+  },
   {
     name: {
       ja: "「オカネガナクナレバ　ヤ　ハ　ツカエナイ」",
