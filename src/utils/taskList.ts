@@ -177,7 +177,7 @@ export const taskList: Z1Task[] = [
     count: 2,
   },
   {
-    name: { ja: "ギャンブルでお金を増やす", en: "win at gambling" },
+    name: { ja: "ギャンブルでお金を増やす", en: "win at the Money-Making-Game" },
     category: "sightseeing",
   },
   {
@@ -185,7 +185,7 @@ export const taskList: Z1Task[] = [
     category: "sightseeing",
   },
   {
-    name: { ja: "L9に行く", en: "visit Level 9's dungeon" },
+    name: { ja: "Level 9に行く", en: "visit Level-9's dungeon" },
     category: "sightseeing",
   },
 
