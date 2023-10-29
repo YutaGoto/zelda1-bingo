@@ -70,11 +70,11 @@ function App() {
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === lang) return;
 
-    navigate(`/zelda1-bingo/${e.target.value}/?seed=${params.get("seed")}`);
+    navigate(`/${e.target.value}/?seed=${params.get("seed")}`);
   };
 
   if (lang !== "ja" && lang !== "en") {
-    navigate(`/zelda1-bingo/ja/?seed=${params.get("seed")}`);
+    navigate(`/ja/?seed=${params.get("seed")}`);
     return;
   }
 

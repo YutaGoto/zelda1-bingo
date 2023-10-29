@@ -23,16 +23,16 @@ const config: ThemeConfig = {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: Outlet,
     children: [
       {
-        path: "/:app/:lang/*",
+        path: "/:lang",
         Component: App,
       },
       {
-        path: "/:app/*",
-        element: <Navigate to="/zelda1-bingo/ja" />,
+        path: "/",
+        element: <Navigate to="/ja" />,
       },
     ],
   },
