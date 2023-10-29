@@ -81,7 +81,7 @@ export const taskList: Z1Task[] = [
   },
   { name: { ja: "キーを購入する", en: "buy a KEY" }, category: "shopping" },
   { name: { ja: "エサを購入する", en: "buy a FOOD" }, category: "shopping" },
-  { name: { ja: "ヒントを買う", en: "Buy a hint" }, category: "shopping" },
+  { name: { ja: "ヒントを買う", en: "buy a hint" }, category: "shopping" },
 
   {
     name: { ja: "コンパスを4個取得する", en: "correct 4 COMMPASSes" },

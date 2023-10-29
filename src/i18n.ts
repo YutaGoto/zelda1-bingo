@@ -4,13 +4,13 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      Z1Bingo: "Zelda1 Bingo Card",
+      Z1Bingo: "Zelda1 Bingo Sheet",
       resetSeed: "Reset Seed",
     },
   },
   ja: {
     translation: {
-      Z1Bingo: "ゼルダの伝説1 ビンゴ カード",
+      Z1Bingo: "ゼルダの伝説1 ビンゴ シート",
       resetSeed: "Reset Seed",
     },
   },
