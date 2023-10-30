@@ -3,13 +3,17 @@ import {
   Box,
   Button,
   Container,
+  Flex,
   Heading,
+  Link,
   Select,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { VscGithubAlt } from "react-icons/vsc";
+import { RiTwitterXLine, RiExternalLinkLine } from "react-icons/ri";
 import { taskList } from "./utils/taskList";
 import { shuffle } from "./utils/shuffle";
 
@@ -87,52 +91,81 @@ function App() {
   }, [lang, i18n]);
 
   return (
-    <Container maxW="2xl" marginTop={2}>
+    <Container maxW="container.lg" marginTop={2}>
       <Heading as="h1" mb={3}>
         {t("Z1Bingo")}
       </Heading>
-      <SimpleGrid id="bingoCard" columns={5}>
-        {hits.map((row, i) => (
-          <div key={i}>
-            {row.map((hit, j) => (
-              <Box
-                key={j}
-                bg={hit ? "green.600" : "gray.800"}
-                width={140}
-                height={140}
-                py={2}
-                px={3}
-                border="1px"
-                borderColor="white"
-                color="white"
-                onClick={() => toggle(i, j)}
-                whiteSpace="unset"
-                className="cell"
+
+      <Box display={{ lg: "flex" }}>
+        <SimpleGrid id="bingoCard" maxW="2xl" columns={5} flexShrink={0}>
+          {hits.map((row, i) => (
+            <div key={i}>
+              {row.map((hit, j) => (
+                <Box
+                  key={j}
+                  bg={hit ? "green.600" : "gray.800"}
+                  width={140}
+                  height={140}
+                  py={2}
+                  px={3}
+                  border="1px"
+                  borderColor="white"
+                  color="white"
+                  onClick={() => toggle(i, j)}
+                  whiteSpace="unset"
+                  className="cell"
+                >
+                  <Text fontSize={14} wordBreak="break-word">
+                    {shuffledTaskList[i + j * 5].name[lang]}
+                  </Text>
+                  {!!shuffledTaskList[i + j * 5].count && (
+                    <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
+                  )}
+                </Box>
+              ))}
+            </div>
+          ))}
+        </SimpleGrid>
+        <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 12 }}>
+          <Box color="white">seed: {params.get("seed")}</Box>
+
+          <Button mt={5} colorScheme="yellow" onClick={() => resetSeed()}>
+            {t("resetSeed")}
+          </Button>
+
+          <Box mt={5} maxW="xs">
+            <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
+              <option value="ja">日本語</option>
+              <option value="en">English</option>
+            </Select>
+          </Box>
+
+          <Box mt={5}>
+            <Text fontSize="lg">{t("contact")}</Text>
+            <Flex gap={2} mt={2}>
+              <Button
+                as={Link}
+                variant="outline"
+                href="https://github.com/YutaGoto/zelda1-bingo"
+                leftIcon={<VscGithubAlt />}
+                rightIcon={<RiExternalLinkLine />}
+                isExternal
               >
-                <Text fontSize={14} wordBreak="break-word">
-                  {shuffledTaskList[i + j * 5].name[lang]}
-                </Text>
-                {!!shuffledTaskList[i + j * 5].count && (
-                  <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
-                )}
-              </Box>
-            ))}
-          </div>
-        ))}
-      </SimpleGrid>
-      <Box mt={5} color="white">
-        seed: {params.get("seed")}
-      </Box>
-
-      <Button mt={5} colorScheme="yellow" onClick={() => resetSeed()}>
-        {t("resetSeed")}
-      </Button>
-
-      <Box mt={5} maxW="xs">
-        <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
-          <option value="ja">日本語</option>
-          <option value="en">English</option>
-        </Select>
+                GitHub
+              </Button>
+              <Button
+                as={Link}
+                variant="outline"
+                href="https://twitter.com/gggooottto"
+                leftIcon={<RiTwitterXLine />}
+                rightIcon={<RiExternalLinkLine />}
+                isExternal
+              >
+                X(Twitter)
+              </Button>
+            </Flex>
+          </Box>
+        </Box>
       </Box>
     </Container>
   );
