@@ -6,12 +6,14 @@ const resources = {
     translation: {
       Z1Bingo: "Zelda1 Bingo Sheet",
       resetSeed: "Reset Seed",
+      contact: "Contact",
     },
   },
   ja: {
     translation: {
       Z1Bingo: "ゼルダの伝説1 ビンゴ シート",
       resetSeed: "Reset Seed",
+      contact: "Contact",
     },
   },
 };

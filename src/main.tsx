@@ -23,7 +23,7 @@ const config: ThemeConfig = {
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     Component: Outlet,
     children: [
       {
