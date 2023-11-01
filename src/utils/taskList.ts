@@ -68,7 +68,7 @@ export const taskList: Z1Task[] = [
     category: "shopping",
   },
   {
-    name: { ja: "青いろうそくを購入する", en: "buy BLUE CANDLE " },
+    name: { ja: "ロウソク　アオを購入する", en: "buy BLUE CANDLE " },
     category: "shopping",
   },
   {
@@ -76,12 +76,11 @@ export const taskList: Z1Task[] = [
     category: "shopping",
   },
   {
-    name: { ja: "クスリを購入する", en: "buy a POTION" },
+    name: { ja: "イノチノミズを購入する", en: "buy a POTION" },
     category: "shopping",
   },
   { name: { ja: "キーを購入する", en: "buy a KEY" }, category: "shopping" },
   { name: { ja: "エサを購入する", en: "buy a FOOD" }, category: "shopping" },
-  { name: { ja: "ヒントを買う", en: "buy a hint" }, category: "shopping" },
 
   {
     name: { ja: "コンパスを4個取得する", en: "correct 4 COMMPASSes" },
@@ -89,24 +88,45 @@ export const taskList: Z1Task[] = [
     count: 4,
   },
   {
-    name: { ja: "地図を4枚取得する", en: "correct 4 MAPs" },
+    name: { ja: "チズを4枚取得する", en: "correct 4 MAPs" },
     category: "correcting",
     count: 4,
+  },
+  {
+    name: {
+      ja: "ホワイト　ソードを入手する",
+      en: "correct WHITE SWORD",
+    },
+    category: "correcting",
   },
   {
     name: { ja: "ボムアップグレードを入手する", en: "get BOMB upgrade" },
     category: "correcting",
   },
   {
-    name: { ja: "マジカルキーを入手する", en: "correct MAGICAL KEY" },
+    name: { ja: "マジカル　キーを入手する", en: "correct MAGICAL KEY" },
     category: "correcting",
   },
   {
-    name: { ja: "赤いろうそくを入手する", en: "correct RED CANDLE" },
+    name: { ja: "ロウソク　アカを入手する", en: "correct RED CANDLE" },
     category: "correcting",
   },
   {
-    name: { ja: "時計を3回取得する", en: "get 3 CLOCKs" },
+    name: {
+      ja: "マジカル　ロッドを入手する",
+      en: "correct MAGICAL ROD",
+    },
+    category: "correcting",
+  },
+  {
+    name: {
+      ja: "バイブルを入手する",
+      en: "correct BOOK OF MAGIC",
+    },
+    category: "correcting",
+  },
+  {
+    name: { ja: "トケイを3回取得する", en: "get 3 CLOCKs" },
     category: "correcting",
     count: 3,
   },
@@ -117,7 +137,7 @@ export const taskList: Z1Task[] = [
   },
   {
     name: {
-      ja: "妖精を3体取得する",
+      ja: "ヨウセイを3体取得する",
       en: "get 3 FAIRIES",
     },
     category: "correcting",
@@ -172,7 +192,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "ダンジョンの地下通路・地下アイテム部屋のキースを4体全て倒す",
-      en: "defeat all 4 KEESE in dungeon's underground passage or underground item room",
+      en: "defeat all 4 KEESEs in dungeon's underground passage or underground item room",
     },
     category: "monster",
   },
@@ -207,13 +227,13 @@ export const taskList: Z1Task[] = [
   },
   {
     name: {
-      ja: "ギャンブルでお金を増やす",
+      ja: "オカネヲフヤス　ゲームでお金を増やす",
       en: "win at the Money-Making Game",
     },
     category: "sightseeing",
   },
   {
-    name: { ja: "笛でワープする", en: "warp with a RECORDER" },
+    name: { ja: "フエでワープする", en: "warp with a RECORDER" },
     category: "sightseeing",
   },
   {
@@ -234,90 +254,118 @@ export const taskList: Z1Task[] = [
       ja: "「ユキドマリノキニハ　ヒミツガアル」",
       en: '"A SECRET IS IN THE TREE AT THE DEAD-END."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「ハカバノジイサンニアエ」",
       en: '"MEET THE OLD MAN AT THE GRAVE."',
     },
-    category: "hint",
+    category: "message",
+  },
+  {
+    name: {
+      ja: "「コノサキノ　ヤマヲ　ウエヘ　ウエヘト　ユケ」",
+      en: '"GO UP, UP THE MOUNTAIN AHEAD."',
+    },
+    category: "message",
+  },
+  {
+    name: {
+      ja: "「マヨイノモリヲ　キタ　ニシ　ミナミ　ニシ　ヘ」",
+      en: '"GO NORTH, WEST, SOUTH, WEST TO THE FOREST OF MAZE."',
+    },
+    category: "message",
+  },
+  {
+    name: {
+      ja: "「コレデハ　イエナイネ」",
+      en: '"THIS AIN\'T ENOUGH TO TALK."',
+    },
+    category: "message",
+  },
+  {
+    name: {
+      ja: "「アンタオカネモチダネ」",
+      en: '"BOY, YOU\'RE RICH!"',
+    },
+    category: "message",
   },
   {
     name: {
       ja: "「オカネガナクナレバ　ヤ　ハ　ツカエナイ」",
       en: '"EASTMOST PENINSULA IS THE SECRET."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「ドドンゴ　ハ　ケムリ　ヲ　キラウ」",
       en: '"DODONGO DISLIKES SMOKE."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「タキノウエノジイサン二　ケンヲ　モラッタカイ」",
       en: '"DID YOU GET THE SWORD FROM THE OLD MAN ON TOP OF THE WATERFALL?"',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「タキ　ノ　ナカ　二　ハイレ」",
       en: '"WALK INTO THE WATERFALL."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「デグドガニハ　キライ　ナ　オトガ　アル」",
       en: '"DIGDOGGER HATES CERTAIN KIND OF SOUND."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「オトニヨワイ　イキモノ　ガイル」",
-      en: '"SECRET POWER IS SAID TO BE IN THE ARROW."',
+      en: '"A SECRET POWER IS SAID TO BE IN THE ARROW."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「ゴーマ　ノ　メヲネラエ」",
       en: '"AIM AT THE EYES OF GOHMA."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「ヨウセイノスマヌイズミ　ニハ　ヒミツガアル」",
       en: '"THERE ARE SECRETS WHERE FAIRIES DON\'T LIVE."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「メガネイワ　ハ　シヘノ　イリグチ」",
       en: '"THERE\'S A SECRET IN THE TIP OF THE NOSE."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「デスマウンテンデ　ヤヲ　サガセ」",
       en: '"SPECTACLE ROCK IS AN ENTRANCE TO DEATH."',
     },
-    category: "hint",
+    category: "message",
   },
   {
     name: {
       ja: "「ライオンノカギヲサガセ」",
       en: '"10TH ENEMY HAS THE BOMB."',
     },
-    category: "hint",
+    category: "message",
   },
 ];
