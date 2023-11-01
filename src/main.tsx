@@ -44,6 +44,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ColorModeScript initialColorMode={config.initialColorMode} />
       <RouterProvider router={router} />
     </ChakraProvider>
-    ,
   </React.StrictMode>,
 );
