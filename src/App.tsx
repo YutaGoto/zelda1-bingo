@@ -4,12 +4,18 @@ import {
   Button,
   Container,
   Flex,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
   Heading,
   Link,
+  NumberInput,
+  NumberInputField,
   Select,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { VscGithubAlt } from "react-icons/vsc";
@@ -18,6 +24,11 @@ import { taskList } from "./utils/taskList";
 import { shuffle } from "./utils/shuffle";
 
 import { Counter } from "./ui/Counter";
+import { Search2Icon, RepeatIcon } from "@chakra-ui/icons";
+
+interface SeedValue {
+  seed: number;
+}
 
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
@@ -39,6 +50,12 @@ function getRandomNum(seed: string | null): number {
 const shuffledTaskList = shuffle(taskList, getRandomNum(paramsSeed));
 
 function App() {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<SeedValue>();
+
   const [hits, setHits] = useState([
     [false, false, false, false, false],
     [false, false, false, false, false],
@@ -68,13 +85,21 @@ function App() {
 
     params.delete("seed");
     history.replaceState("", "", `?${params.toString()}`);
-    window.location.reload();
+    location.reload();
   };
 
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === lang) return;
 
     navigate(`/${e.target.value}/?seed=${params.get("seed")}`);
+  };
+
+  const updateSeed: SubmitHandler<SeedValue> = (values) => {
+    if (values.seed === Number(params.get("seed"))) return;
+
+    navigate(`/${lang}/?seed=${values.seed}`, { replace: true });
+    location.reload();
+    return;
   };
 
   if (lang !== "ja" && lang !== "en") {
@@ -127,17 +152,49 @@ function App() {
           ))}
         </SimpleGrid>
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 12 }}>
-          <Box color="white">seed: {params.get("seed")}</Box>
-
-          <Button mt={5} colorScheme="yellow" onClick={() => resetSeed()}>
+          <form onSubmit={handleSubmit(updateSeed)}>
+            <FormControl isInvalid={Boolean(errors.seed)}>
+              <FormLabel>Seed</FormLabel>
+              <NumberInput
+                defaultValue={Number(params.get("seed"))}
+                min={1}
+                max={9999}
+              >
+                <NumberInputField
+                  {...register("seed", {
+                    required: t("requiredSeed"),
+                    valueAsNumber: true,
+                  })}
+                />
+              </NumberInput>
+              <FormErrorMessage>{errors.seed?.message}</FormErrorMessage>
+            </FormControl>
+            <Button
+              mt={5}
+              colorScheme="teal"
+              leftIcon={<Search2Icon />}
+              type="submit"
+            >
+              {t("updateSeed")}
+            </Button>
+          </form>
+          <Button
+            mt={5}
+            colorScheme="yellow"
+            leftIcon={<RepeatIcon />}
+            onClick={() => resetSeed()}
+          >
             {t("resetSeed")}
           </Button>
 
           <Box mt={5} maxW="xs">
-            <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
-              <option value="ja">日本語</option>
-              <option value="en">English</option>
-            </Select>
+            <FormControl>
+              <FormLabel>{t("language")}</FormLabel>
+              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+              </Select>
+            </FormControl>
           </Box>
 
           <Box mt={5}>
