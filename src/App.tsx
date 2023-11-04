@@ -2,17 +2,18 @@ import { ChangeEvent, useEffect, useState } from "react";
 import {
   Box,
   Button,
+  Center,
   Container,
   Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
+  Grid,
   Heading,
   Link,
   NumberInput,
   NumberInputField,
   Select,
-  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -25,6 +26,7 @@ import { shuffle } from "./utils/shuffle";
 
 import { Counter } from "./ui/Counter";
 import { Search2Icon, RepeatIcon } from "@chakra-ui/icons";
+import { TbBackslash } from "react-icons/tb";
 
 interface SeedValue {
   seed: number;
@@ -122,7 +124,50 @@ function App() {
       </Heading>
 
       <Box display={{ lg: "flex" }}>
-        <SimpleGrid id="bingoCard" maxW="2xl" columns={5} flexShrink={0}>
+        <Grid
+          id="bingoCard"
+          maxW="3xl"
+          templateColumns="30px repeat(5, 140px)"
+          gap={0}
+        >
+          <Center
+            width={30}
+            height={30}
+            py={1}
+            px={1}
+            border="1px"
+            borderColor="white"
+          >
+            <TbBackslash />
+          </Center>
+          {["A", "B", "C", "D", "E"].map((row) => (
+            <Center
+              key={row}
+              width={140}
+              height={30}
+              py={1}
+              px={2}
+              border="1px"
+              borderColor="white"
+            >
+              {row}
+            </Center>
+          ))}
+          <Box>
+            {[1, 2, 3, 4, 5].map((col) => (
+              <Center
+                key={col}
+                width={30}
+                height={140}
+                py={1}
+                px={2}
+                border="1px"
+                borderColor="white"
+              >
+                {col}
+              </Center>
+            ))}
+          </Box>
           {hits.map((row, i) => (
             <div key={i}>
               {row.map((hit, j) => (
@@ -150,8 +195,8 @@ function App() {
               ))}
             </div>
           ))}
-        </SimpleGrid>
-        <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 12 }}>
+        </Grid>
+        <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
           <form onSubmit={handleSubmit(updateSeed)}>
             <FormControl isInvalid={Boolean(errors.seed)}>
               <FormLabel>Seed</FormLabel>
@@ -165,6 +210,7 @@ function App() {
                     required: t("requiredSeed"),
                     valueAsNumber: true,
                   })}
+                  w={24}
                 />
               </NumberInput>
               <FormErrorMessage>{errors.seed?.message}</FormErrorMessage>
@@ -190,7 +236,11 @@ function App() {
           <Box mt={5} maxW="xs">
             <FormControl>
               <FormLabel>{t("language")}</FormLabel>
-              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
+              <Select
+                defaultValue={lang}
+                w={32}
+                onChange={(e) => onChangeLang(e)}
+              >
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
               </Select>
