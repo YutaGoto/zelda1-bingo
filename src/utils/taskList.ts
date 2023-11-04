@@ -59,7 +59,7 @@ export const taskList: Z1Task[] = [
   },
 
   {
-    name: { ja: "ボムを2回購入する", en: "buy 2 BOMBs" },
+    name: { ja: "ボムを2回購入する", en: "buy 2 BOMB" },
     category: "shopping",
     count: 2,
   },
@@ -83,12 +83,12 @@ export const taskList: Z1Task[] = [
   { name: { ja: "エサを購入する", en: "buy a FOOD" }, category: "shopping" },
 
   {
-    name: { ja: "コンパスを4個取得する", en: "correct 4 COMMPASSes" },
+    name: { ja: "コンパスを4個取得する", en: "correct 4 COMPASS" },
     category: "correcting",
     count: 4,
   },
   {
-    name: { ja: "チズを4枚取得する", en: "correct 4 MAPs" },
+    name: { ja: "チズを4枚取得する", en: "correct 4 MAP" },
     category: "correcting",
     count: 4,
   },
@@ -126,12 +126,19 @@ export const taskList: Z1Task[] = [
     category: "correcting",
   },
   {
-    name: { ja: "トケイを3回取得する", en: "get 3 CLOCKs" },
+    name: {
+      ja: "パワー　ブレスレットを入手する",
+      en: "correct POWER BRACELET",
+    },
+    category: "correcting",
+  },
+  {
+    name: { ja: "トケイを3回取得する", en: "get 3 CLOCK" },
     category: "correcting",
     count: 3,
   },
   {
-    name: { ja: "キーを15個集める", en: "correct 15 KEYs" },
+    name: { ja: "キーを15個集める", en: "correct 15 KEY" },
     category: "correcting",
     count: 15,
   },
@@ -192,7 +199,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "ダンジョンの地下通路・地下アイテム部屋のキースを4体全て倒す",
-      en: "defeat all 4 KEESEs in dungeon's underground passage or underground item room",
+      en: "defeat all 4 KEESE in dungeon's underground passage or underground item room",
     },
     category: "monster",
   },
@@ -205,7 +212,15 @@ export const taskList: Z1Task[] = [
     count: 10,
   },
   {
-    name: { ja: "ロックに5回あたる", en: "hit 5 ROCKs" },
+    name: {
+      ja: "ゲルをブーメランまたはマジカル　ブーメランで10体倒す",
+      en: "defeat 10 GEL with BOOMERANG or MAGICAL BOOMERANG",
+    },
+    category: "monster",
+    count: 10,
+  },
+  {
+    name: { ja: "ロックに5回あたる", en: "hit ROCK 5 times" },
     category: "monster",
     count: 5,
   },
