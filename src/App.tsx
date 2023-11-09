@@ -179,7 +179,13 @@ function App() {
               {row.map((hit, j) => (
                 <Box
                   key={j}
-                  bg={hit ? "green.600" : ""}
+                  bg={
+                    hit
+                      ? colorMode === "dark"
+                        ? "green.600"
+                        : "green.300"
+                      : ""
+                  }
                   width={140}
                   height={140}
                   py={2}
