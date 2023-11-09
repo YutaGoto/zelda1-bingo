@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { MoonIcon, RepeatIcon, Search2Icon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -19,17 +19,16 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { useParams, useNavigate } from "react-router-dom";
+import { ChangeEvent, useEffect, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { VscGithubAlt } from "react-icons/vsc";
-import { RiTwitterXLine, RiExternalLinkLine } from "react-icons/ri";
-import { taskList } from "./utils/taskList";
-import { shuffle } from "./utils/shuffle";
-
-import { Counter } from "./ui/Counter";
-import { Search2Icon, RepeatIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
 import { TbBackslash } from "react-icons/tb";
+import { VscGithubAlt } from "react-icons/vsc";
+import { useNavigate, useParams } from "react-router-dom";
+import { Counter } from "./ui/Counter";
+import { shuffle } from "./utils/shuffle";
+import { taskList } from "./utils/taskList";
 
 interface SeedValue {
   seed: number;
