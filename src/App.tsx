@@ -10,11 +10,14 @@ import {
   FormLabel,
   Grid,
   Heading,
+  IconButton,
   Link,
   NumberInput,
   NumberInputField,
   Select,
+  Spacer,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
@@ -25,7 +28,7 @@ import { taskList } from "./utils/taskList";
 import { shuffle } from "./utils/shuffle";
 
 import { Counter } from "./ui/Counter";
-import { Search2Icon, RepeatIcon } from "@chakra-ui/icons";
+import { Search2Icon, RepeatIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { TbBackslash } from "react-icons/tb";
 
 interface SeedValue {
@@ -52,6 +55,7 @@ function getRandomNum(seed: string | null): number {
 const shuffledTaskList = shuffle(taskList, getRandomNum(paramsSeed));
 
 function App() {
+  const { colorMode, toggleColorMode } = useColorMode();
   const {
     handleSubmit,
     register,
@@ -119,9 +123,20 @@ function App() {
 
   return (
     <Container maxW="container.lg" marginTop={2}>
-      <Heading as="h1" mb={3}>
-        {t("Z1Bingo")}
-      </Heading>
+      <Box display="flex">
+        <Heading as="h1" mb={3}>
+          {t("Z1Bingo")}
+        </Heading>
+        <Spacer />
+
+        <Box>
+          <IconButton
+            aria-label="change color mode"
+            onClick={toggleColorMode}
+            icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+          />
+        </Box>
+      </Box>
 
       <Box display={{ lg: "flex" }}>
         <Grid
@@ -130,14 +145,7 @@ function App() {
           templateColumns="30px repeat(5, 140px)"
           gap={0}
         >
-          <Center
-            width={30}
-            height={30}
-            py={1}
-            px={1}
-            border="1px"
-            borderColor="white"
-          >
+          <Center width={30} height={30} py={1} px={1} border="1px">
             <TbBackslash />
           </Center>
           {["A", "B", "C", "D", "E"].map((row) => (
@@ -148,7 +156,6 @@ function App() {
               py={1}
               px={2}
               border="1px"
-              borderColor="white"
             >
               {row}
             </Center>
@@ -162,7 +169,6 @@ function App() {
                 py={1}
                 px={2}
                 border="1px"
-                borderColor="white"
               >
                 {col}
               </Center>
@@ -173,14 +179,12 @@ function App() {
               {row.map((hit, j) => (
                 <Box
                   key={j}
-                  bg={hit ? "green.600" : "gray.800"}
+                  bg={hit ? "green.600" : ""}
                   width={140}
                   height={140}
                   py={2}
                   px={3}
                   border="1px"
-                  borderColor="white"
-                  color="white"
                   onClick={() => toggle(i, j)}
                   whiteSpace="unset"
                   className="cell"
