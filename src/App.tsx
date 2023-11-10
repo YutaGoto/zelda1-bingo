@@ -18,6 +18,7 @@ import {
   Spacer,
   Text,
   useColorMode,
+  useToast,
 } from "@chakra-ui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
@@ -28,14 +29,21 @@ import { taskList } from "./utils/taskList";
 import { shuffle } from "./utils/shuffle";
 
 import { Counter } from "./ui/Counter";
-import { Search2Icon, RepeatIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
+import {
+  Search2Icon,
+  RepeatIcon,
+  SunIcon,
+  MoonIcon,
+  CopyIcon,
+} from "@chakra-ui/icons";
 import { TbBackslash } from "react-icons/tb";
+import { copyText } from "./utils/copyText";
 
 interface SeedValue {
   seed: number;
 }
 
-const url = new URL(window.location.href);
+const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 const paramsSeed = params.get("seed");
 
@@ -56,9 +64,11 @@ const shuffledTaskList = shuffle(taskList, getRandomNum(paramsSeed));
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const toast = useToast();
   const {
     handleSubmit,
     register,
+    watch,
     formState: { errors },
   } = useForm<SeedValue>();
 
@@ -221,6 +231,7 @@ function App() {
             </FormControl>
             <Button
               mt={5}
+              variant="outline"
               colorScheme="teal"
               leftIcon={<Search2Icon />}
               type="submit"
@@ -228,14 +239,72 @@ function App() {
               {t("updateSeed")}
             </Button>
           </form>
-          <Button
-            mt={5}
-            colorScheme="yellow"
-            leftIcon={<RepeatIcon />}
-            onClick={() => resetSeed()}
-          >
-            {t("resetSeed")}
-          </Button>
+          <Box mt={5}>
+            <Button
+              colorScheme="purple"
+              variant="outline"
+              leftIcon={<CopyIcon />}
+              onClick={() => {
+                copyText(watch("seed"));
+                toast({
+                  title: t("copiedSeed"),
+                  status: "success",
+                  isClosable: true,
+                });
+              }}
+            >
+              {t("copySeed")}
+            </Button>
+          </Box>
+          <Box mt={5}>
+            <Button
+              colorScheme="purple"
+              variant="outline"
+              leftIcon={<CopyIcon />}
+              onClick={() => {
+                copyText(location.href);
+                toast({
+                  title: t("copiedCurrentUrl"),
+                  status: "success",
+                  isClosable: true,
+                });
+              }}
+            >
+              {t("copyCurrentUrl")}
+            </Button>
+          </Box>
+          <Box mt={5}>
+            <Button
+              colorScheme="purple"
+              variant="outline"
+              leftIcon={<CopyIcon />}
+              onClick={() => {
+                copyText(
+                  `${location.href.replace(
+                    `seed=${params.get("seed")}`,
+                    `seed=${watch("seed")}`,
+                  )}`,
+                );
+                toast({
+                  title: t("copiedNewSeedUrl"),
+                  status: "success",
+                  isClosable: true,
+                });
+              }}
+            >
+              {t("copyNewSeedUrl")}
+            </Button>
+          </Box>
+          <Box mt={5}>
+            <Button
+              colorScheme="yellow"
+              variant="outline"
+              leftIcon={<RepeatIcon />}
+              onClick={() => resetSeed()}
+            >
+              {t("resetSeed")}
+            </Button>
+          </Box>
 
           <Box mt={5} maxW="xs">
             <FormControl>
