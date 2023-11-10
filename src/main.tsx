@@ -1,22 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import {
   ChakraProvider,
   ColorModeScript,
   ThemeConfig,
   extendTheme,
 } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
+import { mode } from "@chakra-ui/theme-tools";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
   Navigate,
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
 } from "react-router-dom";
 import App from "./App.tsx";
-import "./index.css";
 import "./i18n.ts";
+import "./index.css";
 
 const config: ThemeConfig = {
   initialColorMode: "system",
