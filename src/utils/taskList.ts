@@ -68,7 +68,7 @@ export const taskList: Z1Task[] = [
     category: "shopping",
   },
   {
-    name: { ja: "ロウソク　アオを購入する", en: "buy BLUE CANDLE " },
+    name: { ja: "ロウソク　アオを購入する", en: "buy BLUE CANDLE" },
     category: "shopping",
   },
   {
@@ -206,7 +206,7 @@ export const taskList: Z1Task[] = [
   {
     name: {
       ja: "モリブリンの槍の攻撃を10回防ぐ",
-      en: "prevented 10 attacks by MOBLIN's spear ",
+      en: "prevented 10 attacks by MOBLIN's spear",
     },
     category: "monster",
     count: 10,
@@ -231,14 +231,29 @@ export const taskList: Z1Task[] = [
     },
     category: "monster",
   },
+  {
+    name: {
+      ja: "ドドンゴにボムを2個食べさせる",
+      en: "make a DODONGO eat 2 BOMBs",
+    },
+    category: "monster",
+  },
+  {
+    name: {
+      ja: "グリオークの分裂した頭に剣・剣ビームで5回攻撃をする",
+      en: "attack 5 times with sword or sword beam to the split head of GLEEOK",
+    },
+    category: "monster",
+    count: 5,
+  },
 
   {
     name: {
-      ja: "ドアの修理代請求おじいさんに2回会う",
-      en: "meet 2 old mans who charges for repairing the door. ",
+      ja: "ドアの修理代請求おじいさんに3回会う",
+      en: "meet 3 old mans who charges for repairing the door",
     },
     category: "sightseeing",
-    count: 2,
+    count: 3,
   },
   {
     name: {
@@ -258,6 +273,27 @@ export const taskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 7,
+  },
+  {
+    name: {
+      ja: "Level 4 の10ルピー部屋へ行く",
+      en: "visit 10 RUPEEs room in Level-4",
+    },
+    category: "sightseeing",
+  },
+  {
+    name: {
+      ja: "Level 7 の10ルピー部屋へ行く",
+      en: "visit 10 RUPEEs room in Level-7",
+    },
+    category: "sightseeing",
+  },
+  {
+    name: {
+      ja: "Level 8 の10ルピー部屋へ行く",
+      en: "visit 10 RUPEEs room in Level-8",
+    },
+    category: "sightseeing",
   },
   {
     name: { ja: "Level 9に行く", en: "visit Level-9's dungeon" },
