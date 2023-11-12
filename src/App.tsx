@@ -107,11 +107,11 @@ function App() {
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === lang) return;
 
-    navigate(`/${e.target.value}/?seed=${params.get("seed")}`);
+    navigate(`/${e.target.value}/?seed=${paramsSeed}`);
   };
 
   const updateSeed: SubmitHandler<SeedValue> = (values) => {
-    if (values.seed === Number(params.get("seed"))) return;
+    if (values.seed === Number(paramsSeed)) return;
 
     navigate(`/${lang}/?seed=${values.seed}`, { replace: true });
     location.reload();
@@ -119,7 +119,8 @@ function App() {
   };
 
   if (lang !== "ja" && lang !== "en") {
-    navigate(`/ja/?seed=${params.get("seed")}`);
+    console.log(paramsSeed);
+    navigate(`/ja/?seed=${paramsSeed}`);
     return;
   }
 
