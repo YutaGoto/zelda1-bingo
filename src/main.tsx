@@ -34,6 +34,10 @@ const theme = extendTheme({
   },
 });
 
+const url = new URL(location.href);
+const params = new URLSearchParams(url.search);
+const paramsSeed = params.get("seed");
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Navigate to="/ja" />,
+        element: <Navigate to={`/ja/?seed=${paramsSeed}`} />,
       },
     ],
   },
