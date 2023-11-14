@@ -6,6 +6,7 @@ import {
 } from "@chakra-ui/react";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 import { mode } from "@chakra-ui/theme-tools";
+import { Analytics } from "@vercel/analytics/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
@@ -60,6 +61,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={config.initialColorMode} />
       <RouterProvider router={router} />
+      <Analytics />
     </ChakraProvider>
   </React.StrictMode>,
 );
