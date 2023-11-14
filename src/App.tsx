@@ -107,22 +107,16 @@ function App() {
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === lang) return;
 
-    navigate(`/${e.target.value}/?seed=${paramsSeed}`);
+    navigate(`/${e.target.value}/?seed=${params.get("seed")}`);
   };
 
   const updateSeed: SubmitHandler<SeedValue> = (values) => {
-    if (values.seed === Number(paramsSeed)) return;
+    if (values.seed === Number(params.get("seed"))) return;
 
     navigate(`/${lang}/?seed=${values.seed}`, { replace: true });
     location.reload();
     return;
   };
-
-  if (lang !== "ja" && lang !== "en") {
-    console.log(paramsSeed);
-    navigate(`/ja/?seed=${paramsSeed}`);
-    return;
-  }
 
   useEffect(() => {
     if (lang === "en") {
@@ -207,7 +201,11 @@ function App() {
                   className="cell"
                 >
                   <Text fontSize={14} wordBreak="break-word">
-                    {shuffledTaskList[i + j * 5].name[lang]}
+                    {
+                      shuffledTaskList[i + j * 5].name[
+                        lang === "en" ? lang : "ja"
+                      ]
+                    }
                   </Text>
                   {!!shuffledTaskList[i + j * 5].count && (
                     <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
