@@ -1,35 +1,36 @@
-import { ChakraProvider, ThemeConfig, extendTheme } from "@chakra-ui/react";
-import { StyleFunctionProps } from "@chakra-ui/styled-system";
-import { ColorModeScript } from "@chakra-ui/system";
-import { mode } from "@chakra-ui/theme-tools";
+import { CacheProvider } from "@emotion/react";
 import { RemixBrowser } from "@remix-run/react";
-import { StrictMode, startTransition } from "react";
+import { StrictMode, startTransition, useState } from "react";
 import { hydrateRoot } from "react-dom/client";
 
-const config: ThemeConfig = {
-  initialColorMode: "system",
-  useSystemColorMode: true,
-};
+import { ClientStyleContext } from "./context";
+import createEmotionCache, { defaultCache } from "./createEmotionCache";
 
-const theme = extendTheme({
-  ...config,
-  styles: {
-    global: (props: StyleFunctionProps) => ({
-      body: {
-        bg: mode("gray.50", "gray.800")(props),
-      },
-    }),
-  },
-});
+interface ClientCacheProviderProps {
+  children: React.ReactNode;
+}
+
+function ClientCacheProvider({ children }: ClientCacheProviderProps) {
+  const [cache, setCache] = useState(defaultCache);
+
+  function reset() {
+    setCache(createEmotionCache());
+  }
+
+  return (
+    <ClientStyleContext.Provider value={{ reset }}>
+      <CacheProvider value={cache}>{children}</CacheProvider>
+    </ClientStyleContext.Provider>
+  );
+}
 
 startTransition(() => {
   hydrateRoot(
     document,
     <StrictMode>
-      <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={config.initialColorMode} />
+      <ClientCacheProvider>
         <RemixBrowser />
-      </ChakraProvider>
+      </ClientCacheProvider>
     </StrictMode>,
   );
 });

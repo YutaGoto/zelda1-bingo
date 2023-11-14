@@ -1,12 +1,12 @@
-import { useNavigate } from "@remix-run/react";
-import { useEffect } from "react";
+import { Link } from "@remix-run/react";
 
 export default function Index() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/ja/");
-  }, [navigate])
-
-  return <></>
+  return (
+    <div>
+      <p>go bingo page</p>
+      <p>
+        <Link to="/ja">Bingo</Link>
+      </p>
+    </div>
+  );
 }

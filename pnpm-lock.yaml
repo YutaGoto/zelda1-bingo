@@ -20,6 +20,9 @@ dependencies:
   '@chakra-ui/theme-tools':
     specifier: ^2.1.1
     version: 2.1.1(@chakra-ui/styled-system@2.9.1)
+  '@emotion/cache':
+    specifier: ^11.11.0
+    version: 11.11.0
   '@emotion/react':
     specifier: ^11.11.1
     version: 11.11.1(@types/react@18.2.36)(react@18.2.0)

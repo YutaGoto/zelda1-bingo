@@ -33,11 +33,11 @@ import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
 import { TbBackslash } from "react-icons/tb";
 import { VscGithubAlt } from "react-icons/vsc";
 
+import { useNavigate, useParams, useSearchParams } from "@remix-run/react";
 import { Counter } from "../ui/Counter";
 import { copyText } from "../utils/copyText";
 import { shuffle } from "../utils/shuffle";
 import { taskList } from "../utils/taskList";
-import { useNavigate, useParams, useSearchParams } from "@remix-run/react";
 
 interface SeedValue {
   seed: number;
@@ -80,12 +80,11 @@ function App() {
     [false, false, false, false, false],
   ]);
 
-  const {lang} = useParams();
+  const { lang } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-
 
   const toggle = (i: number, j: number) => {
     const newHits = [...hits];
