@@ -118,12 +118,6 @@ function App() {
     return;
   };
 
-  if (lang !== "ja" && lang !== "en") {
-    navigate(`/ja/?seed=${params.get("seed")}`);
-    location.reload();
-    return;
-  }
-
   useEffect(() => {
     if (lang === "en") {
       i18n.changeLanguage("en");
