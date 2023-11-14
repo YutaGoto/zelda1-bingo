@@ -201,7 +201,11 @@ function App() {
                   className="cell"
                 >
                   <Text fontSize={14} wordBreak="break-word">
-                    {shuffledTaskList[i + j * 5].name[lang]}
+                    {
+                      shuffledTaskList[i + j * 5].name[
+                        lang === "en" ? lang : "ja"
+                      ]
+                    }
                   </Text>
                   {!!shuffledTaskList[i + j * 5].count && (
                     <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
