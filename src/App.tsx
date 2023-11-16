@@ -326,6 +326,43 @@ function App() {
           </Box>
 
           <Box mt={5}>
+            <Text fontSize="lg">{t("otherCategories")}</Text>
+            <Grid
+              templateColumns={{ lg: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+              gap={2}
+              mt={2}
+            >
+              <Button variant="outline" colorScheme="blue">
+                1st Quest
+              </Button>
+              <Button
+                // as={Link}
+                colorScheme="orange"
+                variant="outline"
+                isDisabled={true}
+              >
+                2nd Quest
+              </Button>
+              <Button
+                // as={Link}
+                colorScheme="pink"
+                variant="outline"
+                isDisabled={true}
+              >
+                Swordless
+              </Button>
+              <Button
+                // as={Link}
+                colorScheme="cyan"
+                variant="outline"
+                isDisabled={true}
+              >
+                Randomizer
+              </Button>
+            </Grid>
+          </Box>
+
+          <Box mt={5}>
             <Text fontSize="lg">{t("contact")}</Text>
             <Flex gap={2} mt={2}>
               <Button
