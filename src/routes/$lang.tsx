@@ -26,41 +26,23 @@ import {
   useColorMode,
   useToast,
 } from "@chakra-ui/react";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useMemo, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
 import { TbBackslash } from "react-icons/tb";
 import { VscGithubAlt } from "react-icons/vsc";
-
 import { useNavigate, useParams, useSearchParams } from "@remix-run/react";
+
 import { Counter } from "../ui/Counter";
 import { copyText } from "../utils/copyText";
+import { getNewSeed } from "../utils/getNewSeed";
 import { shuffle } from "../utils/shuffle";
 import { taskList } from "../utils/taskList";
 
 interface SeedValue {
   seed: number;
 }
-
-// const url = new URL(location.href);
-// const params = new URLSearchParams(url.search);
-// const searchParams.get("seed") = searchParams.get("seed");
-
-// function getRandomNum(seed: string | null): number {
-//   let currentSeed: number;
-//   if (seed === null) {
-//     currentSeed = Math.floor(Math.random() * 10000);
-//     searchParams.append("seed", currentSeed.toString());
-//     history.replaceState("", "", `?${searchParams.toString()}`);
-//   } else {
-//     currentSeed = Number(seed);
-//   }
-
-//   return currentSeed % 10000;
-// }
-
-const shuffledTaskList = shuffle(taskList, 1);
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -80,11 +62,17 @@ function App() {
     [false, false, false, false, false],
   ]);
 
+  const [shuffledTaskList, setShuffledTaskList] = useState(taskList)
+
   const { lang } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+
+  // const shuffledTaskList = useMemo(() => {
+  //   return shuffle(taskList, Number(searchParams.get("seed")));
+  // }, [searchParams]);
 
   const toggle = (i: number, j: number) => {
     const newHits = [...hits];
@@ -103,7 +91,7 @@ function App() {
 
     searchParams.delete("seed");
     history.replaceState("", "", `?${searchParams.toString()}`);
-    // location.reload();
+    window.location.reload();
   };
 
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -115,8 +103,9 @@ function App() {
   const updateSeed: SubmitHandler<SeedValue> = (values) => {
     if (values.seed === Number(searchParams.get("seed"))) return;
 
+    setSearchParams({ seed: String(values.seed) });
     navigate(`/${lang}/?seed=${values.seed}`, { replace: true });
-    // location.reload();
+    // window.location.reload();
     return;
   };
 
@@ -133,6 +122,18 @@ function App() {
       i18n.changeLanguage("ja");
     }
   }, [lang, i18n]);
+
+  useEffect(() => {
+    if (!searchParams.get("seed")) {
+      const newSeed = getNewSeed();
+      setSearchParams({ seed: String(newSeed) });
+    }
+  }, [searchParams, setSearchParams]);
+
+  useEffect(() => {
+    console.log(searchParams.get("seed"));
+    setShuffledTaskList(shuffle(taskList, Number(searchParams.get("seed"))))
+  }, [searchParams])
 
   return (
     <Container maxW="container.lg" marginTop={2}>
@@ -224,6 +225,7 @@ function App() {
           ))}
         </Grid>
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
+          {searchParams.get("seed") && (
           <form onSubmit={handleSubmit(updateSeed)}>
             <FormControl isInvalid={Boolean(errors.seed)}>
               <FormLabel>Seed</FormLabel>
@@ -252,6 +254,7 @@ function App() {
               {t("updateSeed")}
             </Button>
           </form>
+          )}
           <Box mt={5}>
             <Button
               colorScheme="purple"
@@ -275,7 +278,7 @@ function App() {
               variant="outline"
               leftIcon={<CopyIcon />}
               onClick={() => {
-                // copyText(location.href);
+                copyText(window.location.href);
                 toast({
                   title: t("copiedCurrentUrl"),
                   status: "success",
@@ -292,12 +295,12 @@ function App() {
               variant="outline"
               leftIcon={<CopyIcon />}
               onClick={() => {
-                // copyText(
-                //   `${location.href.replace(
-                //     `seed=${searchParams.get("seed")}`,
-                //     `seed=${watch("seed")}`,
-                //   )}`,
-                // );
+                copyText(
+                  `${window.location.href.replace(
+                    `seed=${searchParams.get("seed")}`,
+                    `seed=${watch("seed")}`,
+                  )}`,
+                );
                 toast({
                   title: t("copiedNewSeedUrl"),
                   status: "success",
