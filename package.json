@@ -1,9 +1,8 @@
 {
   "name": "z1-bingo",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "type": "module",
-  "packageManager": "yarn@4.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
