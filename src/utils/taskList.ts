@@ -64,6 +64,14 @@ export const taskList: Z1Task[] = [
     count: 2,
   },
   {
+    name: {
+      ja: "ハートを5個購入する",
+      en: "buy 5 HEART",
+    },
+    category: "shopping",
+    count: 5,
+  },
+  {
     name: { ja: "ブルーリングを購入する", en: "buy BLUE RING" },
     category: "shopping",
   },
@@ -170,6 +178,14 @@ export const taskList: Z1Task[] = [
     name: { ja: "ゾーラを3体倒す", en: "defeat 3 ZOLA" },
     category: "monster",
     count: 3,
+  },
+  {
+    name: {
+      ja: "赤テクタイトをボムで5体倒す",
+      en: "defeat 5 red TEKTITE with BOMB",
+    },
+    category: "monster",
+    count: 5,
   },
   {
     name: {
