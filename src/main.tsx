@@ -45,12 +45,16 @@ const router = createBrowserRouter([
     Component: Outlet,
     children: [
       {
-        path: "/:lang",
+        path: "/:category/:lang",
         Component: App,
       },
       {
+        path: "/:lang",
+        element: <Navigate to={`/1q/en/?seed=${paramsSeed}`} />,
+      },
+      {
         path: "/",
-        element: <Navigate to={`/ja/?seed=${paramsSeed}`} />,
+        element: <Navigate to={`/1q/en/?seed=${paramsSeed}`} />,
       },
     ],
   },

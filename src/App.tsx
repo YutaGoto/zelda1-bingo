@@ -34,10 +34,10 @@ import { TbBackslash } from "react-icons/tb";
 import { VscGithubAlt } from "react-icons/vsc";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { Counter } from "./ui/Counter";
+import { Cell } from "./ui/Cell";
 import { copyText } from "./utils/copyText";
+import { firstQuestTaskList } from "./utils/firstQuestTaskList";
 import { shuffle } from "./utils/shuffle";
-import { taskList } from "./utils/taskList";
 
 interface SeedValue {
   seed: number;
@@ -60,7 +60,7 @@ function getRandomNum(seed: string | null): number {
   return currentSeed % 10000;
 }
 
-const shuffledTaskList = shuffle(taskList, getRandomNum(paramsSeed));
+const shuffledTaskList = shuffle(firstQuestTaskList, getRandomNum(paramsSeed));
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -185,37 +185,14 @@ function App() {
           {hits.map((row, i) => (
             <div key={i}>
               {row.map((hit, j) => (
-                <Box
+                <Cell
                   key={j}
-                  bg={
-                    hit
-                      ? colorMode === "dark"
-                        ? "green.600"
-                        : "green.300"
-                      : ""
-                  }
-                  width={140}
-                  height={140}
-                  py={2}
-                  px={3}
-                  border="1px"
+                  task={shuffledTaskList[i + j * 5]}
+                  hit={hit}
+                  lang={lang}
+                  messageLang={messageLang}
                   onClick={() => toggle(i, j)}
-                  whiteSpace="unset"
-                  className="cell"
-                >
-                  <Text fontSize={14} wordBreak="break-word">
-                    {shuffledTaskList[i + j * 5].category === "message"
-                      ? shuffledTaskList[i + j * 5].name[
-                          messageLang === "en" ? messageLang : "ja"
-                        ]
-                      : shuffledTaskList[i + j * 5].name[
-                          lang === "en" ? lang : "ja"
-                        ]}
-                  </Text>
-                  {!!shuffledTaskList[i + j * 5].count && (
-                    <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
-                  )}
-                </Box>
+                />
               ))}
             </div>
           ))}
