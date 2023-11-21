@@ -83,6 +83,7 @@ function App() {
   const { lang } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [messageLang, setMessageLang] = useState<string | undefined>(lang);
 
   const toggle = (i: number, j: number) => {
     const newHits = [...hits];
@@ -107,6 +108,7 @@ function App() {
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === lang) return;
 
+    setMessageLang(e.target.value);
     navigate(`/${e.target.value}/?seed=${params.get("seed")}`);
   };
 
@@ -146,7 +148,8 @@ function App() {
       <Box display={{ lg: "flex" }}>
         <Grid
           id="bingoCard"
-          maxW="3xl"
+          w="730"
+          h="730"
           templateColumns="30px repeat(5, 140px)"
           gap={0}
         >
@@ -201,11 +204,13 @@ function App() {
                   className="cell"
                 >
                   <Text fontSize={14} wordBreak="break-word">
-                    {
-                      shuffledTaskList[i + j * 5].name[
-                        lang === "en" ? lang : "ja"
-                      ]
-                    }
+                    {shuffledTaskList[i + j * 5].category === "message"
+                      ? shuffledTaskList[i + j * 5].name[
+                          messageLang === "en" ? messageLang : "ja"
+                        ]
+                      : shuffledTaskList[i + j * 5].name[
+                          lang === "en" ? lang : "ja"
+                        ]}
                   </Text>
                   {!!shuffledTaskList[i + j * 5].count && (
                     <Counter goal={shuffledTaskList[i + j * 5].count || 0} />
@@ -318,6 +323,17 @@ function App() {
                 defaultValue={lang}
                 w={32}
                 onChange={(e) => onChangeLang(e)}
+              >
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+              </Select>
+            </FormControl>
+            <FormControl mt={2}>
+              <FormLabel>{t("messageLanguage")}</FormLabel>
+              <Select
+                value={messageLang}
+                w={32}
+                onChange={(e) => setMessageLang(e.target.value)}
               >
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
