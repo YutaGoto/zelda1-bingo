@@ -1,6 +1,6 @@
 import type { Z1Task } from "../types/Z1Task";
 
-export const taskList: Z1Task[] = [
+export const firstQuestTaskList: Z1Task[] = [
   {
     name: {
       ja: "Level 1のトライフォースを取得する",
