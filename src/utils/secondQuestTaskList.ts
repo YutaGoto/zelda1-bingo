@@ -4,7 +4,7 @@ export const secondQuestTaskList: Z1Task[] = [
   {
     name: {
       ja: "Level 1のトライフォースを取得する",
-      en: "get Level-1 2Q! TRIFORCE",
+      en: "get Level-1 TRIFORCE",
     },
     category: "triforce",
   },
@@ -298,20 +298,6 @@ export const secondQuestTaskList: Z1Task[] = [
     category: "sightseeing",
   },
   {
-    name: {
-      ja: "Level 7 の10ルピー部屋へ行く",
-      en: "visit 10 RUPEEs room in Level-7",
-    },
-    category: "sightseeing",
-  },
-  {
-    name: {
-      ja: "Level 8 の10ルピー部屋へ行く",
-      en: "visit 10 RUPEEs room in Level-8",
-    },
-    category: "sightseeing",
-  },
-  {
     name: { ja: "Level 9に行く", en: "visit Level-9's dungeon" },
     category: "sightseeing",
   },
@@ -360,78 +346,15 @@ export const secondQuestTaskList: Z1Task[] = [
   },
   {
     name: {
-      ja: "「オカネガナクナレバ　ヤ　ハ　ツカエナイ」",
-      en: '"EASTMOST PENINSULA IS THE SECRET."',
+      ja: "「ヤジルシノ　サキノ　ミチヘ　ユケバ...」",
+      en: '"IF YOU GO IN THE DIRECTION OF THE ARROW."',
     },
     category: "message",
   },
   {
     name: {
-      ja: "「ドドンゴ　ハ　ケムリ　ヲ　キラウ」",
-      en: '"DODONGO DISLIKES SMOKE."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「タキノウエノジイサン二　ケンヲ　モラッタカイ」",
-      en: '"DID YOU GET THE SWORD FROM THE OLD MAN ON TOP OF THE WATERFALL?"',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「タキ　ノ　ナカ　二　ハイレ」",
-      en: '"WALK INTO THE WATERFALL."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「デグドガニハ　キライ　ナ　オトガ　アル」",
-      en: '"DIGDOGGER HATES CERTAIN KIND OF SOUND."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「オトニヨワイ　イキモノ　ガイル」",
-      en: '"A SECRET POWER IS SAID TO BE IN THE ARROW."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「ゴーマ　ノ　メヲネラエ」",
-      en: '"AIM AT THE EYES OF GOHMA."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「ヨウセイノスマヌイズミ　ニハ　ヒミツガアル」",
-      en: '"THERE ARE SECRETS WHERE FAIRIES DON\'T LIVE."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「メガネイワ　ハ　シヘノ　イリグチ」",
-      en: '"THERE\'S A SECRET IN THE TIP OF THE NOSE."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「デスマウンテンデ　ヤヲ　サガセ」",
-      en: '"SPECTACLE ROCK IS AN ENTRANCE TO DEATH."',
-    },
-    category: "message",
-  },
-  {
-    name: {
-      ja: "「ライオンノカギヲサガセ」",
-      en: '"10TH ENEMY HAS THE BOMB."',
+      ja: "「ミズウミノ　キタ　ニハ　ヒミツガ　アル」",
+      en: '"SOUTH OF ARROW MARK HIDES A SECRET."',
     },
     category: "message",
   },
