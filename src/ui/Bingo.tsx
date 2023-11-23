@@ -267,7 +267,7 @@ export const Bingo = ({ seed, taskList }: BingoProps) => {
               <Button
                 as={Link}
                 href={`/firstQuest/${lang}`}
-                variant={category === "firstQuest" ? "solid" :  "outline"}
+                variant={category === "firstQuest" ? "solid" : "outline"}
                 colorScheme="blue"
               >
                 1st Quest
@@ -276,8 +276,7 @@ export const Bingo = ({ seed, taskList }: BingoProps) => {
                 as={Link}
                 href={`/secondQuest/${lang}`}
                 colorScheme="orange"
-                variant={category === "secondQuest" ? "solid" :  "outline"}
-
+                variant={category === "secondQuest" ? "solid" : "outline"}
               >
                 2nd Quest
               </Button>
