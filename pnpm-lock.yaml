@@ -18,8 +18,8 @@ dependencies:
     specifier: ^2.6.1
     version: 2.6.1(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
   '@chakra-ui/theme-tools':
-    specifier: ^2.1.1
-    version: 2.1.1(@chakra-ui/styled-system@2.9.1)
+    specifier: ^2.1.2
+    version: 2.1.2(@chakra-ui/styled-system@2.9.1)
   '@emotion/react':
     specifier: ^11.11.1
     version: 11.11.1(@types/react@18.2.36)(react@18.2.0)
@@ -1411,6 +1411,17 @@ packages:
       '@chakra-ui/styled-system': '>=2.0.0'
     dependencies:
       '@chakra-ui/anatomy': 2.2.1
+      '@chakra-ui/shared-utils': 2.0.5
+      '@chakra-ui/styled-system': 2.9.1
+      color2k: 2.0.2
+    dev: false
+
+  /@chakra-ui/theme-tools@2.1.2(@chakra-ui/styled-system@2.9.1):
+    resolution: {integrity: sha512-Qdj8ajF9kxY4gLrq7gA+Azp8CtFHGO9tWMN2wfF9aQNgG9AuMhPrUzMq9AMQ0MXiYcgNq/FD3eegB43nHVmXVA==}
+    peerDependencies:
+      '@chakra-ui/styled-system': '>=2.0.0'
+    dependencies:
+      '@chakra-ui/anatomy': 2.2.2
       '@chakra-ui/shared-utils': 2.0.5
       '@chakra-ui/styled-system': 2.9.1
       color2k: 2.0.2
