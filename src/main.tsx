@@ -6,6 +6,7 @@ import {
 } from "@chakra-ui/react";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 import { mode } from "@chakra-ui/theme-tools";
+import "@fontsource-variable/noto-sans-jp";
 import { Analytics } from "@vercel/analytics/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -15,6 +16,7 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
+
 import App from "./App.tsx";
 import "./i18n.ts";
 import "./index.css";
@@ -32,6 +34,10 @@ const theme = extendTheme({
         bg: mode("gray.50", "gray.800")(props),
       },
     }),
+  },
+  fonts: {
+    heading: `'Noto Sans JP Variable', sans-serif`,
+    body: `'Noto Sans JP Variable', sans-serif`,
   },
 });
 
