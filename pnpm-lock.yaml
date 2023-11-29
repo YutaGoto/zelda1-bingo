@@ -26,6 +26,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.36)(react@18.2.0)
+  '@fontsource-variable/noto-sans-jp':
+    specifier: ^5.0.16
+    version: 5.0.16
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
@@ -1869,6 +1872,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource-variable/noto-sans-jp@5.0.16:
+    resolution: {integrity: sha512-suU5NNybimn+KgVHKJxpFzQ/HTrQFO3lSYo/umKsqdAFDxhPyRTyjN6V8Ha/IAj01Mnaj2HbL6xvMDEQuGwwCQ==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
