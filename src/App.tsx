@@ -25,6 +25,14 @@ function getRandomNum(seed: string | null): number {
 function App() {
   const { category } = useParams();
   const seed = useMemo(() => getRandomNum(params.get("seed")), []);
+  const selectedCategory = useMemo(() => {
+    switch (category) {
+      case "secondQuest":
+        return "secondQuest";
+      default:
+        return "firstQuest";
+    }
+  }, [category]);
   const shuffledTaskList = useMemo(() => {
     switch (category) {
       case "secondQuest":
@@ -34,7 +42,13 @@ function App() {
     }
   }, [seed, category]);
 
-  return <Bingo seed={seed} taskList={shuffledTaskList} />;
+  return (
+    <Bingo
+      category={selectedCategory}
+      seed={seed}
+      taskList={shuffledTaskList}
+    />
+  );
 }
 
 export default App;

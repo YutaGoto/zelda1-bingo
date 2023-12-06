@@ -37,6 +37,7 @@ import { copyText } from "../utils/copyText";
 import { Sheet } from "./Sheet";
 
 interface BingoProps {
+  category: "firstQuest" | "secondQuest";
   seed: number;
   taskList: Z1Task[];
 }
@@ -48,7 +49,7 @@ interface SeedValue {
 const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 
-export const Bingo = ({ seed, taskList }: BingoProps) => {
+export const Bingo = ({ category, seed, taskList }: BingoProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
   const {
@@ -66,7 +67,7 @@ export const Bingo = ({ seed, taskList }: BingoProps) => {
     [false, false, false, false, false],
   ]);
 
-  const { category, lang } = useParams();
+  const { lang } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [messageLang, setMessageLang] = useState<string | undefined>(lang);
@@ -117,9 +118,16 @@ export const Bingo = ({ seed, taskList }: BingoProps) => {
   return (
     <Container maxW="container.lg" marginTop={2}>
       <Box display="flex">
-        <Heading as="h1" mb={3}>
-          {t("Z1Bingo")}
-        </Heading>
+        <Flex minWidth="max-content" alignItems="end" mb={3}>
+          <Heading as="h1" me={3}>
+            {t("Z1Bingo")}
+          </Heading>
+
+          <Heading as="h5" size="sm">
+            {t(category)}
+          </Heading>
+        </Flex>
+
         <Spacer />
 
         <Box>
