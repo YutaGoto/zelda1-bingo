@@ -5,7 +5,7 @@ export function shuffle(array: Z1Task[], seed: number) {
   let temporaryValue;
   let randomIndex;
   let tmpSeed = seed || 1;
-  const random = function () {
+  const random = () => {
     const x = Math.sin(tmpSeed++) * 10000;
     return x - Math.floor(x);
   };
