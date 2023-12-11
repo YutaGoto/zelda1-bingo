@@ -38,7 +38,7 @@ const resources = {
       resetSeed: "Seedをリセット",
       language: "Page Language",
       messageLanguage: "Hint Message Language",
-      firstQquest: "First Quest",
+      firstQuest: "First Quest",
       secondQuest: "Second Quest",
       swordless: "ソードレス",
       randomizer: "ランダマイザー",
