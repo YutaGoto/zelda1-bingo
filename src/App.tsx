@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
+import { firstQuestTaskList } from "./constants/firstQuestTaskList";
+import { secondQuestTaskList } from "./constants/secondQuestTaskList";
+import { swordlessTaskList } from "./constants/swordlessTackList";
 import { Bingo } from "./ui/Bingo";
-import { firstQuestTaskList } from "./utils/firstQuestTaskList";
-import { secondQuestTaskList } from "./utils/secondQuestTaskList";
 import { shuffle } from "./utils/shuffle";
 
 const url = new URL(location.href);
@@ -29,6 +30,8 @@ function App() {
     switch (category) {
       case "secondQuest":
         return "secondQuest";
+      case "swordless":
+        return "swordless";
       default:
         return "firstQuest";
     }
@@ -37,6 +40,8 @@ function App() {
     switch (category) {
       case "secondQuest":
         return shuffle(secondQuestTaskList, seed);
+      case "swordless":
+        return shuffle(swordlessTaskList, seed);
       default:
         return shuffle(firstQuestTaskList, seed);
     }

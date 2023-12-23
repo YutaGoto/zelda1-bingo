@@ -37,7 +37,7 @@ import { copyText } from "../utils/copyText";
 import { Sheet } from "./Sheet";
 
 interface BingoProps {
-  category: "firstQuest" | "secondQuest";
+  category: "firstQuest" | "secondQuest" | "swordless";
   seed: number;
   taskList: Z1Task[];
 }
@@ -289,10 +289,10 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 2nd Quest
               </Button>
               <Button
-                // as={Link}
+                as={Link}
+                href={`/swordless/${lang}`}
                 colorScheme="pink"
-                variant="outline"
-                isDisabled={true}
+                variant={category === "swordless" ? "solid" : "outline"}
               >
                 Swordless
               </Button>
