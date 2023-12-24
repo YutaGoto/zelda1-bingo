@@ -207,7 +207,7 @@ export const firstQuestTaskList: Z1Task[] = [
   },
   {
     name: {
-      ja: "テスチタート(MANHANDLA)を剣攻撃・剣ビーム攻撃のみで倒す",
+      ja: "テスチタートを剣攻撃・剣ビーム攻撃のみで倒す",
       en: "defeat MANHANDLA with sword or sword beam only",
     },
     category: "monster",
@@ -237,6 +237,14 @@ export const firstQuestTaskList: Z1Task[] = [
   },
   {
     name: { ja: "ロックに5回あたる", en: "hit ROCK 5 times" },
+    category: "monster",
+    count: 5,
+  },
+  {
+    name: {
+      ja: "ロウソクの火の攻撃に5回当たる",
+      en: "be hit 5 times by CANDLE's fire",
+    },
     category: "monster",
     count: 5,
   },
@@ -284,6 +292,14 @@ export const firstQuestTaskList: Z1Task[] = [
   },
   {
     name: {
+      ja: "ヨウセイがいる泉 2カ所全てに訪れる",
+      en: "visit all 2 FAIRY Fountains",
+    },
+    category: "sightseeing",
+    count: 2,
+  },
+  {
+    name: {
       ja: "ダンジョンの壁をボムで7回破壊する",
       en: "break 7 walls with BOMB in dungeon",
     },
@@ -308,6 +324,13 @@ export const firstQuestTaskList: Z1Task[] = [
     name: {
       ja: "Level 8 の10ルピー部屋へ行く",
       en: "visit 10 RUPEEs room in Level-8",
+    },
+    category: "sightseeing",
+  },
+  {
+    name: {
+      ja: "ダンジョン内のおじいさんに10回攻撃をする",
+      en: "attack 10 times to old man in dungeon",
     },
     category: "sightseeing",
   },
