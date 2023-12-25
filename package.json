@@ -16,7 +16,7 @@
     "@chakra-ui/styled-system": "^2.9.2",
     "@chakra-ui/system": "^2.6.1",
     "@chakra-ui/theme-tools": "^2.1.2",
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/noto-sans-jp": "^5.0.17",
     "@vercel/analytics": "^1.1.1",
