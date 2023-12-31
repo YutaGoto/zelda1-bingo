@@ -37,7 +37,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "i18next": "^23.7.8",
     "jsdom": "^23.0.1",
-    "react-i18next": "^13.5.0",
+    "react-i18next": "^14.0.0",
     "react-icons": "^4.12.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
