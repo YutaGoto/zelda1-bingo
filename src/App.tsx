@@ -26,6 +26,7 @@ function getRandomNum(seed: string | null): number {
 function App() {
   const { category } = useParams();
   const seed = useMemo(() => getRandomNum(params.get("seed")), []);
+
   const selectedCategory = useMemo(() => {
     switch (category) {
       case "secondQuest":
@@ -36,6 +37,7 @@ function App() {
         return "firstQuest";
     }
   }, [category]);
+
   const shuffledTaskList = useMemo(() => {
     switch (category) {
       case "secondQuest":
