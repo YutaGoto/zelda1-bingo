@@ -71,14 +71,14 @@ devDependencies:
     specifier: ^4.2.1
     version: 4.2.1(vite@5.0.10)
   i18next:
-    specifier: ^23.7.8
-    version: 23.7.8
+    specifier: ^23.7.13
+    version: 23.7.13
   jsdom:
     specifier: ^23.0.1
     version: 23.0.1
   react-i18next:
     specifier: ^14.0.0
-    version: 14.0.0(i18next@23.7.8)(react-dom@18.2.0)(react@18.2.0)
+    version: 14.0.0(i18next@23.7.13)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: ^4.12.0
     version: 4.12.0(react@18.2.0)
@@ -2859,8 +2859,8 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /i18next@23.7.8:
-    resolution: {integrity: sha512-yCe9964O+1abdIG01AOzk6P9mQi0HVJV1B57whYJQu6TjmrB9JHHDYonDI8amGt6M6b9bP3x3R0Zh7ROmvX7JQ==}
+  /i18next@23.7.13:
+    resolution: {integrity: sha512-DbCPlw6VmURSZa43iOnycxq9o15e+WuBWDBZ3aj+gQZcDz4sgnuKwrcwmP1n8gSSCwCN7CRFGTpnwTd93A16Mg==}
     dependencies:
       '@babel/runtime': 7.23.2
     dev: true
@@ -3391,7 +3391,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-i18next@14.0.0(i18next@23.7.8)(react-dom@18.2.0)(react@18.2.0):
+  /react-i18next@14.0.0(i18next@23.7.13)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-OCrS8rHNAmnr8ggGRDxjakzihrMW7HCbsplduTm3EuuQ6fyvWGT41ksZpqbduYoqJurBmEsEVZ1pILSUWkHZng==}
     peerDependencies:
       i18next: '>= 23.2.3'
@@ -3406,7 +3406,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.2
       html-parse-stringify: 3.0.1
-      i18next: 23.7.8
+      i18next: 23.7.13
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
