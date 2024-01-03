@@ -7,6 +7,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-1 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -14,6 +15,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-2 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -21,6 +23,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-3 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -28,6 +31,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-4 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -35,6 +39,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-5 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -42,6 +47,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-6 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -49,6 +55,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-7 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -56,12 +63,14 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "get Level-8 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
 
   {
     name: { ja: "ボムを2回購入する", en: "buy 2 BOMB" },
     category: "shopping",
     count: 2,
+    score: 2,
   },
   {
     name: {
@@ -70,35 +79,50 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "shopping",
     count: 5,
+    score: 2,
   },
   {
     name: { ja: "ブルーリングを購入する", en: "buy BLUE RING" },
     category: "shopping",
+    score: 2,
   },
   {
     name: { ja: "ロウソク　アオを購入する", en: "buy BLUE CANDLE" },
     category: "shopping",
+    score: 2,
   },
   {
     name: { ja: "マジカルシールドを購入する", en: "buy MAGICAL SHIELD" },
     category: "shopping",
+    score: 2,
   },
   {
     name: { ja: "イノチノミズを購入する", en: "buy a POTION" },
     category: "shopping",
+    score: 2,
   },
-  { name: { ja: "キーを購入する", en: "buy a KEY" }, category: "shopping" },
-  { name: { ja: "エサを購入する", en: "buy a FOOD" }, category: "shopping" },
+  {
+    name: { ja: "キーを購入する", en: "buy a KEY" },
+    category: "shopping",
+    score: 2,
+  },
+  {
+    name: { ja: "エサを購入する", en: "buy a FOOD" },
+    category: "shopping",
+    score: 2,
+  },
 
   {
     name: { ja: "コンパスを4個取得する", en: "correct 4 COMPASS" },
     category: "correcting",
     count: 4,
+    score: 2,
   },
   {
     name: { ja: "チズを4枚取得する", en: "correct 4 MAP" },
     category: "correcting",
     count: 4,
+    score: 2,
   },
   {
     name: {
@@ -106,18 +130,22 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "correct WHITE SWORD",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "ボムアップグレードを入手する", en: "get BOMB upgrade" },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "マジカル　キーを入手する", en: "correct MAGICAL KEY" },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "ロウソク　アカを入手する", en: "correct RED CANDLE" },
     category: "correcting",
+    score: 2,
   },
   {
     name: {
@@ -125,6 +153,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "correct MAGICAL ROD",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: {
@@ -132,6 +161,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "correct BOOK OF MAGIC",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: {
@@ -139,16 +169,19 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "correct POWER BRACELET",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "トケイを3回取得する", en: "get 3 CLOCK" },
     category: "correcting",
     count: 3,
+    score: 2,
   },
   {
     name: { ja: "キーを15個集める", en: "correct 15 KEY" },
     category: "correcting",
     count: 15,
+    score: 2,
   },
   {
     name: {
@@ -157,27 +190,32 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "correcting",
     count: 3,
+    score: 2,
   },
 
   {
     name: { ja: "赤オクタロックを20体倒す", en: "defeat 20 OCTAROK" },
     category: "monster",
     count: 20,
+    score: 2,
   },
   {
     name: { ja: "赤ライネルを5体倒す", en: "defeat 5 red LYNEL" },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: { ja: "ピーハットを5体倒す", en: "defeat 5 PEAHAT" },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: { ja: "ゾーラを3体倒す", en: "defeat 3 ZOLA" },
     category: "monster",
     count: 3,
+    score: 2,
   },
   {
     name: {
@@ -186,6 +224,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: {
@@ -193,6 +232,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "11 GHINI appear on one screen",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -200,10 +240,12 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "touch and move 10 AMOS on one screen without defeating",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: { ja: "ウォールマスターに捕まる", en: "be caught a WALLMASTER" },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -211,6 +253,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "defeat MANHANDLA with sword or sword beam only",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -218,6 +261,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "defeat all 4 KEESE in dungeon's underground passage or underground item room",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -226,6 +270,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 10,
+    score: 2,
   },
   {
     name: {
@@ -234,11 +279,13 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 10,
+    score: 2,
   },
   {
     name: { ja: "ロックに5回あたる", en: "hit ROCK 5 times" },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: {
@@ -247,6 +294,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: {
@@ -254,6 +302,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "be eaten by a LIKE-LIKE",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -261,6 +310,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "make a DODONGO eat 2 BOMBs",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -269,6 +319,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
+    score: 2,
   },
 
   {
@@ -278,6 +329,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 3,
+    score: 2,
   },
   {
     name: {
@@ -285,10 +337,12 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "win at the Money-Making Game",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: { ja: "フエでワープする", en: "warp with a RECORDER" },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: {
@@ -297,6 +351,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 3,
+    score: 2,
   },
   {
     name: {
@@ -305,6 +360,7 @@ export const secondQuestTaskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 7,
+    score: 2,
   },
   {
     name: {
@@ -312,6 +368,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "visit 10 RUPEEs room in Level-4",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: {
@@ -319,10 +376,12 @@ export const secondQuestTaskList: Z1Task[] = [
       en: "attack 10 times to old man in dungeon",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: { ja: "Level 9に行く", en: "visit Level-9's dungeon" },
     category: "sightseeing",
+    score: 2,
   },
 
   {
@@ -331,6 +390,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"A SECRET IS IN THE TREE AT THE DEAD-END."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -338,6 +398,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"MEET THE OLD MAN AT THE GRAVE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -345,6 +406,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"GO UP, UP THE MOUNTAIN AHEAD."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -352,6 +414,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"GO NORTH, WEST, SOUTH, WEST TO THE FOREST OF MAZE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -359,6 +422,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"THIS AIN\'T ENOUGH TO TALK."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -366,6 +430,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"BOY, YOU\'RE RICH!"',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -373,6 +438,7 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"IF YOU GO IN THE DIRECTION OF THE ARROW."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -380,5 +446,6 @@ export const secondQuestTaskList: Z1Task[] = [
       en: '"SOUTH OF ARROW MARK HIDES A SECRET."',
     },
     category: "message",
+    score: 2,
   },
 ];

@@ -3,9 +3,10 @@ import { HStack, IconButton, Input, useNumberInput } from "@chakra-ui/react";
 
 interface CounterProps {
   goal: number;
+  marginTop: number;
 }
 
-export const Counter = ({ goal }: CounterProps) => {
+export const Counter = ({ goal, marginTop }: CounterProps) => {
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
       step: 1,
@@ -31,7 +32,7 @@ export const Counter = ({ goal }: CounterProps) => {
   });
 
   return (
-    <HStack w="95px" marginTop="3">
+    <HStack w="95px" marginTop={marginTop}>
       <IconButton
         aria-label="decrement"
         size="xs"

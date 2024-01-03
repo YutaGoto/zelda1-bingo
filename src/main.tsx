@@ -18,6 +18,7 @@ import {
 } from "react-router-dom";
 
 import App from "./App.tsx";
+import Score from "./Score.tsx";
 import "./i18n.ts";
 import "./index.css";
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
     path: "/",
     Component: Outlet,
     children: [
+      {
+        path: "/score/:category/:lang",
+        Component: Score,
+      },
       {
         path: "/:category/:lang",
         Component: App,
