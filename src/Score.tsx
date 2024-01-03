@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
 import { firstQuestTaskList } from "./constants/firstQuestTaskList";
-import { secondQuestTaskList } from "./constants/secondQuestTaskList";
-import { swordlessTaskList } from "./constants/swordlessTackList";
+// import { secondQuestTaskList } from "./constants/secondQuestTaskList";
+// import { swordlessTaskList } from "./constants/swordlessTackList";
 import { ScoreBoard } from "./ui/ScoreBoard";
 import { shuffle } from "./utils/shuffle";
 
@@ -27,12 +27,15 @@ function Score() {
   const { category } = useParams();
   const seed = useMemo(() => getRandomNum(params.get("seed")), []);
 
-  const selectedCategory = useMemo(() => {
-    switch (category) {
-      default:
-        return "firstQuest";
-    }
-  }, [category]);
+  // TODO: 他のカテゴリーを追加
+  // const selectedCategory = useMemo(() => {
+  //   switch (category) {
+  //     case "secondQuest":
+  //       return "secondQuest";
+  //     default:
+  //       return "firstQuest";
+  //   }
+  // }, [category]);
 
   const shuffledTaskList = useMemo(() => {
     switch (category) {
@@ -44,7 +47,7 @@ function Score() {
   return (
     <div>
       <ScoreBoard
-        category={selectedCategory}
+        category={"firstQuest"}
         seed={seed}
         taskList={shuffledTaskList.slice(0, 30)}
       />

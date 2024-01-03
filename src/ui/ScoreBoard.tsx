@@ -14,7 +14,6 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Grid,
   HStack,
   Heading,
   IconButton,
@@ -28,7 +27,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { ChangeEvent, useEffect, useMemo, useState } from "react";
-import { SubmitHandler, set, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
 import { VscGithubAlt } from "react-icons/vsc";
@@ -38,7 +37,7 @@ import { Z1Task } from "../types/Z1Task";
 import { copyText } from "../utils/copyText";
 import { Counter } from "./Counter";
 
-interface ScoreBoradProps {
+interface ScoreBoardProps {
   category: "firstQuest";
   seed: number;
   taskList: Z1Task[];
@@ -51,7 +50,7 @@ interface SeedValue {
 const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 
-export const ScoreBoard = ({ category, seed, taskList }: ScoreBoradProps) => {
+export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
   const sortedTasks = useMemo(() => {
     return taskList.sort((a, b) => {
       if (a.score < b.score) return -1;
