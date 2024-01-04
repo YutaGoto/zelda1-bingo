@@ -22,7 +22,9 @@ import {
   NumberInputField,
   Select,
   Spacer,
+  StackDivider,
   Text,
+  VStack,
   useColorMode,
   useToast,
 } from "@chakra-ui/react";
@@ -52,6 +54,7 @@ const params = new URLSearchParams(url.search);
 
 export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
   const sortedTasks = useMemo(() => {
+    // 昇順に並び替える
     return taskList.sort((a, b) => {
       if (a.score < b.score) return -1;
       if (a.score > b.score) return 1;
@@ -68,7 +71,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
     formState: { errors },
   } = useForm<SeedValue>();
 
-  const [hits, setHits] = useState<boolean[]>(new Array(30).fill(false));
+  const [hits, setHits] = useState<boolean[]>(new Array(20).fill(false));
   const [currentPoint, setCurrentPoint] = useState(0);
 
   const { t, i18n } = useTranslation();
@@ -91,7 +94,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
   };
 
   const resetSeed = () => {
-    setHits(new Array(30).fill(false));
+    setHits(new Array(20).fill(false));
     params.delete("seed");
     history.replaceState("", "", `?${params.toString()}`);
     location.reload();
@@ -153,21 +156,30 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               {t("currentPoint")}: {currentPoint}pts
             </Text>
           </Box>
-          {sortedTasks.map((task, i) => (
-            <Box key={task.name.en} marginTop="0.5">
-              <Checkbox onChange={() => toggle(i)}>
-                <HStack alignItems="center">
-                  <Box>
-                    {task.score}pts:{" "}
-                    {task.category === "message"
-                      ? task.name[messageLang === "en" ? messageLang : "ja"]
-                      : task.name[lang === "en" ? lang : "ja"]}
-                  </Box>{" "}
-                  {!!task.count && <Counter goal={task.count} marginTop={0} />}
-                </HStack>
-              </Checkbox>
-            </Box>
-          ))}
+          <VStack
+            divider={<StackDivider borderColor="gray.200" />}
+            spacing={2}
+            marginTop={2}
+            align="stretch"
+          >
+            {sortedTasks.map((task, i) => (
+              <Box key={task.name.en}>
+                <Checkbox onChange={() => toggle(i)}>
+                  <HStack alignItems="center">
+                    <Box>
+                      {task.score}pts:{" "}
+                      {task.category === "message"
+                        ? task.name[messageLang === "en" ? messageLang : "ja"]
+                        : task.name[lang === "en" ? lang : "ja"]}
+                    </Box>{" "}
+                    {!!task.count && (
+                      <Counter goal={task.count} marginTop={0} />
+                    )}
+                  </HStack>
+                </Checkbox>
+              </Box>
+            ))}
+          </VStack>
         </Box>
         <Spacer />
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>

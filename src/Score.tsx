@@ -49,7 +49,7 @@ function Score() {
       <ScoreBoard
         category={"firstQuest"}
         seed={seed}
-        taskList={shuffledTaskList.slice(0, 30)}
+        taskList={shuffledTaskList.slice(0, 20)}
       />
     </div>
   );
