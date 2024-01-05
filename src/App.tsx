@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { firstQuestTaskList } from "./constants/firstQuestTaskList";
 import { secondQuestTaskList } from "./constants/secondQuestTaskList";
 import { swordlessTaskList } from "./constants/swordlessTackList";
-import { Bingo } from "./ui/Bingo";
+import { Bingo } from "./features/Bingo";
 import { shuffle } from "./utils/shuffle";
 
 const url = new URL(location.href);

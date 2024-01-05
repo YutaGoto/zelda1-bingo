@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { firstQuestTaskList } from "./constants/firstQuestTaskList";
 // import { secondQuestTaskList } from "./constants/secondQuestTaskList";
 // import { swordlessTaskList } from "./constants/swordlessTackList";
-import { ScoreBoard } from "./ui/ScoreBoard";
+import { ScoreBoard } from "./features/ScoreBoard";
 import { shuffle } from "./utils/shuffle";
 
 const url = new URL(location.href);

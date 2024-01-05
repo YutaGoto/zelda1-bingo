@@ -31,9 +31,9 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Z1Task } from "../types/Z1Task";
+import { Contact } from "../ui/Contact";
+import { Sheet } from "../ui/Sheet";
 import { copyText } from "../utils/copyText";
-import { Contact } from "./Contact";
-import { Sheet } from "./Sheet";
 
 interface BingoProps {
   category: "firstQuest" | "secondQuest" | "swordless";

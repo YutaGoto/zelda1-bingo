@@ -33,9 +33,9 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Z1Task } from "../types/Z1Task";
+import { Contact } from "../ui/Contact";
+import { Counter } from "../ui/Counter";
 import { copyText } from "../utils/copyText";
-import { Contact } from "./Contact";
-import { Counter } from "./Counter";
 
 interface ScoreBoardProps {
   category: "firstQuest";
