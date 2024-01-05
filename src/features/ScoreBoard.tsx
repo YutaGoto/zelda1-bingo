@@ -35,6 +35,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Z1Task } from "../types/Z1Task";
 import { Contact } from "../ui/Contact";
 import { Counter } from "../ui/Counter";
+import { ModeSelect } from "../ui/ModeSelect";
 import { copyText } from "../utils/copyText";
 
 interface ScoreBoardProps {
@@ -300,6 +301,8 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               </Select>
             </FormControl>
           </Box>
+
+          <ModeSelect mode="score" lang={lang} category="firstQuest" mt={5} />
 
           <Contact mt={5} />
         </Box>

@@ -32,6 +32,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { Z1Task } from "../types/Z1Task";
 import { Contact } from "../ui/Contact";
+import { ModeSelect } from "../ui/ModeSelect";
 import { Sheet } from "../ui/Sheet";
 import { copyText } from "../utils/copyText";
 
@@ -305,6 +306,10 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
               </Button>
             </Grid>
           </Box>
+
+          {category === "firstQuest" && (
+            <ModeSelect mode="bingo" lang={lang} category={category} mt={5} />
+          )}
 
           <Contact mt={5} />
         </Box>
