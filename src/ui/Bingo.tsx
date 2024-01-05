@@ -28,12 +28,11 @@ import {
 import { ChangeEvent, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
-import { VscGithubAlt } from "react-icons/vsc";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Z1Task } from "../types/Z1Task";
 import { copyText } from "../utils/copyText";
+import { Contact } from "./Contact";
 import { Sheet } from "./Sheet";
 
 interface BingoProps {
@@ -307,31 +306,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             </Grid>
           </Box>
 
-          <Box mt={5}>
-            <Text fontSize="lg">{t("contact")}</Text>
-            <Flex gap={2} mt={2}>
-              <Button
-                as={Link}
-                variant="outline"
-                href="https://github.com/YutaGoto/zelda1-bingo"
-                leftIcon={<VscGithubAlt />}
-                rightIcon={<RiExternalLinkLine />}
-                isExternal
-              >
-                GitHub
-              </Button>
-              <Button
-                as={Link}
-                variant="outline"
-                href="https://twitter.com/gggooottto"
-                leftIcon={<RiTwitterXLine />}
-                rightIcon={<RiExternalLinkLine />}
-                isExternal
-              >
-                X(Twitter)
-              </Button>
-            </Flex>
-          </Box>
+          <Contact mt={5} />
         </Box>
       </Box>
     </Container>
