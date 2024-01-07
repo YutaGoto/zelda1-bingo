@@ -2,6 +2,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { expect, test, vi } from "vitest";
 
+import {
+  factoryZ1MessageTask,
+  factoryZ1Task,
+} from "../../__test__/factory/Z1Task";
 import { Cell } from "../Cell";
 
 const setup = () => {
@@ -12,13 +16,7 @@ const setup = () => {
 test("English Cell", () => {
   render(
     <Cell
-      task={{
-        name: {
-          ja: "てすと",
-          en: "test",
-        },
-        category: "demo",
-      }}
+      task={factoryZ1Task}
       hit={false}
       lang="en"
       messageLang="en"
@@ -32,13 +30,7 @@ test("English Cell", () => {
 test("Japanese Cell", () => {
   render(
     <Cell
-      task={{
-        name: {
-          ja: "てすと",
-          en: "test",
-        },
-        category: "demo",
-      }}
+      task={factoryZ1Task}
       hit={false}
       lang="ja"
       messageLang="ja"
@@ -46,19 +38,13 @@ test("Japanese Cell", () => {
     />,
   );
 
-  expect(screen.getByText("てすと")).toBeTruthy();
+  expect(screen.getByText("テスト")).toBeTruthy();
 });
 
 test("English Cell with Japanese message", () => {
   render(
     <Cell
-      task={{
-        name: {
-          ja: "てすと",
-          en: "test",
-        },
-        category: "message",
-      }}
+      task={factoryZ1Task}
       hit={false}
       lang="ja"
       messageLang="en"
@@ -66,19 +52,13 @@ test("English Cell with Japanese message", () => {
     />,
   );
 
-  expect(screen.getByText("test")).toBeTruthy();
+  expect(screen.getByText("テスト")).toBeTruthy();
 });
 
 test("Japanese Cell with English message", () => {
   render(
     <Cell
-      task={{
-        name: {
-          ja: "てすと",
-          en: "test",
-        },
-        category: "message",
-      }}
+      task={factoryZ1MessageTask}
       hit={false}
       lang="ja"
       messageLang="en"
@@ -94,13 +74,7 @@ test("on click then hit", async () => {
   const onClick = vi.fn();
   render(
     <Cell
-      task={{
-        name: {
-          ja: "てすと",
-          en: "test",
-        },
-        category: "demo",
-      }}
+      task={factoryZ1Task}
       hit={false}
       lang="en"
       messageLang="en"

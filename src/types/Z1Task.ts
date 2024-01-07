@@ -5,4 +5,5 @@ export interface Z1Task {
   };
   category: string;
   count?: number;
+  score: number;
 }

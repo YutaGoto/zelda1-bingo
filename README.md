@@ -1,7 +1,7 @@
 # Zelda 1 Bingo
 
-[![action](https://github.com/YutaGoto/z1-bingo/actions/workflows/biome.yml/badge.svg)](https://github.com/YutaGoto/z1-bingo/actions)
-[![action](https://github.com/YutaGoto/z1-bingo/actions/workflows/vitest.yml/badge.svg)](https://github.com/YutaGoto/z1-bingo/actions)
+[![action](https://github.com/YutaGoto/zelda1-bingo/actions/workflows/biome.yml/badge.svg)](https://github.com/YutaGoto/zelda1-bingo/actions)
+[![action](https://github.com/YutaGoto/zelda1-bingo/actions/workflows/vitest.yml/badge.svg)](https://github.com/YutaGoto/zelda1-bingo/actions)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

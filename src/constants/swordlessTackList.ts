@@ -7,6 +7,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-1 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -14,6 +15,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-2 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -21,6 +23,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-3 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -28,6 +31,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-4 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -35,6 +39,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-5 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -42,6 +47,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-6 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -49,6 +55,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-7 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
   {
     name: {
@@ -56,12 +63,14 @@ export const swordlessTaskList: Z1Task[] = [
       en: "get Level-8 TRIFORCE",
     },
     category: "triforce",
+    score: 2,
   },
 
   {
     name: { ja: "ボムを3回購入する", en: "buy 3 BOMB" },
     category: "shopping",
     count: 3,
+    score: 2,
   },
   {
     name: {
@@ -70,47 +79,65 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "shopping",
     count: 4,
+    score: 2,
   },
   {
     name: { ja: "ブルーリングを購入する", en: "buy BLUE RING" },
     category: "shopping",
+    score: 2,
   },
   {
     name: { ja: "ロウソク　アオを購入する", en: "buy BLUE CANDLE" },
     category: "shopping",
+    score: 2,
   },
   {
     name: { ja: "マジカルシールドを購入する", en: "buy MAGICAL SHIELD" },
     category: "shopping",
+    score: 2,
   },
   {
     name: { ja: "イノチノミズを購入する", en: "buy a POTION" },
     category: "shopping",
+    score: 2,
   },
-  { name: { ja: "キーを購入する", en: "buy a KEY" }, category: "shopping" },
-  { name: { ja: "エサを購入する", en: "buy a FOOD" }, category: "shopping" },
+  {
+    name: { ja: "キーを購入する", en: "buy a KEY" },
+    category: "shopping",
+    score: 2,
+  },
+  {
+    name: { ja: "エサを購入する", en: "buy a FOOD" },
+    category: "shopping",
+    score: 2,
+  },
 
   {
     name: { ja: "コンパスを4個取得する", en: "correct 4 COMPASS" },
     category: "correcting",
     count: 4,
+    score: 2,
   },
   {
     name: { ja: "チズを4枚取得する", en: "correct 4 MAP" },
     category: "correcting",
     count: 4,
+    score: 2,
   },
   {
     name: { ja: "ボムアップグレードを入手する", en: "get BOMB upgrade" },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "マジカル　キーを入手する", en: "correct MAGICAL KEY" },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "ロウソク　アカを入手する", en: "correct RED CANDLE" },
     category: "correcting",
+    score: 2,
   },
   {
     name: {
@@ -118,6 +145,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "correct MAGICAL ROD",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: {
@@ -125,6 +153,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "correct BOOK OF MAGIC",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: {
@@ -132,16 +161,19 @@ export const swordlessTaskList: Z1Task[] = [
       en: "correct POWER BRACELET",
     },
     category: "correcting",
+    score: 2,
   },
   {
     name: { ja: "トケイを3回取得する", en: "get 3 CLOCK" },
     category: "correcting",
     count: 3,
+    score: 2,
   },
   {
     name: { ja: "キーを15個集める", en: "correct 15 KEY" },
     category: "correcting",
     count: 15,
+    score: 2,
   },
   {
     name: {
@@ -150,27 +182,32 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "correcting",
     count: 3,
+    score: 2,
   },
 
   {
     name: { ja: "赤オクタロックを15体倒す", en: "defeat 15 OCTAROK" },
     category: "monster",
     count: 15,
+    score: 2,
   },
   {
     name: { ja: "赤ライネルを5体倒す", en: "defeat 5 red LYNEL" },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: { ja: "ピーハットを4体倒す", en: "defeat 4 PEAHAT" },
     category: "monster",
     count: 4,
+    score: 2,
   },
   {
     name: { ja: "ゾーラを3体倒す", en: "defeat 3 ZOLA" },
     category: "monster",
     count: 3,
+    score: 2,
   },
   {
     name: {
@@ -179,6 +216,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: {
@@ -186,6 +224,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "11 GHINI appear on one screen",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -193,10 +232,12 @@ export const swordlessTaskList: Z1Task[] = [
       en: "touch and move 10 AMOS on one screen without defeating",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: { ja: "ウォールマスターに捕まる", en: "be caught a WALLMASTER" },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -204,6 +245,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "defeat MANHANDLA with arrow only",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -211,6 +253,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "defeat all 4 KEESE in dungeon's underground passage or underground item room",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -219,6 +262,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 10,
+    score: 2,
   },
   {
     name: {
@@ -227,11 +271,13 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 10,
+    score: 2,
   },
   {
     name: { ja: "ロックに5回あたる", en: "hit ROCK 5 times" },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: {
@@ -240,6 +286,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
+    score: 2,
   },
   {
     name: {
@@ -247,6 +294,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "be eaten by a LIKE-LIKE",
     },
     category: "monster",
+    score: 2,
   },
   {
     name: {
@@ -255,6 +303,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 2,
+    score: 2,
   },
   {
     name: {
@@ -263,6 +312,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
+    score: 2,
   },
 
   {
@@ -272,6 +322,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 3,
+    score: 2,
   },
   {
     name: {
@@ -279,10 +330,12 @@ export const swordlessTaskList: Z1Task[] = [
       en: "win at the Money-Making Game",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: { ja: "フエでワープする", en: "warp with a RECORDER" },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: {
@@ -291,6 +344,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 2,
+    score: 2,
   },
   {
     name: {
@@ -299,6 +353,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "sightseeing",
     count: 7,
+    score: 2,
   },
   {
     name: {
@@ -306,6 +361,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "visit 10 RUPEEs room in Level-4",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: {
@@ -313,6 +369,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "visit 10 RUPEEs room in Level-7",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: {
@@ -320,6 +377,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: "visit 10 RUPEEs room in Level-8",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: {
@@ -327,10 +385,12 @@ export const swordlessTaskList: Z1Task[] = [
       en: "attack 10 times to old man in dungeon",
     },
     category: "sightseeing",
+    score: 2,
   },
   {
     name: { ja: "Level 9に行く", en: "visit Level-9's dungeon" },
     category: "sightseeing",
+    score: 2,
   },
 
   {
@@ -339,6 +399,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"A SECRET IS IN THE TREE AT THE DEAD-END."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -346,6 +407,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"MEET THE OLD MAN AT THE GRAVE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -353,6 +415,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"GO UP, UP THE MOUNTAIN AHEAD."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -360,6 +423,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"GO NORTH, WEST, SOUTH, WEST TO THE FOREST OF MAZE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -367,6 +431,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"THIS AIN\'T ENOUGH TO TALK."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -374,6 +439,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"BOY, YOU\'RE RICH!"',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -381,6 +447,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"EASTMOST PENINSULA IS THE SECRET."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -388,6 +455,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"DODONGO DISLIKES SMOKE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -395,6 +463,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"DID YOU GET THE SWORD FROM THE OLD MAN ON TOP OF THE WATERFALL?"',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -402,6 +471,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"WALK INTO THE WATERFALL."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -409,6 +479,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"DIGDOGGER HATES CERTAIN KIND OF SOUND."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -416,6 +487,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"A SECRET POWER IS SAID TO BE IN THE ARROW."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -423,6 +495,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"AIM AT THE EYES OF GOHMA."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -430,6 +503,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"THERE ARE SECRETS WHERE FAIRIES DON\'T LIVE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -437,6 +511,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"THERE\'S A SECRET IN THE TIP OF THE NOSE."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -444,6 +519,7 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"SPECTACLE ROCK IS AN ENTRANCE TO DEATH."',
     },
     category: "message",
+    score: 2,
   },
   {
     name: {
@@ -451,5 +527,6 @@ export const swordlessTaskList: Z1Task[] = [
       en: '"10TH ENEMY HAS THE BOMB."',
     },
     category: "message",
+    score: 2,
   },
 ];

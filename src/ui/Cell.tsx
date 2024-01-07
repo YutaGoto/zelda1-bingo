@@ -30,7 +30,7 @@ export const Cell = ({ task, hit, lang, messageLang, onClick }: CellProps) => {
           ? task.name[messageLang === "en" ? messageLang : "ja"]
           : task.name[lang === "en" ? lang : "ja"]}
       </Text>
-      {!!task.count && <Counter goal={task.count || 0} />}
+      {!!task.count && <Counter goal={task.count} marginTop={5} />}
     </Box>
   );
 };

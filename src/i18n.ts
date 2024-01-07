@@ -5,6 +5,7 @@ const resources = {
   en: {
     translation: {
       Z1Bingo: "Zelda1 Bingo Sheet",
+      Z1ScoreBoard: "Zelda1 Score Board",
       requiredSeed: "Seed is required",
       updateSeed: "Update Seed",
       copySeed: "Copy input Seed",
@@ -14,6 +15,11 @@ const resources = {
       copiedCurrentUrl: "Copied Current URL",
       copiedNewSeedUrl: "Copied New Seed URL",
       resetSeed: "Reset Seed",
+      mode: "Mode",
+      bingo: "Bingo",
+      score: "Score Attack",
+      singleTasking: "Single Tasking",
+      currentPoint: "Current Point",
       language: "Page Language",
       messageLanguage: "Hint Message Language",
       otherCategories: "Other Categories",
@@ -27,6 +33,7 @@ const resources = {
   ja: {
     translation: {
       Z1Bingo: "ゼルダの伝説1 ビンゴ シート",
+      Z1ScoreBoard: "ゼルダの伝説1 スコアボード",
       requiredSeed: "Seedを入力してください",
       updateSeed: "Seedを更新する",
       copySeed: "入力したSeedをコピー",
@@ -36,6 +43,11 @@ const resources = {
       copiedCurrentUrl: "現在のURLをコピーしました",
       copiedNewSeedUrl: "新しいSeedのURLをコピーしました",
       resetSeed: "Seedをリセット",
+      mode: "モード",
+      bingo: "ビンゴ",
+      score: "スコアアタック",
+      singleTasking: "シングルタスキング",
+      currentPoint: "現在のポイント",
       language: "Page Language",
       messageLanguage: "Hint Message Language",
       firstQuest: "First Quest",

@@ -28,13 +28,13 @@ import {
 import { ChangeEvent, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
-import { VscGithubAlt } from "react-icons/vsc";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Z1Task } from "../types/Z1Task";
+import { Contact } from "../ui/Contact";
+import { ModeSelect } from "../ui/ModeSelect";
+import { Sheet } from "../ui/Sheet";
 import { copyText } from "../utils/copyText";
-import { Sheet } from "./Sheet";
 
 interface BingoProps {
   category: "firstQuest" | "secondQuest" | "swordless";
@@ -307,31 +307,11 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             </Grid>
           </Box>
 
-          <Box mt={5}>
-            <Text fontSize="lg">{t("contact")}</Text>
-            <Flex gap={2} mt={2}>
-              <Button
-                as={Link}
-                variant="outline"
-                href="https://github.com/YutaGoto/zelda1-bingo"
-                leftIcon={<VscGithubAlt />}
-                rightIcon={<RiExternalLinkLine />}
-                isExternal
-              >
-                GitHub
-              </Button>
-              <Button
-                as={Link}
-                variant="outline"
-                href="https://twitter.com/gggooottto"
-                leftIcon={<RiTwitterXLine />}
-                rightIcon={<RiExternalLinkLine />}
-                isExternal
-              >
-                X(Twitter)
-              </Button>
-            </Flex>
-          </Box>
+          {category === "firstQuest" && (
+            <ModeSelect mode="bingo" lang={lang} category={category} mt={5} />
+          )}
+
+          <Contact mt={5} />
         </Box>
       </Box>
     </Container>
