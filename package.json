@@ -8,9 +8,11 @@
     "build": "tsc && vite build",
     "tsc": "tsc",
     "preview": "vite preview",
-    "lint": "biome check ./src && biome lint ./src",
-    "format": "biome check --apply-unsafe ./src && biome format --write ./src",
-    "test": "vitest"
+    "lint": "biome check ./src ./tests && biome lint ./src ./tests",
+    "format": "biome check --apply-unsafe ./src ./tests && biome format --write ./src ./tests",
+    "test": "vitest",
+    "test:e2e": "playwright test --headed",
+    "test:e2e:ci": "playwright test"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.1",
+    "@playwright/test": "^1.40.1",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.11.0",
