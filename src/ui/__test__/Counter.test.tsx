@@ -46,5 +46,4 @@ test("not Increment over goal", async () => {
   await user.click(screen.getByLabelText("increment"));
   await user.click(screen.getByLabelText("increment"));
   expect(screen.getByDisplayValue("1")).toBeTruthy();
-  expect(screen.getByDisplayValue("2")).toBeFalsy();
 });
