@@ -27,6 +27,7 @@ export const ModeSelect = ({ mode, lang, category, mt }: ModeSelectProps) => {
         </Button>
         <Button
           as={Link}
+          isDisabled={category === "swordless"}
           href={`/score/${category}/${lang}`}
           colorScheme="yellow"
           variant={mode === "score" ? "solid" : "outline"}

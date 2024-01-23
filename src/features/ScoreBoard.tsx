@@ -14,9 +14,11 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
+  Grid,
   HStack,
   Heading,
   IconButton,
+  Link,
   NumberInput,
   NumberInputField,
   Select,
@@ -39,7 +41,7 @@ import { ModeSelect } from "../ui/ModeSelect";
 import { copyText } from "../utils/copyText";
 
 interface ScoreBoardProps {
-  category: "firstQuest";
+  category: "firstQuest" | "secondQuest" | "swordless";
   seed: number;
   taskList: Z1Task[];
 }
@@ -302,7 +304,50 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             </FormControl>
           </Box>
 
-          <ModeSelect mode="score" lang={lang} category="firstQuest" mt={5} />
+          <Box mt={5}>
+            <Text fontSize="lg">{t("otherCategories")}</Text>
+            <Grid
+              templateColumns={{ lg: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+              gap={2}
+              mt={2}
+            >
+              <Button
+                as={Link}
+                href={`/score/firstQuest/${lang}`}
+                variant={category === "firstQuest" ? "solid" : "outline"}
+                colorScheme="blue"
+              >
+                1st Quest
+              </Button>
+              <Button
+                as={Link}
+                href={`/score/secondQuest/${lang}`}
+                colorScheme="orange"
+                variant={category === "secondQuest" ? "solid" : "outline"}
+              >
+                2nd Quest
+              </Button>
+              <Button
+                as={Link}
+                href={`/score/swordless/${lang}`}
+                isDisabled={true}
+                colorScheme="pink"
+                variant={category === "swordless" ? "solid" : "outline"}
+              >
+                Swordless
+              </Button>
+              <Button
+                // as={Link}
+                colorScheme="cyan"
+                variant="outline"
+                isDisabled={true}
+              >
+                Randomizer
+              </Button>
+            </Grid>
+          </Box>
+
+          <ModeSelect mode="score" lang={lang} category={category} mt={5} />
 
           <Contact mt={5} />
         </Box>
