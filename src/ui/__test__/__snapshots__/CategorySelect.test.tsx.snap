@@ -1,0 +1,132 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`active category > 1st quest 1`] = `
+<DocumentFragment>
+  <div
+    class="css-zv7ju9"
+  >
+    <p
+      class="chakra-text css-1ezsviu"
+    >
+      Other Categories
+    </p>
+    <div
+      class="css-k5oabe"
+    >
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/score/firstQuest/en"
+      >
+        1st Quest
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/score/secondQuest/en"
+      >
+        2nd Quest
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        disabled=""
+        href="/score/swordless/en"
+      >
+        Swordless
+      </a>
+      <button
+        class="chakra-button css-4xx2wk"
+        disabled=""
+        type="button"
+      >
+        Randomizer
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`active category > 2nd quest 1`] = `
+<DocumentFragment>
+  <div
+    class="css-zv7ju9"
+  >
+    <p
+      class="chakra-text css-1ezsviu"
+    >
+      Other Categories
+    </p>
+    <div
+      class="css-k5oabe"
+    >
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/score/firstQuest/en"
+      >
+        1st Quest
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/score/secondQuest/en"
+      >
+        2nd Quest
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        disabled=""
+        href="/score/swordless/en"
+      >
+        Swordless
+      </a>
+      <button
+        class="chakra-button css-4xx2wk"
+        disabled=""
+        type="button"
+      >
+        Randomizer
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`active category > swordless 1`] = `
+<DocumentFragment>
+  <div
+    class="css-zv7ju9"
+  >
+    <p
+      class="chakra-text css-1ezsviu"
+    >
+      Other Categories
+    </p>
+    <div
+      class="css-k5oabe"
+    >
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/firstQuest/en"
+      >
+        1st Quest
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/secondQuest/en"
+      >
+        2nd Quest
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/swordless/en"
+      >
+        Swordless
+      </a>
+      <button
+        class="chakra-button css-4xx2wk"
+        disabled=""
+        type="button"
+      >
+        Randomizer
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

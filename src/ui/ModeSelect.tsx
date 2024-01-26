@@ -5,10 +5,15 @@ interface ModeSelectProps {
   mode: "score" | "bingo" | "single";
   category: "firstQuest" | "secondQuest" | "swordless";
   lang: string | undefined;
-  mt: number;
+  mt?: number;
 }
 
-export const ModeSelect = ({ mode, lang, category, mt }: ModeSelectProps) => {
+export const ModeSelect = ({
+  mode,
+  lang,
+  category,
+  mt = 0,
+}: ModeSelectProps) => {
   return (
     <Box mt={mt}>
       <Text fontSize="lg">{t("mode")}</Text>
