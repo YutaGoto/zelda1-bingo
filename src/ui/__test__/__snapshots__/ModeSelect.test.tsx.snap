@@ -1,0 +1,76 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`active mode > bingo 1`] = `
+<DocumentFragment>
+  <div
+    class="css-zv7ju9"
+  >
+    <p
+      class="chakra-text css-1ezsviu"
+    >
+      Mode
+    </p>
+    <div
+      class="css-k5oabe"
+    >
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/swordless/en"
+      >
+        Bingo
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        disabled=""
+        href="/score/swordless/en"
+      >
+        Score Attack
+      </a>
+      <button
+        class="chakra-button css-4xx2wk"
+        disabled=""
+        type="button"
+      >
+        Single Tasking
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`active mode > score attack 1`] = `
+<DocumentFragment>
+  <div
+    class="css-zv7ju9"
+  >
+    <p
+      class="chakra-text css-1ezsviu"
+    >
+      Mode
+    </p>
+    <div
+      class="css-k5oabe"
+    >
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/firstQuest/en"
+      >
+        Bingo
+      </a>
+      <a
+        class="chakra-link chakra-button css-1ncwzw6"
+        href="/score/firstQuest/en"
+      >
+        Score Attack
+      </a>
+      <button
+        class="chakra-button css-4xx2wk"
+        disabled=""
+        type="button"
+      >
+        Single Tasking
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

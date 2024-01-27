@@ -13,15 +13,12 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Grid,
   Heading,
   IconButton,
-  Link,
   NumberInput,
   NumberInputField,
   Select,
   Spacer,
-  Text,
   useColorMode,
   useToast,
 } from "@chakra-ui/react";
@@ -31,6 +28,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Z1Task } from "../types/Z1Task";
+import { CategorySelect } from "../ui/CategorySelect";
 import { Contact } from "../ui/Contact";
 import { ModeSelect } from "../ui/ModeSelect";
 import { Sheet } from "../ui/Sheet";
@@ -265,51 +263,8 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             </FormControl>
           </Box>
 
-          <Box mt={5}>
-            <Text fontSize="lg">{t("otherCategories")}</Text>
-            <Grid
-              templateColumns={{ lg: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
-              gap={2}
-              mt={2}
-            >
-              <Button
-                as={Link}
-                href={`/firstQuest/${lang}`}
-                variant={category === "firstQuest" ? "solid" : "outline"}
-                colorScheme="blue"
-              >
-                1st Quest
-              </Button>
-              <Button
-                as={Link}
-                href={`/secondQuest/${lang}`}
-                colorScheme="orange"
-                variant={category === "secondQuest" ? "solid" : "outline"}
-              >
-                2nd Quest
-              </Button>
-              <Button
-                as={Link}
-                href={`/swordless/${lang}`}
-                colorScheme="pink"
-                variant={category === "swordless" ? "solid" : "outline"}
-              >
-                Swordless
-              </Button>
-              <Button
-                // as={Link}
-                colorScheme="cyan"
-                variant="outline"
-                isDisabled={true}
-              >
-                Randomizer
-              </Button>
-            </Grid>
-          </Box>
-
-          {category === "firstQuest" && (
-            <ModeSelect mode="bingo" lang={lang} category={category} mt={5} />
-          )}
+          <CategorySelect mode="bingo" lang={lang} category={category} mt={5} />
+          <ModeSelect mode="bingo" lang={lang} category={category} mt={5} />
 
           <Contact mt={5} />
         </Box>
