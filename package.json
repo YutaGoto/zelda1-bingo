@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/noto-sans-jp": "^5.0.17",
     "@vercel/analytics": "^1.1.2",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
