@@ -38,6 +38,7 @@ import { Contact } from "../ui/Contact";
 import { Counter } from "../ui/Counter";
 import { ModeSelect } from "../ui/ModeSelect";
 import { copyText } from "../utils/copyText";
+import { sortByScore } from "../utils/sortByScore";
 
 interface ScoreBoardProps {
   category: "firstQuest" | "secondQuest" | "swordless";
@@ -55,11 +56,7 @@ const params = new URLSearchParams(url.search);
 export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
   const sortedTasks = useMemo(() => {
     // 昇順に並び替える
-    return taskList.sort((a, b) => {
-      if (a.score < b.score) return -1;
-      if (a.score > b.score) return 1;
-      return 0;
-    });
+    return sortByScore(taskList);
   }, [taskList]);
 
   const { colorMode, toggleColorMode } = useColorMode();
