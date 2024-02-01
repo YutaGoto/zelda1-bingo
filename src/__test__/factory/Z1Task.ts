@@ -16,5 +16,14 @@ export const factoryZ1MessageTask = {
     ja: "テスト",
   },
   category: "message",
-  score: 2,
+  score: 3,
+};
+
+export const factoryZ1OtherTask = {
+  name: {
+    en: "test",
+    ja: "テスト",
+  },
+  category: "shopping",
+  score: 5,
 };
