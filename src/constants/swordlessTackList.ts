@@ -216,7 +216,7 @@ export const swordlessTaskList: Z1Task[] = [
     },
     category: "monster",
     count: 5,
-    score: 23,
+    score: 3,
   },
   {
     name: {
