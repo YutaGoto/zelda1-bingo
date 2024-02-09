@@ -42,7 +42,6 @@ export const CategorySelect = ({
         <Button
           as={Link}
           href={`${modePath}/swordless/${lang}`}
-          isDisabled={mode === "score"}
           colorScheme="pink"
           variant={category === "swordless" ? "solid" : "outline"}
         >

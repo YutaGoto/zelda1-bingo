@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { firstQuestTaskList } from "./constants/firstQuestTaskList";
 import { secondQuestTaskList } from "./constants/secondQuestTaskList";
-// import { swordlessTaskList } from "./constants/swordlessTackList";
+import { swordlessTaskList } from "./constants/swordlessTackList";
 import { ScoreBoard } from "./features/ScoreBoard";
 import { shuffle } from "./utils/shuffle";
 
@@ -32,6 +32,8 @@ function Score() {
     switch (category) {
       case "secondQuest":
         return "secondQuest";
+      case "swordless":
+        return "swordless";
       default:
         return "firstQuest";
     }
@@ -41,6 +43,8 @@ function Score() {
     switch (category) {
       case "secondQuest":
         return shuffle(secondQuestTaskList, seed);
+      case "swordless":
+        return shuffle(swordlessTaskList, seed);
       default:
         return shuffle(firstQuestTaskList, seed);
     }

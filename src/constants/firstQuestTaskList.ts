@@ -161,7 +161,7 @@ export const firstQuestTaskList: Z1Task[] = [
       en: "correct BOOK OF MAGIC",
     },
     category: "correcting",
-    score: 5,
+    score: 4,
   },
   {
     name: {
