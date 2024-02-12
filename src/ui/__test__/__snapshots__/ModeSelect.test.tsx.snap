@@ -21,7 +21,6 @@ exports[`active mode > bingo 1`] = `
       </a>
       <a
         class="chakra-link chakra-button css-1ncwzw6"
-        disabled=""
         href="/score/swordless/en"
       >
         Score Attack

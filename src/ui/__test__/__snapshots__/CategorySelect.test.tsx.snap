@@ -27,7 +27,6 @@ exports[`active category > 1st quest 1`] = `
       </a>
       <a
         class="chakra-link chakra-button css-1ncwzw6"
-        disabled=""
         href="/score/swordless/en"
       >
         Swordless
@@ -71,7 +70,6 @@ exports[`active category > 2nd quest 1`] = `
       </a>
       <a
         class="chakra-link chakra-button css-1ncwzw6"
-        disabled=""
         href="/score/swordless/en"
       >
         Swordless
