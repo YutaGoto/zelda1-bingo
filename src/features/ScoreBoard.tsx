@@ -27,10 +27,12 @@ import {
   useColorMode,
   useToast,
 } from "@chakra-ui/react";
+import { useForm } from "@tanstack/react-form";
+import { zodValidator } from "@tanstack/zod-form-adapter";
 import { ChangeEvent, useEffect, useMemo, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
+import { z } from "zod";
 
 import { Z1Task } from "../types/Z1Task";
 import { CategorySelect } from "../ui/CategorySelect";
@@ -46,10 +48,6 @@ interface ScoreBoardProps {
   taskList: Z1Task[];
 }
 
-interface SeedValue {
-  seed: number;
-}
-
 const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 
@@ -61,12 +59,21 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
 
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
-  const {
-    handleSubmit,
-    register,
-    watch,
-    formState: { errors },
-  } = useForm<SeedValue>();
+  const form = useForm({
+    defaultValues: {
+      seed: seed,
+    },
+    onSubmit: (values) => {
+      if (values.value.seed === Number(seed)) return;
+
+      navigate(`/score/${category}/${lang}/?seed=${values.value.seed}`, {
+        replace: true,
+      });
+      location.reload();
+      return;
+    },
+    validatorAdapter: zodValidator,
+  });
 
   const [hits, setHits] = useState<boolean[]>(new Array(20).fill(false));
   const [currentPoint, setCurrentPoint] = useState(0);
@@ -102,16 +109,6 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
 
     setMessageLang(e.target.value);
     navigate(`/score/${category}/${e.target.value}/?seed=${seed}`);
-  };
-
-  const updateSeed: SubmitHandler<SeedValue> = (values) => {
-    if (values.seed === Number(seed)) return;
-
-    navigate(`/score/${category}/${lang}/?seed=${values.seed}`, {
-      replace: true,
-    });
-    location.reload();
-    return;
   };
 
   useEffect(() => {
@@ -181,37 +178,65 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
         <Spacer />
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
           <Box>
-            <form onSubmit={handleSubmit(updateSeed)}>
-              <FormControl isInvalid={Boolean(errors.seed)}>
-                <FormLabel>Seed</FormLabel>
-                <NumberInput defaultValue={Number(seed)} min={1} max={9999}>
-                  <NumberInputField
-                    {...register("seed", {
-                      required: t("requiredSeed"),
-                      valueAsNumber: true,
-                    })}
-                    w={24}
-                  />
-                </NumberInput>
-                <FormErrorMessage>{errors.seed?.message}</FormErrorMessage>
-              </FormControl>
-              <Button
-                mt={5}
-                variant="outline"
-                colorScheme="teal"
-                leftIcon={<Search2Icon />}
-                type="submit"
+            <form.Provider>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  void form.handleSubmit();
+                }}
               >
-                {t("updateSeed")}
-              </Button>
-            </form>
+                <form.Field
+                  name="seed"
+                  validators={{
+                    onBlur: z.number().int().min(1).max(9999),
+                  }}
+                  children={(field) => (
+                    <FormControl isInvalid={field.state.meta.errors.length > 0}>
+                      <FormLabel>Seed</FormLabel>
+                      <NumberInput
+                        name={field.name}
+                        defaultValue={field.state.value}
+                        min={1}
+                        max={9999}
+                      >
+                        <NumberInputField
+                          onBlur={field.handleBlur}
+                          onChange={(e) =>
+                            field.handleChange(Number(e.target.value))
+                          }
+                          w={24}
+                        />
+                      </NumberInput>
+                      <FormErrorMessage>
+                        {field.state.meta.errors.join(", ")}
+                      </FormErrorMessage>
+                    </FormControl>
+                  )}
+                />
+                <form.Subscribe
+                  selector={(state) => [state.isSubmitting]}
+                  children={([isSubmitting]) => (
+                    <Button
+                      mt={5}
+                      variant="outline"
+                      colorScheme="teal"
+                      leftIcon={<Search2Icon />}
+                      type="submit"
+                    >
+                      {isSubmitting ? "..." : t("updateSeed")}
+                    </Button>
+                  )}
+                />
+              </form>
+            </form.Provider>
             <Box mt={5}>
               <Button
                 colorScheme="purple"
                 variant="outline"
                 leftIcon={<CopyIcon />}
                 onClick={() => {
-                  copyText(watch("seed"));
+                  copyText(form.state.values.seed);
                   toast({
                     title: t("copiedSeed"),
                     status: "success",
@@ -248,7 +273,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                   copyText(
                     `${location.href.replace(
                       `seed=${seed}`,
-                      `seed=${watch("seed")}`,
+                      `seed=${form.state.values.seed}`,
                     )}`,
                   );
                   toast({
