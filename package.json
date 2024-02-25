@@ -23,12 +23,14 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/noto-sans-jp": "^5.0.17",
+    "@tanstack/react-form": "^0.13.6",
+    "@tanstack/zod-form-adapter": "^0.13.6",
     "@vercel/analytics": "^1.2.0",
     "framer-motion": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.50.1",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
