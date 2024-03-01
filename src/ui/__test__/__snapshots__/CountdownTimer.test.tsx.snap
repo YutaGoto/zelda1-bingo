@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-1cqbdan"
+    >
+      <p
+        class="chakra-text css-fm7i82"
+      >
+        0:15:00
+      </p>
+    </div>
+    <div
+      class="chakra-button__group css-1ind3v2"
+      data-orientation="horizontal"
+      role="group"
+    >
+      <button
+        class="chakra-button css-1fysbuj"
+        type="button"
+      >
+        Start
+      </button>
+      <button
+        class="chakra-button css-1fysbuj"
+        type="button"
+      >
+        Pause
+      </button>
+      <button
+        class="chakra-button css-1fysbuj"
+        type="button"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
