@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { expect, test } from "vitest";
 
@@ -24,7 +24,11 @@ test("Snapshot", () => {
 test("Start", async () => {
   const { user } = setup();
   render(<CountdownTimer />);
-  await user.click(screen.getByText("Start"));
-  await new Promise((r) => setTimeout(r, 2000));
+
+  await act(async () => {
+    await user.click(screen.getByText("Start"));
+    await new Promise((r) => setTimeout(r, 2000));
+  });
+
   expect(screen.queryByText("0:15:00")).toBeNull();
 });
