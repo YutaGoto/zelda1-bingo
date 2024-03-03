@@ -6,6 +6,7 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import {
+  Badge,
   Box,
   Button,
   Checkbox,
@@ -37,6 +38,7 @@ import { z } from "zod";
 import { Z1Task } from "../types/Z1Task";
 import { CategorySelect } from "../ui/CategorySelect";
 import { Contact } from "../ui/Contact";
+import { CountdownTimer } from "../ui/CountdownTimer";
 import { Counter } from "../ui/Counter";
 import { ModeSelect } from "../ui/ModeSelect";
 import { copyText } from "../utils/copyText";
@@ -127,9 +129,13 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             {t("Z1ScoreBoard")}
           </Heading>
 
-          <Heading as="h5" size="sm">
+          <Heading as="h5" size="sm" me={3}>
             {t(category)}
           </Heading>
+
+          <Badge colorScheme="green" fontSize="1.2em" variant="subtle">
+            {seed}
+          </Badge>
         </Flex>
 
         <Spacer />
@@ -177,6 +183,10 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
         </Box>
         <Spacer />
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
+          <Box>
+            <CountdownTimer />
+          </Box>
+
           <Box>
             <form.Provider>
               <form

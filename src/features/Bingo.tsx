@@ -6,6 +6,7 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import {
+  Badge,
   Box,
   Button,
   Container,
@@ -34,6 +35,7 @@ import { CategorySelect } from "../ui/CategorySelect";
 import { Contact } from "../ui/Contact";
 import { ModeSelect } from "../ui/ModeSelect";
 import { Sheet } from "../ui/Sheet";
+import { Stopwatch } from "../ui/Stopwatch";
 import { copyText } from "../utils/copyText";
 
 interface BingoProps {
@@ -122,9 +124,13 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             {t("Z1Bingo")}
           </Heading>
 
-          <Heading as="h5" size="sm">
+          <Heading as="h5" size="md" me={3}>
             {t(category)}
           </Heading>
+
+          <Badge colorScheme="green" fontSize="1.2em" variant="subtle">
+            {seed}
+          </Badge>
         </Flex>
 
         <Spacer />
@@ -148,6 +154,10 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
         />
 
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
+          <Box mb={5}>
+            <Stopwatch />
+          </Box>
+
           <form.Provider>
             <form
               onSubmit={(e) => {
