@@ -27,8 +27,8 @@ dependencies:
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.61)(react@18.2.0)
   '@fontsource-variable/noto-sans-jp':
-    specifier: ^5.0.17
-    version: 5.0.17
+    specifier: ^5.0.18
+    version: 5.0.18
   '@tanstack/react-form':
     specifier: ^0.13.6
     version: 0.13.6(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)
@@ -1679,8 +1679,8 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource-variable/noto-sans-jp@5.0.17:
-    resolution: {integrity: sha512-Nn/FXR3A/dNIYcRKNXEM/DVxRs6prfT38Z69N08MG26gMnVRXiAUsWADAr4VrOGOeNlLoEnDLD7TXTxFymq6Ww==}
+  /@fontsource-variable/noto-sans-jp@5.0.18:
+    resolution: {integrity: sha512-pN/BnClLJ4t1tMWtosxq18Co/ndyhKLZsvhmf/0DE4WS6YVJs4juhoj/HK1jyRKktc+mDPsyDAA4AMOuzld/mg==}
     dev: false
 
   /@jest/schemas@29.6.3:
