@@ -9,6 +9,7 @@ test("Contact", () => {
   expect(screen.getByText("Contact")).toBeTruthy();
   expect(screen.getByText("X(Twitter)")).toBeTruthy();
   expect(screen.getByText("GitHub")).toBeTruthy();
+  expect(screen.getByText("Bluesky")).toBeTruthy();
 });
 
 test("Snapshot", () => {
