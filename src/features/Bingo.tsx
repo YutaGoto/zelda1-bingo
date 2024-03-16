@@ -19,6 +19,7 @@ import {
   NumberInput,
   NumberInputField,
   Select,
+  SimpleGrid,
   Spacer,
   useColorMode,
   useToast,
@@ -277,30 +278,25 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             </Button>
           </Box>
 
-          <Box mt={5} maxW="xs">
+          <SimpleGrid columns={{ lg: 1, md: 2 }} spacing={2} mt={5}>
             <FormControl>
               <FormLabel>{t("language")}</FormLabel>
-              <Select
-                defaultValue={lang}
-                w={32}
-                onChange={(e) => onChangeLang(e)}
-              >
+              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
               </Select>
             </FormControl>
-            <FormControl mt={2}>
+            <FormControl>
               <FormLabel>{t("messageLanguage")}</FormLabel>
               <Select
                 value={messageLang}
-                w={32}
                 onChange={(e) => setMessageLang(e.target.value)}
               >
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
               </Select>
             </FormControl>
-          </Box>
+          </SimpleGrid>
 
           <CategorySelect mode="bingo" lang={lang} category={category} mt={5} />
           <ModeSelect mode="bingo" lang={lang} category={category} mt={5} />
