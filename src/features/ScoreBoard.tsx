@@ -95,7 +95,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
           return acc + sortedTasks[i].score;
         }
         return acc;
-      }, 0)
+      }, 0),
     );
     setHits(newHits);
   };
@@ -284,8 +284,8 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                   copyText(
                     `${location.href.replace(
                       `seed=${seed}`,
-                      `seed=${form.state.values.seed}`
-                    )}`
+                      `seed=${form.state.values.seed}`,
+                    )}`,
                   );
                   toast({
                     title: t("copiedNewSeedUrl"),
