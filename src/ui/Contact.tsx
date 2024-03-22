@@ -1,6 +1,6 @@
-import { Box, Button, Flex, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Link, SimpleGrid, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
+import { RiBox1Line, RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
 import { VscGithubAlt } from "react-icons/vsc";
 
 interface ContactProps {
@@ -12,7 +12,7 @@ export const Contact = ({ mt }: ContactProps) => {
   return (
     <Box mt={mt}>
       <Text fontSize="lg">{t("contact")}</Text>
-      <Flex gap={2} mt={2}>
+      <SimpleGrid columns={{ lg: 1, md: 3 }} spacing={2} mt={2}>
         <Button
           as={Link}
           variant="outline"
@@ -33,7 +33,17 @@ export const Contact = ({ mt }: ContactProps) => {
         >
           X(Twitter)
         </Button>
-      </Flex>
+        <Button
+          as={Link}
+          variant="outline"
+          href="https://bsky.app/profile/yougoto.dev"
+          leftIcon={<RiBox1Line />}
+          rightIcon={<RiExternalLinkLine />}
+          isExternal
+        >
+          Bluesky
+        </Button>
+      </SimpleGrid>
     </Box>
   );
 };

@@ -21,6 +21,7 @@ import {
   NumberInput,
   NumberInputField,
   Select,
+  SimpleGrid,
   Spacer,
   StackDivider,
   Text,
@@ -310,30 +311,25 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
 
           <Spacer />
 
-          <Box mt={5}>
+          <SimpleGrid columns={{ lg: 1, md: 2 }} spacing={2} mt={5}>
             <FormControl>
               <FormLabel>{t("language")}</FormLabel>
-              <Select
-                defaultValue={lang}
-                w={32}
-                onChange={(e) => onChangeLang(e)}
-              >
+              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
               </Select>
             </FormControl>
-            <FormControl mt={2}>
+            <FormControl>
               <FormLabel>{t("messageLanguage")}</FormLabel>
               <Select
                 value={messageLang}
-                w={32}
                 onChange={(e) => setMessageLang(e.target.value)}
               >
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
               </Select>
             </FormControl>
-          </Box>
+          </SimpleGrid>
 
           <CategorySelect mode="score" lang={lang} category={category} mt={5} />
           <ModeSelect mode="score" lang={lang} category={category} mt={5} />
