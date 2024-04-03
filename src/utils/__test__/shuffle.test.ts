@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { firstQuestTaskList } from "../../constants/firstQuestTaskList";
-import { Z1Task } from "../../types/Z1Task";
+import type { Z1Task } from "../../types/Z1Task";
 import { shuffle } from "../shuffle";
 
 const clone = (arr: Z1Task[]) => JSON.parse(JSON.stringify(arr));

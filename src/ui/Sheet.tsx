@@ -1,6 +1,6 @@
 import { Box, Center, Grid } from "@chakra-ui/react";
 import { TbBackslash } from "react-icons/tb";
-import { Z1Task } from "../types/Z1Task";
+import type { Z1Task } from "../types/Z1Task";
 import { Cell } from "./Cell";
 
 interface SheetProps {

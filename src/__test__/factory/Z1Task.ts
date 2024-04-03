@@ -1,4 +1,4 @@
-import { Z1Task } from "../../types/Z1Task";
+import type { Z1Task } from "../../types/Z1Task";
 
 export const factoryZ1Task: Z1Task = {
   name: {
