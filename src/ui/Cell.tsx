@@ -1,5 +1,5 @@
 import { Box, Text, useColorMode } from "@chakra-ui/react";
-import { Z1Task } from "../types/Z1Task";
+import type { Z1Task } from "../types/Z1Task";
 import { Counter } from "./Counter";
 
 interface CellProps {
