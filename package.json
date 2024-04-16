@@ -26,7 +26,7 @@
     "@tanstack/react-form": "^0.13.6",
     "@tanstack/zod-form-adapter": "^0.13.6",
     "@vercel/analytics": "^1.2.2",
-    "framer-motion": "^11.0.15",
+    "framer-motion": "^11.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
