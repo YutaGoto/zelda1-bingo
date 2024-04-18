@@ -58,7 +58,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
     onSubmit: ({ value }) => {
       if (value.seed === seed) return;
 
-      navigate(`/${category}/${lang}/?seed=${value.seed}`, {
+      navigate(`/${category}/${lang}?seed=${value.seed}`, {
         replace: true,
       });
       location.reload();
@@ -104,7 +104,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
     if (e.target.value === lang) return;
 
     setMessageLang(e.target.value);
-    navigate(`/${category}/${e.target.value}/?seed=${seed}`);
+    navigate(`/${category}/${e.target.value}?seed=${seed}`);
   };
 
   useEffect(() => {
