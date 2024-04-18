@@ -61,11 +61,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/:lang",
-        element: <Navigate to={`/firstQuest/en/?seed=${paramsSeed}`} />,
+        element: <Navigate to={`/firstQuest/en?seed=${paramsSeed}`} />,
       },
       {
         path: "/",
-        element: <Navigate to={`/firstQuest/en/?seed=${paramsSeed}`} />,
+        element: <Navigate to={`/firstQuest/en?seed=${paramsSeed}`} />,
       },
     ],
   },

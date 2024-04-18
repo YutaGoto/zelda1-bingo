@@ -51,16 +51,14 @@ const params = new URLSearchParams(url.search);
 export const Bingo = ({ category, seed, taskList }: BingoProps) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
-  const form = useForm({
+  const { handleSubmit, state, Field, Subscribe } = useForm({
     defaultValues: {
       seed: seed,
     },
     onSubmit: ({ value }) => {
-      console.log(value);
-      console.log(seed);
       if (value.seed === seed) return;
 
-      navigate(`/${category}/${lang}/?seed=${value.seed}`, {
+      navigate(`/${category}/${lang}?seed=${value.seed}`, {
         replace: true,
       });
       location.reload();
@@ -106,7 +104,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
     if (e.target.value === lang) return;
 
     setMessageLang(e.target.value);
-    navigate(`/${category}/${e.target.value}/?seed=${seed}`);
+    navigate(`/${category}/${e.target.value}?seed=${seed}`);
   };
 
   useEffect(() => {
@@ -159,65 +157,63 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             <Stopwatch />
           </Box>
 
-          <form.Provider>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                void form.handleSubmit();
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              void handleSubmit();
+            }}
+          >
+            <Field
+              name="seed"
+              validators={{
+                onBlur: z.number().int().min(1).max(9999),
               }}
-            >
-              <form.Field
-                name="seed"
-                validators={{
-                  onBlur: z.number().int().min(1).max(9999),
-                }}
-                children={(field) => (
-                  <FormControl isInvalid={field.state.meta.errors.length > 0}>
-                    <FormLabel>Seed</FormLabel>
-                    <NumberInput
-                      name={field.name}
-                      defaultValue={field.state.value}
-                      min={1}
-                      max={9999}
-                    >
-                      <NumberInputField
-                        onBlur={field.handleBlur}
-                        onChange={(e) =>
-                          field.handleChange(Number(e.target.value))
-                        }
-                        w={24}
-                      />
-                    </NumberInput>
-                    <FormErrorMessage>
-                      {field.state.meta.errors.join(", ")}
-                    </FormErrorMessage>
-                  </FormControl>
-                )}
-              />
-              <form.Subscribe
-                selector={(state) => [state.isSubmitting]}
-                children={([isSubmitting]) => (
-                  <Button
-                    mt={5}
-                    variant="outline"
-                    colorScheme="teal"
-                    leftIcon={<Search2Icon />}
-                    type="submit"
+              children={(field) => (
+                <FormControl isInvalid={field.state.meta.errors.length > 0}>
+                  <FormLabel>Seed</FormLabel>
+                  <NumberInput
+                    name={field.name}
+                    defaultValue={field.state.value}
+                    min={1}
+                    max={9999}
                   >
-                    {isSubmitting ? "..." : t("updateSeed")}
-                  </Button>
-                )}
-              />
-            </form>
-          </form.Provider>
+                    <NumberInputField
+                      onBlur={field.handleBlur}
+                      onChange={(e) =>
+                        field.handleChange(Number(e.target.value))
+                      }
+                      w={24}
+                    />
+                  </NumberInput>
+                  <FormErrorMessage>
+                    {field.state.meta.errors.join(", ")}
+                  </FormErrorMessage>
+                </FormControl>
+              )}
+            />
+            <Subscribe
+              selector={(state) => [state.isSubmitting]}
+              children={([isSubmitting]) => (
+                <Button
+                  mt={5}
+                  variant="outline"
+                  colorScheme="teal"
+                  leftIcon={<Search2Icon />}
+                  type="submit"
+                >
+                  {isSubmitting ? "..." : t("updateSeed")}
+                </Button>
+              )}
+            />
+          </form>
           <Box mt={5}>
             <Button
               colorScheme="purple"
               variant="outline"
               leftIcon={<CopyIcon />}
               onClick={() => {
-                copyText(form.state.values.seed);
+                copyText(state.values.seed);
                 toast({
                   title: t("copiedSeed"),
                   status: "success",
@@ -254,7 +250,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 copyText(
                   `${location.href.replace(
                     `seed=${seed}`,
-                    `seed=${form.state.values.seed}`,
+                    `seed=${state.values.seed}`,
                   )}`,
                 );
                 toast({
