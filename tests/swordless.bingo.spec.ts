@@ -12,7 +12,7 @@ test.describe("swordless bingo", () => {
       await expect(contentTitle).toHaveText("Zelda1 Bingo Sheet");
 
       const categoryTitle = page.locator("h5");
-      await expect(categoryTitle).toHaveText("First Quest");
+      await expect(categoryTitle).toHaveText("Swordless");
     });
 
     test("show swordless bingo, Japanese", async ({ page }) => {
@@ -25,7 +25,7 @@ test.describe("swordless bingo", () => {
       await expect(contentTitle).toHaveText("ゼルダの伝説1 ビンゴ シート");
 
       const categoryTitle = page.locator("h5");
-      await expect(categoryTitle).toHaveText("First Quest");
+      await expect(categoryTitle).toHaveText("Swordless");
     });
   });
 
