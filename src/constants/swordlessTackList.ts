@@ -184,6 +184,78 @@ export const swordlessTaskList: Z1Task[] = [
     count: 3,
     score: 3,
   },
+  {
+    name: {
+      ja: "Level 1で20ルピー集める",
+      en: "correct 20 RUPEEs in Level 1",
+    },
+    category: "correcting",
+    count: 20,
+    score: 4,
+  },
+  {
+    name: {
+      ja: "Level 2で20ルピー集める",
+      en: "correct 20 RUPEEs in Level 2",
+    },
+    category: "correcting",
+    count: 20,
+    score: 4,
+  },
+  {
+    name: {
+      ja: "Level 3で15ルピー集める",
+      en: "correct 15 RUPEEs in Level 3",
+    },
+    category: "correcting",
+    count: 15,
+    score: 4,
+  },
+  {
+    name: {
+      ja: "Level 4で15ルピー集める",
+      en: "correct 15 RUPEEs in Level 4",
+    },
+    category: "correcting",
+    count: 15,
+    score: 5,
+  },
+  {
+    name: {
+      ja: "Level 5で15ルピー集める",
+      en: "correct 15 RUPEEs in Level 5",
+    },
+    category: "correcting",
+    count: 15,
+    score: 5,
+  },
+  {
+    name: {
+      ja: "Level 6で15ルピー集める",
+      en: "correct 15 RUPEEs in Level 6",
+    },
+    category: "correcting",
+    count: 15,
+    score: 5,
+  },
+  {
+    name: {
+      ja: "Level 7で20ルピー集める",
+      en: "correct 20 RUPEEs in Level 7",
+    },
+    category: "correcting",
+    count: 20,
+    score: 6,
+  },
+  {
+    name: {
+      ja: "Level 8で15ルピー集める",
+      en: "correct 20 RUPEEs in Level 8",
+    },
+    category: "correcting",
+    count: 20,
+    score: 6,
+  },
 
   {
     name: { ja: "赤オクタロックを15体倒す", en: "defeat 15 OCTAROK" },
