@@ -27,7 +27,7 @@
     "@tanstack/zod-form-adapter": "^0.13.6",
     "@vercel/analytics": "^1.2.2",
     "framer-motion": "^11.1.7",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0",
     "zod": "^3.22.4"
@@ -38,7 +38,7 @@
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.79",
+    "@types/react": "^18.3.1",
     "@types/react-dom": "^18.2.23",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "i18next": "^23.11.3",
