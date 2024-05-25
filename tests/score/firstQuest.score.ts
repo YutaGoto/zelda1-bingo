@@ -66,6 +66,6 @@ test.describe("firstQuest score attack", () => {
       await expect(page).toHaveURL(/\/score\/swordless\/en/);
       const categoryTitle = page.locator("h5");
       await expect(categoryTitle).toHaveText("Swordless");
-    }
+    });
   });
 });
