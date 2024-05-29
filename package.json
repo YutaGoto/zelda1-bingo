@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.11.5",
     "@fontsource-variable/noto-sans-jp": "^5.0.19",
     "@tanstack/react-form": "^0.20.0",
-    "@tanstack/zod-form-adapter": "^0.13.6",
+    "@tanstack/zod-form-adapter": "^0.20.2",
     "@vercel/analytics": "^1.2.2",
     "framer-motion": "^11.2.6",
     "react": "^18.3.1",
