@@ -33,8 +33,8 @@ dependencies:
     specifier: ^0.20.0
     version: 0.20.0(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)
   '@tanstack/zod-form-adapter':
-    specifier: ^0.13.6
-    version: 0.13.6(zod@3.23.8)
+    specifier: ^0.20.3
+    version: 0.20.3(zod@3.23.8)
   '@vercel/analytics':
     specifier: ^1.2.2
     version: 1.2.2(react@18.3.1)
@@ -1955,14 +1955,14 @@ packages:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
     dev: true
 
-  /@tanstack/form-core@0.13.6:
-    resolution: {integrity: sha512-ZcAoAd3xLZUYy6FXawJ1h08KhLzCnfzQqmwh6eGruKlzS1LpPGhPqJ0HdjFN8NmqaafJxONZb0nPI56uqu8SDw==}
+  /@tanstack/form-core@0.20.0:
+    resolution: {integrity: sha512-7iOFXTSTEkTKRk7pu1v7Xa+szGE/v10jExK+Cym3dAHkK6znRTYkDt8cNaEG8TgHgLi9TRhy0jJV3yjnkqa42A==}
     dependencies:
       '@tanstack/store': 0.3.1
     dev: false
 
-  /@tanstack/form-core@0.20.0:
-    resolution: {integrity: sha512-7iOFXTSTEkTKRk7pu1v7Xa+szGE/v10jExK+Cym3dAHkK6znRTYkDt8cNaEG8TgHgLi9TRhy0jJV3yjnkqa42A==}
+  /@tanstack/form-core@0.20.3:
+    resolution: {integrity: sha512-oFu1fBSQyDL7fkvXxP2ZPnXWFcac973xghNPfiF8DMUzJ7MBFe4sZHB5HS6l3YGWtMFnqRwW4sFIhHLGKtDVJA==}
     dependencies:
       '@tanstack/store': 0.3.1
     dev: false
@@ -1998,12 +1998,12 @@ packages:
     resolution: {integrity: sha512-A49KN8SpLMWaNmZGPa9K982RQ81W+m7W6iStcQVeKeVS70JZRqkF0fDwKByREPq6qz9/kS0aQFOPQ0W6wIeU5g==}
     dev: false
 
-  /@tanstack/zod-form-adapter@0.13.6(zod@3.23.8):
-    resolution: {integrity: sha512-7075tDwoQvBdJICbFQtfY/csBO2m8aOJOJGNIUk4UUeoOzOtdpWgWgaeagNV/tOfm6aOrpnPMysI9TjA3TAeqw==}
+  /@tanstack/zod-form-adapter@0.20.3(zod@3.23.8):
+    resolution: {integrity: sha512-ghsytT4isgelVER6Qdty6ZVdD8SZfT8TuhNHrbC2snVrqQxrSdqQFr5JPvVMycs06y5l3OLspW97HkIO3d7lBw==}
     peerDependencies:
       zod: ^3.x
     dependencies:
-      '@tanstack/form-core': 0.13.6
+      '@tanstack/form-core': 0.20.3
       zod: 3.23.8
     dev: false
 
