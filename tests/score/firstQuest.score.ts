@@ -68,4 +68,30 @@ test.describe("firstQuest score attack", () => {
       await expect(categoryTitle).toHaveText("Swordless");
     });
   });
+
+  test.describe("switch language", () => {
+    test("switch to French", async ({ page }) => {
+      await page.goto("/score/firstQuest/en");
+
+      await expect(page).toHaveURL(/\/score\/firstQuest\/en/);
+      await page.click('a:has-text("Français")');
+      await page.waitForURL(/\/score\/firstQuest\/fr/);
+
+      await expect(page).toHaveURL(/\/score\/firstQuest\/fr/);
+      const categoryTitle = page.locator("h5");
+      await expect(categoryTitle).toHaveText("Première Quête");
+    });
+
+    test("switch to Japanese", async ({ page }) => {
+      await page.goto("/score/firstQuest/en");
+
+      await expect(page).toHaveURL(/\/score\/firstQuest\/en/);
+      await page.click('a:has-text("日本語")');
+      await page.waitForURL(/\/score\/firstQuest\/ja/);
+
+      await expect(page).toHaveURL(/\/score\/firstQuest\/ja/);
+      const categoryTitle = page.locator("h5");
+      await expect(categoryTitle).toHaveText("ファーストクエスト");
+    });
+  });
 });
