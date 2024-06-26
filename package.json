@@ -9,7 +9,7 @@
     "tsc": "tsc",
     "preview": "vite preview",
     "lint": "biome check ./src ./tests && biome lint ./src ./tests",
-    "format": "biome check --apply-unsafe ./src ./tests && biome format --write ./src ./tests",
+    "format": "biome check --write ./src ./tests && biome format --write ./src ./tests",
     "test": "vitest",
     "test:e2e": "playwright test --headed",
     "test:e2e:ci": "playwright test"
