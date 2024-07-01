@@ -75,7 +75,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
       location.reload();
       return;
     },
-    validatorAdapter: zodValidator,
+    validatorAdapter: zodValidator(),
   });
 
   const [hits, setHits] = useState<boolean[]>(new Array(20).fill(false));
