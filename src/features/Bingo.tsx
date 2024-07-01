@@ -64,7 +64,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
       location.reload();
       return;
     },
-    validatorAdapter: zodValidator,
+    validatorAdapter: zodValidator(),
   });
 
   const [hits, setHits] = useState([
