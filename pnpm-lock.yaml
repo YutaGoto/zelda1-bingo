@@ -33,8 +33,8 @@ importers:
         specifier: ^5.0.19
         version: 5.0.19
       '@tanstack/react-form':
-        specifier: ^0.25.1
-        version: 0.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+        specifier: ^0.26.0
+        version: 0.26.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       '@tanstack/zod-form-adapter':
         specifier: ^0.25.2
         version: 0.25.2(zod@3.23.8)
@@ -1119,14 +1119,14 @@ packages:
   '@swc/types@0.1.9':
     resolution: {integrity: sha512-qKnCno++jzcJ4lM4NTfYifm1EFSCeIfKiAHAfkENZAV5Kl9PjJIyd2yeeVv6c/2CckuLyv2NmRC5pv6pm2WQBg==}
 
-  '@tanstack/form-core@0.25.1':
-    resolution: {integrity: sha512-dMeJigLGBvVdSvvh49X/xx6rvVbtgG7Gc1LBwOrgaNTKiTcqVtfRwhCLkGo0IHeFL/oInTSbdeAxF/DE8mmAqQ==}
-
   '@tanstack/form-core@0.25.2':
     resolution: {integrity: sha512-BWPCpl0buDa7xPaU2+Dp9SZ/+3J3nnwzk15JnbKxbuKSCvnCLKHxxifhN/nSifiCLs+14tNDBu0ueG9sU6VWGQ==}
 
-  '@tanstack/react-form@0.25.1':
-    resolution: {integrity: sha512-lWRUJDraOLk9N6JP2KXDlK7hseA+UGh03Q4/3IozZ0X7yxvV93mH5R2k20yfHuYRHpoUB8Vafz8EQgrl2FP2yw==}
+  '@tanstack/form-core@0.25.3':
+    resolution: {integrity: sha512-4ZPuzsCvqpdJGy/06+pBlgr6khvkwxyMFLcrlieD+8ilBRqCvNdojUvdDLz4EDP74vmxl3RWo7anqzJ3H6xkMw==}
+
+  '@tanstack/react-form@0.26.0':
+    resolution: {integrity: sha512-Wm1XRIu1tJhG1xEH7Gg4dCyb03ggi1RhQHOBtHkSHxHhtFtJ/AAd5uhlwNWAx/Vswg/MkDMXHVLdPKrNigXPLA==}
     peerDependencies:
       '@tanstack/start': ^1.40.1
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3414,18 +3414,18 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tanstack/form-core@0.25.1':
-    dependencies:
-      '@tanstack/store': 0.5.2
-
   '@tanstack/form-core@0.25.2':
     dependencies:
       '@tanstack/store': 0.5.2
 
-  '@tanstack/react-form@0.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)':
+  '@tanstack/form-core@0.25.3':
+    dependencies:
+      '@tanstack/store': 0.5.2
+
+  '@tanstack/react-form@0.26.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)':
     dependencies:
       '@remix-run/node': 2.10.0(typescript@5.5.3)
-      '@tanstack/form-core': 0.25.1
+      '@tanstack/form-core': 0.25.3
       '@tanstack/react-store': 0.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       decode-formdata: 0.7.5
       react: 18.3.1
