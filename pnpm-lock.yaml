@@ -82,14 +82,14 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0(vite@5.3.3(@types/node@20.14.9))
       i18next:
-        specifier: ^23.11.5
-        version: 23.11.5
+        specifier: ^23.12.2
+        version: 23.12.2
       jsdom:
         specifier: ^24.0.0
         version: 24.1.0
       react-i18next:
         specifier: ^14.1.2
-        version: 14.1.2(i18next@23.11.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 14.1.2(i18next@23.12.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-icons:
         specifier: ^5.2.1
         version: 5.2.1(react@18.3.1)
@@ -1598,8 +1598,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  i18next@23.11.5:
-    resolution: {integrity: sha512-41pvpVbW9rhZPk5xjCX2TPJi2861LEig/YRhUkY+1FQ2IQPS0bKUDYnEqY8XPPbB48h1uIwLnP9iiEfuSl20CA==}
+  i18next@23.12.2:
+    resolution: {integrity: sha512-XIeh5V+bi8SJSWGL3jqbTEBW5oD6rbP5L+E7dVQh1MNTxxYef0x15rhJVcRb7oiuq4jLtgy2SD8eFlf6P2cmqg==}
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -3906,7 +3906,7 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  i18next@23.11.5:
+  i18next@23.12.2:
     dependencies:
       '@babel/runtime': 7.24.7
 
@@ -4150,11 +4150,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.3
 
-  react-i18next@14.1.2(i18next@23.11.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-i18next@14.1.2(i18next@23.12.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.24.7
       html-parse-stringify: 3.0.1
-      i18next: 23.11.5
+      i18next: 23.12.2
       react: 18.3.1
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
