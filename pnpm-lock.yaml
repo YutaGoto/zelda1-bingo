@@ -33,8 +33,8 @@ importers:
         specifier: ^5.0.19
         version: 5.0.19
       '@tanstack/react-form':
-        specifier: ^0.25.1
-        version: 0.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+        specifier: ^0.28.0
+        version: 0.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       '@tanstack/zod-form-adapter':
         specifier: ^0.28.0
         version: 0.28.0(zod@3.23.8)
@@ -946,8 +946,8 @@ packages:
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
-  '@remix-run/node@2.10.0':
-    resolution: {integrity: sha512-hFBt431leCEoN84kVj6BExv60+3KHFORTU2t24igJNtXPNCHH/pujMMKYaSrS3a5oKDTwwqbCmSztTyyr7uFLA==}
+  '@remix-run/node@2.11.1':
+    resolution: {integrity: sha512-KCQPLSd5Y3OLCoJUQxxTGswALL1gZ+OgL3bf2ap6kITIp1AUZz3T4jqCNVVyWllVAU9gpCtrONaI+SiWf+8b2w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: ^5.1.0
@@ -955,16 +955,16 @@ packages:
       typescript:
         optional: true
 
-  '@remix-run/router@1.17.0':
-    resolution: {integrity: sha512-2D6XaHEVvkCn682XBnipbJjgZUU7xjLtA4dGJRBVUKpEaDYOZMENZoZjAOSb7qirxt5RupjzZxz4fK2FO+EFPw==}
-    engines: {node: '>=14.0.0'}
-
   '@remix-run/router@1.18.0':
     resolution: {integrity: sha512-L3jkqmqoSVBVKHfpGZmLrex0lxR5SucGA0sUfFzGctehw+S/ggL9L/0NnC5mw6P8HUWpFZ3nQw3cRApjjWx9Sw==}
     engines: {node: '>=14.0.0'}
 
-  '@remix-run/server-runtime@2.10.0':
-    resolution: {integrity: sha512-lwgMq3m8U+oz0ZmgOrQeAE3tf6g1LPf2+ff3lgb5xb4bx7bV5VGGwKkzRK4+0fDguHXcW+YcppvdYdnKzQn1YQ==}
+  '@remix-run/router@1.19.0':
+    resolution: {integrity: sha512-zDICCLKEwbVYTS6TjYaWtHXxkdoUvD/QXvyVZjGCsWz5vyH7aFeONlPffPdW+Y/t6KT0MgXb2Mfjun9YpWN1dA==}
+    engines: {node: '>=14.0.0'}
+
+  '@remix-run/server-runtime@2.11.1':
+    resolution: {integrity: sha512-j3AlrZul0javvPR6ZWdN32/l12t1E90sLeZI/k+4HpT0ifjqJVg8uG6alRJ0LLN9ae5BERYEslUebUqdfejSkQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       typescript: ^5.1.0
@@ -1146,29 +1146,23 @@ packages:
   '@swc/types@0.1.9':
     resolution: {integrity: sha512-qKnCno++jzcJ4lM4NTfYifm1EFSCeIfKiAHAfkENZAV5Kl9PjJIyd2yeeVv6c/2CckuLyv2NmRC5pv6pm2WQBg==}
 
-  '@tanstack/form-core@0.25.1':
-    resolution: {integrity: sha512-dMeJigLGBvVdSvvh49X/xx6rvVbtgG7Gc1LBwOrgaNTKiTcqVtfRwhCLkGo0IHeFL/oInTSbdeAxF/DE8mmAqQ==}
-
   '@tanstack/form-core@0.28.0':
     resolution: {integrity: sha512-HU1MDIZmhB635BJfL73fLAdTVOE1xseYrbMJKywbnwY2cEpIjKcu/5gC656bSI1jF//+NJEWRL68ZgrUevWc2A==}
 
-  '@tanstack/react-form@0.25.1':
-    resolution: {integrity: sha512-lWRUJDraOLk9N6JP2KXDlK7hseA+UGh03Q4/3IozZ0X7yxvV93mH5R2k20yfHuYRHpoUB8Vafz8EQgrl2FP2yw==}
+  '@tanstack/react-form@0.28.0':
+    resolution: {integrity: sha512-BXAnN61gSFFl8XtGnf3CSXD5BZZI3kQbL5AR3zLVE5ingY8mie9rXL+rpBSXsX6lv4STkwviG+oDH5riakIMCg==}
     peerDependencies:
-      '@tanstack/start': ^1.40.1
+      '@tanstack/start': ^1.43.13
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@tanstack/start':
         optional: true
 
-  '@tanstack/react-store@0.5.2':
-    resolution: {integrity: sha512-qzYy3ov/U/QZV8MX4zpStlp0Wwj91dmz7faVQwyLZLHiZp1VbOC5WfbUfbkKz9waL6MecZLKvosYVbgxz8Ty7Q==}
+  '@tanstack/react-store@0.5.5':
+    resolution: {integrity: sha512-1orYXGatBqXCYKuroFwV8Ll/6aDa5E3pU6RR4h7RvRk7TmxF1+zLCsWALZaeijXkySNMGmvawSbUXRypivg2XA==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
-
-  '@tanstack/store@0.5.2':
-    resolution: {integrity: sha512-t3vR/nzKnixSmJcSjAULL4mlK6hApsC/pFNjwhLTgJJuWzGQaEjcaQvWfyD3LTVm4wljIL0gWW9cZ7Zrqb1bPQ==}
 
   '@tanstack/store@0.5.5':
     resolution: {integrity: sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==}
@@ -3324,9 +3318,9 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@remix-run/node@2.10.0(typescript@5.5.3)':
+  '@remix-run/node@2.11.1(typescript@5.5.3)':
     dependencies:
-      '@remix-run/server-runtime': 2.10.0(typescript@5.5.3)
+      '@remix-run/server-runtime': 2.11.1(typescript@5.5.3)
       '@remix-run/web-fetch': 4.4.2
       '@web3-storage/multipart-parser': 1.0.0
       cookie-signature: 1.2.1
@@ -3336,13 +3330,13 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.3
 
-  '@remix-run/router@1.17.0': {}
-
   '@remix-run/router@1.18.0': {}
 
-  '@remix-run/server-runtime@2.10.0(typescript@5.5.3)':
+  '@remix-run/router@1.19.0': {}
+
+  '@remix-run/server-runtime@2.11.1(typescript@5.5.3)':
     dependencies:
-      '@remix-run/router': 1.17.0
+      '@remix-run/router': 1.19.0
       '@types/cookie': 0.6.0
       '@web3-storage/multipart-parser': 1.0.0
       cookie: 0.6.0
@@ -3482,33 +3476,27 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tanstack/form-core@0.25.1':
-    dependencies:
-      '@tanstack/store': 0.5.2
-
   '@tanstack/form-core@0.28.0':
     dependencies:
       '@tanstack/store': 0.5.5
 
-  '@tanstack/react-form@0.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)':
+  '@tanstack/react-form@0.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)':
     dependencies:
-      '@remix-run/node': 2.10.0(typescript@5.5.3)
-      '@tanstack/form-core': 0.25.1
-      '@tanstack/react-store': 0.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@remix-run/node': 2.11.1(typescript@5.5.3)
+      '@tanstack/form-core': 0.28.0
+      '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       decode-formdata: 0.7.5
       react: 18.3.1
     transitivePeerDependencies:
       - react-dom
       - typescript
 
-  '@tanstack/react-store@0.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-store@0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/store': 0.5.2
+      '@tanstack/store': 0.5.5
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
-
-  '@tanstack/store@0.5.2': {}
 
   '@tanstack/store@0.5.5': {}
 
