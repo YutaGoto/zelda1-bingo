@@ -33,8 +33,8 @@ importers:
         specifier: ^5.0.19
         version: 5.0.19
       '@tanstack/react-form':
-        specifier: ^0.28.0
-        version: 0.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        specifier: ^0.29.1
+        version: 0.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@tanstack/zod-form-adapter':
         specifier: ^0.28.0
         version: 0.28.0(zod@3.23.8)
@@ -1119,8 +1119,8 @@ packages:
   '@tanstack/form-core@0.28.0':
     resolution: {integrity: sha512-HU1MDIZmhB635BJfL73fLAdTVOE1xseYrbMJKywbnwY2cEpIjKcu/5gC656bSI1jF//+NJEWRL68ZgrUevWc2A==}
 
-  '@tanstack/react-form@0.28.0':
-    resolution: {integrity: sha512-BXAnN61gSFFl8XtGnf3CSXD5BZZI3kQbL5AR3zLVE5ingY8mie9rXL+rpBSXsX6lv4STkwviG+oDH5riakIMCg==}
+  '@tanstack/react-form@0.29.1':
+    resolution: {integrity: sha512-MVKjnWo1l0YHd7uTScm24EpNnpion6dCX79SmxVPcFG0De/gfWztyG86KUjjGtRLKEjjtf2Tp8ZMgYrpsKU+/Q==}
     peerDependencies:
       '@tanstack/start': ^1.43.13
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3370,7 +3370,7 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
-  '@tanstack/react-form@0.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@tanstack/react-form@0.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
       '@remix-run/node': 2.11.1(typescript@5.5.4)
       '@tanstack/form-core': 0.28.0
