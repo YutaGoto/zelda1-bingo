@@ -33,8 +33,8 @@ importers:
         specifier: ^5.0.20
         version: 5.0.20
       '@tanstack/react-form':
-        specifier: ^0.29.1
-        version: 0.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        specifier: ^0.29.2
+        version: 0.29.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@tanstack/zod-form-adapter':
         specifier: ^0.29.2
         version: 0.29.2(zod@3.23.8)
@@ -1124,14 +1124,11 @@ packages:
   '@swc/types@0.1.9':
     resolution: {integrity: sha512-qKnCno++jzcJ4lM4NTfYifm1EFSCeIfKiAHAfkENZAV5Kl9PjJIyd2yeeVv6c/2CckuLyv2NmRC5pv6pm2WQBg==}
 
-  '@tanstack/form-core@0.28.0':
-    resolution: {integrity: sha512-HU1MDIZmhB635BJfL73fLAdTVOE1xseYrbMJKywbnwY2cEpIjKcu/5gC656bSI1jF//+NJEWRL68ZgrUevWc2A==}
-
   '@tanstack/form-core@0.29.2':
     resolution: {integrity: sha512-ElWBS4IwR9sJEFuW98RysAQf9DYDzqzq6Po9CFWTmND653FONnv6s+ERyt5EjshZUh26KYz6GO7QUcxfCVpXJg==}
 
-  '@tanstack/react-form@0.29.1':
-    resolution: {integrity: sha512-MVKjnWo1l0YHd7uTScm24EpNnpion6dCX79SmxVPcFG0De/gfWztyG86KUjjGtRLKEjjtf2Tp8ZMgYrpsKU+/Q==}
+  '@tanstack/react-form@0.29.2':
+    resolution: {integrity: sha512-mjfRhFLMZgR4tBUw2xu41OrNoK+yyUdQ+2OZHIT3uNfwSkRUztB6Z71xGRpQFughKuuXUKQ9LvzrH89zqQe/JQ==}
     peerDependencies:
       '@tanstack/start': ^1.43.13
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3383,18 +3380,14 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tanstack/form-core@0.28.0':
-    dependencies:
-      '@tanstack/store': 0.5.5
-
   '@tanstack/form-core@0.29.2':
     dependencies:
       '@tanstack/store': 0.5.5
 
-  '@tanstack/react-form@0.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@tanstack/react-form@0.29.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
       '@remix-run/node': 2.11.1(typescript@5.5.4)
-      '@tanstack/form-core': 0.28.0
+      '@tanstack/form-core': 0.29.2
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       decode-formdata: 0.7.5
       react: 18.3.1
