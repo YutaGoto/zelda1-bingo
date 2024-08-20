@@ -32,6 +32,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { z } from "zod";
 
 import type { Z1Task } from "../types/Z1Task";
+import { BingoCount } from "../ui/BingoCount";
 import { CategorySelect } from "../ui/CategorySelect";
 import { Contact } from "../ui/Contact";
 import { ModeSelect } from "../ui/ModeSelect";
@@ -155,6 +156,10 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
           <Box mb={5}>
             <Stopwatch />
+          </Box>
+
+          <Box mb={5}>
+            <BingoCount hits={hits} />
           </Box>
 
           <form

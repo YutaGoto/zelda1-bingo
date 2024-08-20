@@ -38,6 +38,28 @@ test.describe("firstQuest bingo", () => {
     await expect(seedBadge).toHaveText(seed);
   });
 
+  test("bingo count", async ({ page }) => {
+    await page.goto("/firstQuest/en");
+
+    await expect(page).toHaveURL(/\/firstQuest\/en/);
+    const bingoCount = page.locator("p.chakra-text.bingo-count");
+    await expect(bingoCount).toHaveText("0 lines Bingo");
+  });
+
+  test("show 1 line bingo", async ({ page }) => {
+    await page.goto("/firstQuest/en");
+
+    await expect(page).toHaveURL(/\/firstQuest\/en/);
+    await page.click("div.cell:first-child");
+    await page.click("div.cell:nth-child(2)");
+    await page.click("div.cell:nth-child(3)");
+    await page.click("div.cell:nth-child(4)");
+    await page.click("div.cell:nth-child(5)");
+
+    const bingoCount = page.locator("p.chakra-text.bingo-count");
+    await expect(bingoCount).toHaveText("1 line Bingo");
+  });
+
   test.describe("update seed", () => {
     test("update seed", async ({ page }) => {
       await page.goto("/firstQuest/en");
