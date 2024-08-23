@@ -21,7 +21,7 @@
     "@chakra-ui/styled-system": "^2.9.2",
     "@chakra-ui/system": "^2.6.2",
     "@chakra-ui/theme-tools": "^2.1.2",
-    "@emotion/react": "^11.13.0",
+    "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/noto-sans-jp": "^5.0.20",
     "@tanstack/react-form": "^0.29.2",
