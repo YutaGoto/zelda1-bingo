@@ -1,6 +1,10 @@
 import { Box, Button, Link, SimpleGrid, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { RiBox1Line, RiExternalLinkLine, RiTwitterXLine } from "react-icons/ri";
+import {
+  RiBlueskyLine,
+  RiExternalLinkLine,
+  RiTwitterXLine,
+} from "react-icons/ri";
 import { VscGithubAlt } from "react-icons/vsc";
 
 interface ContactProps {
@@ -37,7 +41,7 @@ export const Contact = ({ mt }: ContactProps) => {
           as={Link}
           variant="outline"
           href="https://bsky.app/profile/yougoto.dev"
-          leftIcon={<RiBox1Line />}
+          leftIcon={<RiBlueskyLine />}
           rightIcon={<RiExternalLinkLine />}
           isExternal
         >
