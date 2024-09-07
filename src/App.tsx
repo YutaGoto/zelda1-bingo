@@ -29,12 +29,12 @@ function App() {
 
   const selectedCategory = useMemo(() => {
     switch (category) {
-      case "secondQuest":
+      case 'secondQuest':
         return "secondQuest";
-      case "swordless":
+      case 'swordless':
         return "swordless";
       default:
-        return "firstQuest";
+          return "firstQuest";
     }
   }, [category]);
 
