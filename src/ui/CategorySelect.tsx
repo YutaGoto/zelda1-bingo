@@ -47,14 +47,6 @@ export const CategorySelect = ({
         >
           Swordless
         </Button>
-        <Button
-          // as={Link}
-          colorScheme="cyan"
-          variant="outline"
-          isDisabled={true}
-        >
-          Randomizer
-        </Button>
       </Grid>
     </Box>
   );

@@ -31,13 +31,6 @@ exports[`active category > 1st quest 1`] = `
       >
         Swordless
       </a>
-      <button
-        class="chakra-button css-4xx2wk"
-        disabled=""
-        type="button"
-      >
-        Randomizer
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -74,13 +67,6 @@ exports[`active category > 2nd quest 1`] = `
       >
         Swordless
       </a>
-      <button
-        class="chakra-button css-4xx2wk"
-        disabled=""
-        type="button"
-      >
-        Randomizer
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -117,13 +103,6 @@ exports[`active category > swordless 1`] = `
       >
         Swordless
       </a>
-      <button
-        class="chakra-button css-4xx2wk"
-        disabled=""
-        type="button"
-      >
-        Randomizer
-      </button>
     </div>
   </div>
 </DocumentFragment>
