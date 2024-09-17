@@ -34,7 +34,7 @@ importers:
         version: 5.0.20
       '@tanstack/react-form':
         specifier: ^0.32.0
-        version: 0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+        version: 0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2)
       '@tanstack/zod-form-adapter':
         specifier: ^0.32.0
         version: 0.32.0(zod@3.23.8)
@@ -94,8 +94,8 @@ importers:
         specifier: ^5.3.0
         version: 5.3.0(react@18.3.1)
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vite:
         specifier: ^5.4.3
         version: 5.4.3(@types/node@22.5.4)
@@ -2039,8 +2039,8 @@ packages:
   turbo-stream@2.3.0:
     resolution: {integrity: sha512-PhEr9mdexoVv+rJkQ3c8TjrN3DUghX37GNJkSMksoPR4KrXIPnM2MnqRt07sViIqX9IdlhrgtTSyjoVOASq6cg==}
 
-  typescript@5.5.4:
-    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+  typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3240,9 +3240,9 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@remix-run/node@2.11.2(typescript@5.5.4)':
+  '@remix-run/node@2.11.2(typescript@5.6.2)':
     dependencies:
-      '@remix-run/server-runtime': 2.11.2(typescript@5.5.4)
+      '@remix-run/server-runtime': 2.11.2(typescript@5.6.2)
       '@remix-run/web-fetch': 4.4.2
       '@web3-storage/multipart-parser': 1.0.0
       cookie-signature: 1.2.1
@@ -3250,13 +3250,13 @@ snapshots:
       stream-slice: 0.1.2
       undici: 6.19.2
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
 
   '@remix-run/router@1.19.1': {}
 
   '@remix-run/router@1.19.2': {}
 
-  '@remix-run/server-runtime@2.11.2(typescript@5.5.4)':
+  '@remix-run/server-runtime@2.11.2(typescript@5.6.2)':
     dependencies:
       '@remix-run/router': 1.19.1
       '@types/cookie': 0.6.0
@@ -3266,7 +3266,7 @@ snapshots:
       source-map: 0.7.4
       turbo-stream: 2.3.0
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
 
   '@remix-run/web-blob@3.1.0':
     dependencies:
@@ -3400,9 +3400,9 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
-  '@tanstack/react-form@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@tanstack/react-form@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2)':
     dependencies:
-      '@remix-run/node': 2.11.2(typescript@5.5.4)
+      '@remix-run/node': 2.11.2(typescript@5.6.2)
       '@tanstack/form-core': 0.32.0
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       decode-formdata: 0.8.0
@@ -4278,7 +4278,7 @@ snapshots:
 
   turbo-stream@2.3.0: {}
 
-  typescript@5.5.4: {}
+  typescript@5.6.2: {}
 
   undici-types@6.19.8: {}
 
