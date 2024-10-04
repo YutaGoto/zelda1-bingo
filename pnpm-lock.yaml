@@ -30,8 +30,8 @@ importers:
         specifier: ^11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.9)(react@18.3.1))(@types/react@18.3.9)(react@18.3.1)
       '@fontsource-variable/noto-sans-jp':
-        specifier: ^5.0.20
-        version: 5.0.20
+        specifier: ^5.1.0
+        version: 5.1.0
       '@tanstack/react-form':
         specifier: ^0.32.0
         version: 0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2)
@@ -900,8 +900,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource-variable/noto-sans-jp@5.0.20':
-    resolution: {integrity: sha512-TCwU1jA4D2tUhCwBDbSlz7m+Y5IsTa3NUQRJIFusMecI1g1h4e+xUBLNBdUMr1B270cz2W/UkR65gtoJ+W0nJg==}
+  '@fontsource-variable/noto-sans-jp@5.1.0':
+    resolution: {integrity: sha512-VmEW0dlHsC0tQOlZlzcrUj+9HL73pANKneMrsZD8X6Jg3XhysOYY6R2VRGO4cTYwp5iVznt1crzGUEWM+/xQuA==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -3145,7 +3145,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@fontsource-variable/noto-sans-jp@5.0.20': {}
+  '@fontsource-variable/noto-sans-jp@5.1.0': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
