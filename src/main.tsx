@@ -10,17 +10,10 @@ import "@fontsource-variable/noto-sans-jp";
 import { Analytics } from "@vercel/analytics/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  Navigate,
-  Outlet,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
 
-import App from "./App.tsx";
-import Score from "./Score.tsx";
 import "./i18n.ts";
 import "./index.css";
+import { Z1BingoRoutes } from "./routes";
 
 const config: ThemeConfig = {
   initialColorMode: "system",
@@ -42,40 +35,11 @@ const theme = extendTheme({
   },
 });
 
-const url = new URL(location.href);
-const params = new URLSearchParams(url.search);
-const paramsSeed = params.get("seed");
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Outlet,
-    children: [
-      {
-        path: "/score/:category/:lang",
-        Component: Score,
-      },
-      {
-        path: "/:category/:lang",
-        Component: App,
-      },
-      {
-        path: "/:lang",
-        element: <Navigate to={`/firstQuest/en?seed=${paramsSeed}`} />,
-      },
-      {
-        path: "/",
-        element: <Navigate to={`/firstQuest/en?seed=${paramsSeed}`} />,
-      },
-    ],
-  },
-]);
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={config.initialColorMode} />
-      <RouterProvider router={router} />
+      <Z1BingoRoutes />
       <Analytics />
     </ChakraProvider>
   </React.StrictMode>,
