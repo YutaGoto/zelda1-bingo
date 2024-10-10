@@ -2,6 +2,7 @@
 
 ![bingo](/public/bingo.png)
 
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/zelda1-bingo)
 [![biome](https://github.com/YutaGoto/zelda1-bingo/actions/workflows/biome.yml/badge.svg)](https://github.com/YutaGoto/zelda1-bingo/actions)
 [![vitest](https://github.com/YutaGoto/zelda1-bingo/actions/workflows/vitest.yml/badge.svg)](https://github.com/YutaGoto/zelda1-bingo/actions)
 [![CodeQL](https://github.com/YutaGoto/zelda1-bingo/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/YutaGoto/zelda1-bingo/actions/workflows/github-code-scanning/codeql)
