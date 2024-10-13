@@ -8,7 +8,8 @@ exports[`Snapshot 1`] = `
     <button
       aria-disabled="true"
       aria-label="decrement"
-      class="chakra-button css-p7mkev"
+      class="chakra-button css-50f1ws"
+      disabled=""
       role="button"
       tabindex="-1"
       type="button"
@@ -47,7 +48,7 @@ exports[`Snapshot 1`] = `
     />
     <button
       aria-label="increment"
-      class="chakra-button css-p7mkev"
+      class="chakra-button css-50f1ws"
       role="button"
       tabindex="-1"
       type="button"
