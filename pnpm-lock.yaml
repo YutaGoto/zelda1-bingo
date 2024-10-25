@@ -21,8 +21,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(react@18.3.1))(react@18.3.1)
       '@chakra-ui/theme-tools':
-        specifier: ^2.1.2
-        version: 2.1.2(@chakra-ui/styled-system@2.12.0(react@18.3.1))
+        specifier: ^2.2.6
+        version: 2.2.6(@chakra-ui/styled-system@2.12.0(react@18.3.1))(react@18.3.1)
       '@emotion/react':
         specifier: ^11.13.3
         version: 11.13.3(@types/react@18.3.11)(react@18.3.1)
@@ -1972,13 +1972,6 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.2
 
-  '@chakra-ui/theme-tools@2.1.2(@chakra-ui/styled-system@2.12.0(react@18.3.1))':
-    dependencies:
-      '@chakra-ui/anatomy': 2.2.2
-      '@chakra-ui/shared-utils': 2.0.5
-      '@chakra-ui/styled-system': 2.12.0(react@18.3.1)
-      color2k: 2.0.3
-
   '@chakra-ui/theme-tools@2.1.2(@chakra-ui/styled-system@2.9.2)':
     dependencies:
       '@chakra-ui/anatomy': 2.2.2
@@ -1990,6 +1983,15 @@ snapshots:
     dependencies:
       '@chakra-ui/anatomy': 2.3.4
       '@chakra-ui/styled-system': 2.11.2(react@18.3.1)
+      '@chakra-ui/utils': 2.2.2(react@18.3.1)
+      color2k: 2.0.3
+    transitivePeerDependencies:
+      - react
+
+  '@chakra-ui/theme-tools@2.2.6(@chakra-ui/styled-system@2.12.0(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@chakra-ui/anatomy': 2.3.4
+      '@chakra-ui/styled-system': 2.12.0(react@18.3.1)
       '@chakra-ui/utils': 2.2.2(react@18.3.1)
       color2k: 2.0.3
     transitivePeerDependencies:
