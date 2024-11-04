@@ -7,10 +7,10 @@ export const system = createSystem(defaultConfig, {
         heading: {
           value: `'Noto Sans JP Variable', sans-serif`,
         },
-        body:{
+        body: {
           value: `'Noto Sans JP Variable', sans-serif`,
         },
       },
-    }
-  }
-})
+    },
+  },
+});
