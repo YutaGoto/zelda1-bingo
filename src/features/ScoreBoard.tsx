@@ -1,40 +1,29 @@
 import {
-  CopyIcon,
-  MoonIcon,
-  RepeatIcon,
-  Search2Icon,
-  SunIcon,
-} from "@chakra-ui/icons";
-import {
   Badge,
   Box,
-  Button,
-  Checkbox,
   Container,
   Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
   HStack,
   Heading,
-  IconButton,
   NumberInput,
-  NumberInputField,
   Select,
   SimpleGrid,
   Spacer,
-  StackDivider,
   Text,
   VStack,
-  useColorMode,
-  useToast,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { type ChangeEvent, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaCopy, FaSearch } from "react-icons/fa";
+import { FaRepeat } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
 import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { toaster } from "@/components/ui/toaster";
 
 import type { Z1Task } from "../types/Z1Task";
 import { CategorySelect } from "../ui/CategorySelect";
@@ -60,8 +49,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
     return sortByScore(taskList);
   }, [taskList]);
 
-  const { colorMode, toggleColorMode } = useColorMode();
-  const toast = useToast();
+  // const { colorMode, toggleColorMode } = useColorMode();
   const { handleSubmit, state, Field, Subscribe } = useForm({
     defaultValues: {
       seed: seed,
@@ -95,7 +83,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
           return acc + sortedTasks[i].score;
         }
         return acc;
-      }, 0),
+      }, 0)
     );
     setHits(newHits);
   };
@@ -142,11 +130,11 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
         <Spacer />
 
         <Box>
-          <IconButton
+          {/* <IconButton
             aria-label="change color mode"
             onClick={toggleColorMode}
             icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-          />
+          /> */}
         </Box>
       </Box>
 
@@ -158,9 +146,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             </Text>
           </Box>
           <VStack
-            divider={<StackDivider borderColor="gray.200" />}
-            spacing={2}
-            marginTop={2}
+            separator={<StackDivider borderColor="gray.200" />}
             align="stretch"
           >
             {sortedTasks.map((task, i) => (
@@ -204,9 +190,9 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                 children={(field) => (
                   <FormControl isInvalid={field.state.meta.errors.length > 0}>
                     <FormLabel>Seed</FormLabel>
-                    <NumberInput
+                    <NumberInput.Root
                       name={field.name}
-                      defaultValue={field.state.value}
+                      defaultValue={String(field.state.value)}
                       min={1}
                       max={9999}
                     >
@@ -217,7 +203,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                         }
                         w={24}
                       />
-                    </NumberInput>
+                    </NumberInput.Root>
                     <FormErrorMessage>
                       {field.state.meta.errors.join(", ")}
                     </FormErrorMessage>
@@ -231,7 +217,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                     mt={5}
                     variant="outline"
                     colorScheme="teal"
-                    leftIcon={<Search2Icon />}
+                    leftIcon={<FaSearch />}
                     type="submit"
                   >
                     {isSubmitting ? "..." : t("updateSeed")}
@@ -243,49 +229,47 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               <Button
                 colorScheme="purple"
                 variant="outline"
-                leftIcon={<CopyIcon />}
                 onClick={() => {
                   copyText(state.values.seed);
-                  toast({
+                  toaster({
                     title: t("copiedSeed"),
                     status: "success",
                     isClosable: true,
                   });
                 }}
               >
-                {t("copySeed")}
+                <FaCopy /> {t("copySeed")}
               </Button>
             </Box>
             <Box mt={5}>
               <Button
                 colorScheme="purple"
                 variant="outline"
-                leftIcon={<CopyIcon />}
                 onClick={() => {
                   copyText(location.href);
-                  toast({
+                  toaster({
                     title: t("copiedCurrentUrl"),
                     status: "success",
                     isClosable: true,
                   });
                 }}
               >
-                {t("copyCurrentUrl")}
+                <FaCopy /> {t("copyCurrentUrl")}
               </Button>
             </Box>
             <Box mt={5}>
               <Button
                 colorScheme="purple"
                 variant="outline"
-                leftIcon={<CopyIcon />}
+                leftIcon={<FaCopy />}
                 onClick={() => {
                   copyText(
                     `${location.href.replace(
                       `seed=${seed}`,
-                      `seed=${state.values.seed}`,
-                    )}`,
+                      `seed=${state.values.seed}`
+                    )}`
                   );
-                  toast({
+                  toaster({
                     title: t("copiedNewSeedUrl"),
                     status: "success",
                     isClosable: true,
@@ -299,7 +283,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               <Button
                 colorScheme="yellow"
                 variant="outline"
-                leftIcon={<RepeatIcon />}
+                leftIcon={<FaRepeat />}
                 onClick={() => resetSeed()}
               >
                 {t("resetSeed")}
