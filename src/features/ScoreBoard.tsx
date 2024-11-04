@@ -23,6 +23,7 @@ import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Field } from "@/components/ui/field";
 import { toaster } from "@/components/ui/toaster";
 
 import type { Z1Task } from "../types/Z1Task";
@@ -83,7 +84,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
           return acc + sortedTasks[i].score;
         }
         return acc;
-      }, 0)
+      }, 0),
     );
     setHits(newHits);
   };
@@ -145,10 +146,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               {t("currentPoint")}: {currentPoint}pts
             </Text>
           </Box>
-          <VStack
-            separator={<StackDivider borderColor="gray.200" />}
-            align="stretch"
-          >
+          <VStack align="stretch">
             {sortedTasks.map((task, i) => (
               <Box key={task.name.en}>
                 <Checkbox onChange={() => toggle(i)}>
@@ -217,10 +215,15 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                     mt={5}
                     variant="outline"
                     colorScheme="teal"
-                    leftIcon={<FaSearch />}
                     type="submit"
                   >
-                    {isSubmitting ? "..." : t("updateSeed")}
+                    {isSubmitting ? (
+                      "..."
+                    ) : (
+                      <>
+                        <FaSearch /> {t("updateSeed")}
+                      </>
+                    )}
                   </Button>
                 )}
               />
@@ -231,10 +234,9 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                 variant="outline"
                 onClick={() => {
                   copyText(state.values.seed);
-                  toaster({
+                  toaster.create({
                     title: t("copiedSeed"),
-                    status: "success",
-                    isClosable: true,
+                    type: "success",
                   });
                 }}
               >
@@ -247,10 +249,9 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                 variant="outline"
                 onClick={() => {
                   copyText(location.href);
-                  toaster({
+                  toaster.create({
                     title: t("copiedCurrentUrl"),
-                    status: "success",
-                    isClosable: true,
+                    type: "success",
                   });
                 }}
               >
@@ -261,32 +262,29 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               <Button
                 colorScheme="purple"
                 variant="outline"
-                leftIcon={<FaCopy />}
                 onClick={() => {
                   copyText(
                     `${location.href.replace(
                       `seed=${seed}`,
-                      `seed=${state.values.seed}`
-                    )}`
+                      `seed=${state.values.seed}`,
+                    )}`,
                   );
-                  toaster({
+                  toaster.create({
                     title: t("copiedNewSeedUrl"),
-                    status: "success",
-                    isClosable: true,
+                    type: "success",
                   });
                 }}
               >
-                {t("copyNewSeedUrl")}
+                <FaCopy /> {t("copyNewSeedUrl")}
               </Button>
             </Box>
             <Box mt={5}>
               <Button
                 colorScheme="yellow"
                 variant="outline"
-                leftIcon={<FaRepeat />}
                 onClick={() => resetSeed()}
               >
-                {t("resetSeed")}
+                <FaRepeat /> {t("resetSeed")}
               </Button>
             </Box>
           </Box>
