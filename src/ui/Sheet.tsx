@@ -26,17 +26,31 @@ export const Sheet = ({
       templateColumns="30px repeat(5, 140px)"
       gap={0}
     >
-      <Center width={30} height={30} py={1} px={1} border="1px">
+      <Center width={30} height={30} py={1} px={1} borderWidth="1px">
         <TbBackslash />
       </Center>
       {["A", "B", "C", "D", "E"].map((row) => (
-        <Center key={row} width={140} height={30} py={1} px={2} border="1px">
+        <Center
+          key={row}
+          width={140}
+          height={30}
+          py={1}
+          px={2}
+          borderWidth="1px"
+        >
           {row}
         </Center>
       ))}
       <Box>
         {[1, 2, 3, 4, 5].map((col) => (
-          <Center key={col} width={30} height={140} py={1} px={2} border="1px">
+          <Center
+            key={col}
+            width={30}
+            height={140}
+            py={1}
+            px={2}
+            borderWidth="1px"
+          >
             {col}
           </Center>
         ))}

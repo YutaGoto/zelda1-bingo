@@ -2,9 +2,11 @@ import {
   Badge,
   Box,
   Container,
+  Fieldset,
   Flex,
   HStack,
   Heading,
+  Input,
   NumberInput,
   Select,
   SimpleGrid,
@@ -186,26 +188,24 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                   onBlur: z.number().int().min(1).max(9999),
                 }}
                 children={(field) => (
-                  <FormControl isInvalid={field.state.meta.errors.length > 0}>
-                    <FormLabel>Seed</FormLabel>
-                    <NumberInput.Root
-                      name={field.name}
-                      defaultValue={String(field.state.value)}
-                      min={1}
-                      max={9999}
+                  <Fieldset.Content>
+                    <Field
+                      name="seed"
+                      invalid={field.state.meta.errors.length > 0}
                     >
-                      <NumberInputField
-                        onBlur={field.handleBlur}
-                        onChange={(e) =>
-                          field.handleChange(Number(e.target.value))
-                        }
-                        w={24}
+                      <Input
+                        type="number"
+                        name={field.name}
+                        defaultValue={String(field.state.value)}
+                        min={1}
+                        max={9999}
                       />
-                    </NumberInput.Root>
-                    <FormErrorMessage>
+                    </Field>
+
+                    <Fieldset.HelperText>
                       {field.state.meta.errors.join(", ")}
-                    </FormErrorMessage>
-                  </FormControl>
+                    </Fieldset.HelperText>
+                  </Fieldset.Content>
                 )}
               />
               <Subscribe
@@ -293,14 +293,14 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
 
           <SimpleGrid columns={{ lg: 1, md: 2 }} spacing={2} mt={5}>
             <FormControl>
-              <FormLabel>{t("language")}</FormLabel>
+              <Fieldset.Legend>{t("language")}</Fieldset.Legend>
               <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
                 <option value="ja">日本語</option>
                 <option value="en">English</option>
               </Select>
             </FormControl>
             <FormControl>
-              <FormLabel>{t("messageLanguage")}</FormLabel>
+              <Fieldset.Legend>{t("messageLanguage")}</Fieldset.Legend>
               <Select
                 value={messageLang}
                 onChange={(e) => setMessageLang(e.target.value)}

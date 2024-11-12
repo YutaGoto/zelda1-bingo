@@ -1,28 +1,14 @@
 import {
-  CopyIcon,
-  MoonIcon,
-  RepeatIcon,
-  Search2Icon,
-  SunIcon,
-} from "@chakra-ui/icons";
-import {
   Badge,
   Box,
   Button,
   Container,
   Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
   Heading,
-  IconButton,
   NumberInput,
-  NumberInputField,
   Select,
   SimpleGrid,
   Spacer,
-  useColorMode,
-  useToast,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
@@ -50,8 +36,8 @@ const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 
 export const Bingo = ({ category, seed, taskList }: BingoProps) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const toast = useToast();
+  // const { colorMode, toggleColorMode } = useColorMode();
+  // const toast = useToast();
   const { handleSubmit, state, Field, Subscribe } = useForm({
     defaultValues: {
       seed: seed,
@@ -135,13 +121,13 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
 
         <Spacer />
 
-        <Box>
+        {/* <Box>
           <IconButton
             aria-label="change color mode"
             onClick={toggleColorMode}
             icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
           />
-        </Box>
+        </Box> */}
       </Box>
 
       <Box display={{ lg: "flex" }}>
@@ -255,8 +241,8 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 copyText(
                   `${location.href.replace(
                     `seed=${seed}`,
-                    `seed=${state.values.seed}`,
-                  )}`,
+                    `seed=${state.values.seed}`
+                  )}`
                 );
                 toast({
                   title: t("copiedNewSeedUrl"),
