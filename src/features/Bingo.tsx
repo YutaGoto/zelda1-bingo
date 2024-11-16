@@ -14,9 +14,11 @@ import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { type ChangeEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { z } from "zod";
 
+import { toaster } from "@/components/ui/toaster";
 import type { Z1Task } from "../types/Z1Task";
 import { BingoCount } from "../ui/BingoCount";
 import { CategorySelect } from "../ui/CategorySelect";
@@ -202,70 +204,81 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             <Button
               colorScheme="purple"
               variant="outline"
-              leftIcon={<CopyIcon />}
               onClick={() => {
                 copyText(state.values.seed);
-                toast({
+                toaster.create({
                   title: t("copiedSeed"),
-                  status: "success",
-                  isClosable: true,
+                  type: "success",
+                  action: {
+                    label: t("close"),
+                    onClick: () => {
+                      toaster.dismiss();
+                    },
+                  },
                 });
               }}
             >
-              {t("copySeed")}
+              <FaCopy /> {t("copySeed")}
             </Button>
           </Box>
           <Box mt={5}>
             <Button
               colorScheme="purple"
               variant="outline"
-              leftIcon={<CopyIcon />}
               onClick={() => {
                 copyText(location.href);
-                toast({
+                toaster.create({
                   title: t("copiedCurrentUrl"),
-                  status: "success",
-                  isClosable: true,
+                  type: "success",
+                  action: {
+                    label: t("close"),
+                    onClick: () => {
+                      toaster.dismiss();
+                    },
+                  },
                 });
               }}
             >
-              {t("copyCurrentUrl")}
+              <FaCopy /> {t("copyCurrentUrl")}
             </Button>
           </Box>
           <Box mt={5}>
             <Button
               colorScheme="purple"
               variant="outline"
-              leftIcon={<CopyIcon />}
               onClick={() => {
                 copyText(
                   `${location.href.replace(
                     `seed=${seed}`,
-                    `seed=${state.values.seed}`
-                  )}`
+                    `seed=${state.values.seed}`,
+                  )}`,
                 );
-                toast({
+                toaster.create({
                   title: t("copiedNewSeedUrl"),
-                  status: "success",
-                  isClosable: true,
+                  type: "success",
+                  action: {
+                    label: t("close"),
+                    onClick: () => {
+                      toaster.dismiss();
+                    },
+                  },
                 });
               }}
             >
-              {t("copyNewSeedUrl")}
+              <FaCopy /> {t("copyNewSeedUrl")}
             </Button>
           </Box>
           <Box mt={5}>
             <Button
               colorScheme="yellow"
               variant="outline"
-              leftIcon={<RepeatIcon />}
               onClick={() => resetSeed()}
             >
-              {t("resetSeed")}
+              <FaCopy /> {t("resetSeed")}
             </Button>
           </Box>
 
-          <SimpleGrid columns={{ lg: 1, md: 2 }} spacing={2} mt={5}>
+          <SimpleGrid columns={{ lg: 1, md: 2 }} gap={2} mt={5}>
             <FormControl>
               <FormLabel>{t("language")}</FormLabel>
               <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>

@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, Text } from "@chakra-ui/react";
+import { Box, Grid, Link, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 
 interface CategorySelectProps {
@@ -23,30 +23,27 @@ export const CategorySelect = ({
         gap={2}
         mt={2}
       >
-        <Button
-          as={Link}
+        <Link
           href={`${modePath}/firstQuest/${lang}`}
-          variant={category === "firstQuest" ? "solid" : "outline"}
+          variant={category === "firstQuest" ? "plain" : "underline"}
           colorScheme="blue"
         >
           1st Quest
-        </Button>
-        <Button
-          as={Link}
+        </Link>
+        <Link
           href={`${modePath}/secondQuest/${lang}`}
           colorScheme="orange"
-          variant={category === "secondQuest" ? "solid" : "outline"}
+          variant={category === "secondQuest" ? "plain" : "underline"}
         >
           2nd Quest
-        </Button>
-        <Button
-          as={Link}
+        </Link>
+        <Link
           href={`${modePath}/swordless/${lang}`}
           colorScheme="pink"
-          variant={category === "swordless" ? "solid" : "outline"}
+          variant={category === "swordless" ? "plain" : "underline"}
         >
           Swordless
-        </Button>
+        </Link>
       </Grid>
     </Box>
   );
