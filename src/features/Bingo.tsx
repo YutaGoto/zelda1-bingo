@@ -5,10 +5,15 @@ import {
   Container,
   Flex,
   Heading,
-  NumberInput,
-  Select,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectRoot,
+  SelectTrigger,
+  SelectValueText,
   SimpleGrid,
   Spacer,
+  createListCollection,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
@@ -18,7 +23,7 @@ import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { z } from "zod";
 
-import { toaster } from "@/components/ui/toaster";
+import { toaster } from "../components/ui/toaster";
 import type { Z1Task } from "../types/Z1Task";
 import { BingoCount } from "../ui/BingoCount";
 import { CategorySelect } from "../ui/CategorySelect";
@@ -56,6 +61,13 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
     validatorAdapter: zodValidator(),
   });
 
+  const languages = createListCollection({
+    items: [
+      { value: "ja", label: "日本語" },
+      { value: "en", label: "English" },
+    ],
+  });
+
   const [hits, setHits] = useState([
     [false, false, false, false, false],
     [false, false, false, false, false],
@@ -89,11 +101,11 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
     location.reload();
   };
 
-  const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === lang) return;
+  const onChangeLang = (e: string[]) => {
+    if (e[0] === lang) return;
 
-    setMessageLang(e.target.value);
-    navigate(`/${category}/${e.target.value}?seed=${seed}`);
+    setMessageLang(e[0]);
+    navigate(`/${category}/${e[0]}?seed=${seed}`);
   };
 
   useEffect(() => {
@@ -150,7 +162,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             <BingoCount hits={hits} />
           </Box>
 
-          <form
+          {/* <form
             onSubmit={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -174,7 +186,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                     <NumberInputField
                       onBlur={field.handleBlur}
                       onChange={(e) =>
-                        field.handleChange(Number(e.target.value))
+                        field.handleChange(Number(e[0]))
                       }
                       w={24}
                     />
@@ -199,7 +211,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 </Button>
               )}
             />
-          </form>
+          </form> */}
           <Box mt={5}>
             <Button
               colorScheme="purple"
@@ -279,23 +291,43 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
           </Box>
 
           <SimpleGrid columns={{ lg: 1, md: 2 }} gap={2} mt={5}>
-            <FormControl>
-              <FormLabel>{t("language")}</FormLabel>
-              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-              </Select>
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("messageLanguage")}</FormLabel>
-              <Select
-                value={messageLang}
-                onChange={(e) => setMessageLang(e.target.value)}
-              >
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-              </Select>
-            </FormControl>
+            <SelectRoot
+              onValueChange={(e) => onChangeLang(e.value)}
+              collection={languages}
+            >
+              <SelectLabel>{t("language")}</SelectLabel>
+              <SelectTrigger>
+                <SelectValueText>
+                  {lang === "en" ? "English" : "日本語"}
+                </SelectValueText>
+              </SelectTrigger>
+              <SelectContent>
+                {languages.items.map((item) => (
+                  <SelectItem key={item.value} item={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectRoot>
+
+            <SelectRoot
+              onValueChange={(e) => setMessageLang(e.value[0])}
+              collection={languages}
+            >
+              <SelectLabel>{t("messageLanguage")}</SelectLabel>
+              <SelectTrigger>
+                <SelectValueText>
+                  {messageLang === "en" ? "English" : "日本語"}
+                </SelectValueText>
+              </SelectTrigger>
+              <SelectContent>
+                {languages.items.map((item) => (
+                  <SelectItem key={item.value} item={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectRoot>
           </SimpleGrid>
 
           <CategorySelect mode="bingo" lang={lang} category={category} mt={5} />

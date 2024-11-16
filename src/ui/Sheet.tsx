@@ -1,4 +1,4 @@
-import { Box, Center, Grid } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem } from "@chakra-ui/react";
 import { TbBackslash } from "react-icons/tb";
 import type { Z1Task } from "../types/Z1Task";
 import { Cell } from "./Cell";
@@ -19,18 +19,14 @@ export const Sheet = ({
   toggle,
 }: SheetProps) => {
   return (
-    <Grid
-      id="bingoCard"
-      w="730"
-      h="730"
-      templateColumns="30px repeat(5, 140px)"
-      gap={0}
-    >
-      <Center width={30} height={30} py={1} px={1} borderWidth="1px">
-        <TbBackslash />
-      </Center>
+    <Grid id="bingoCard" templateColumns="30px repeat(5, 140px)" gap={0}>
+      <GridItem width={30} height={30} py={1} px={1} borderWidth="1px">
+        <Center>
+          <TbBackslash />
+        </Center>
+      </GridItem>
       {["A", "B", "C", "D", "E"].map((row) => (
-        <Center
+        <GridItem
           key={row}
           width={140}
           height={30}
@@ -38,12 +34,12 @@ export const Sheet = ({
           px={2}
           borderWidth="1px"
         >
-          {row}
-        </Center>
+          <Center>{row}</Center>
+        </GridItem>
       ))}
       <Box>
         {[1, 2, 3, 4, 5].map((col) => (
-          <Center
+          <GridItem
             key={col}
             width={30}
             height={140}
@@ -51,12 +47,12 @@ export const Sheet = ({
             px={2}
             borderWidth="1px"
           >
-            {col}
-          </Center>
+            <Center>{col}</Center>
+          </GridItem>
         ))}
       </Box>
       {hits.map((row, i) => (
-        <div key={i}>
+        <GridItem key={i}>
           {row.map((hit, j) => (
             <Cell
               key={j}
@@ -67,7 +63,7 @@ export const Sheet = ({
               onClick={() => toggle(i, j)}
             />
           ))}
-        </div>
+        </GridItem>
       ))}
     </Grid>
   );
