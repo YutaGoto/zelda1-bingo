@@ -17,13 +17,17 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
-import { type ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import { z } from "zod";
 
-import { toaster } from "../components/ui/toaster";
+import {
+  NumberInputField,
+  NumberInputLabel,
+  NumberInputRoot,
+} from "../components/ui/number-input";
+import { Toaster, toaster } from "../components/ui/toaster";
 import type { Z1Task } from "../types/Z1Task";
 import { BingoCount } from "../ui/BingoCount";
 import { CategorySelect } from "../ui/CategorySelect";
@@ -44,8 +48,11 @@ const params = new URLSearchParams(url.search);
 
 export const Bingo = ({ category, seed, taskList }: BingoProps) => {
   // const { colorMode, toggleColorMode } = useColorMode();
-  // const toast = useToast();
-  const { handleSubmit, state, Field, Subscribe } = useForm({
+  const {
+    handleSubmit,
+    state,
+    Field: FormField,
+  } = useForm({
     defaultValues: {
       seed: seed,
     },
@@ -162,56 +169,35 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             <BingoCount hits={hits} />
           </Box>
 
-          {/* <form
+          <form
             onSubmit={(e) => {
               e.preventDefault();
               e.stopPropagation();
               void handleSubmit();
             }}
           >
-            <Field
+            <FormField
               name="seed"
-              validators={{
-                onBlur: z.number().int().min(1).max(9999),
-              }}
               children={(field) => (
-                <FormControl isInvalid={field.state.meta.errors.length > 0}>
-                  <FormLabel>Seed</FormLabel>
-                  <NumberInput
-                    name={field.name}
-                    defaultValue={field.state.value}
-                    min={1}
-                    max={9999}
-                  >
-                    <NumberInputField
-                      onBlur={field.handleBlur}
-                      onChange={(e) =>
-                        field.handleChange(Number(e[0]))
-                      }
-                      w={24}
-                    />
-                  </NumberInput>
-                  <FormErrorMessage>
-                    {field.state.meta.errors.join(", ")}
-                  </FormErrorMessage>
-                </FormControl>
-              )}
-            />
-            <Subscribe
-              selector={(state) => [state.isSubmitting]}
-              children={([isSubmitting]) => (
-                <Button
-                  mt={5}
-                  variant="outline"
-                  colorScheme="teal"
-                  leftIcon={<Search2Icon />}
-                  type="submit"
+                <NumberInputRoot
+                  min={1}
+                  max={9999}
+                  name={field.name}
+                  defaultValue={String(field.state.value)}
+                  onValueChange={(e) => {
+                    field.handleChange(Number(e.value));
+                  }}
                 >
-                  {isSubmitting ? "..." : t("updateSeed")}
-                </Button>
+                  <NumberInputLabel>Seed</NumberInputLabel>
+                  <NumberInputField />
+                </NumberInputRoot>
               )}
             />
-          </form> */}
+
+            <Button mt={5} variant="outline" colorScheme="teal" type="submit">
+              {t("updateSeed")}
+            </Button>
+          </form>
           <Box mt={5}>
             <Button
               colorScheme="purple"
@@ -221,12 +207,6 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 toaster.create({
                   title: t("copiedSeed"),
                   type: "success",
-                  action: {
-                    label: t("close"),
-                    onClick: () => {
-                      toaster.dismiss();
-                    },
-                  },
                 });
               }}
             >
@@ -242,12 +222,6 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 toaster.create({
                   title: t("copiedCurrentUrl"),
                   type: "success",
-                  action: {
-                    label: t("close"),
-                    onClick: () => {
-                      toaster.dismiss();
-                    },
-                  },
                 });
               }}
             >
@@ -262,18 +236,12 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 copyText(
                   `${location.href.replace(
                     `seed=${seed}`,
-                    `seed=${state.values.seed}`,
-                  )}`,
+                    `seed=${state.values.seed}`
+                  )}`
                 );
                 toaster.create({
                   title: t("copiedNewSeedUrl"),
                   type: "success",
-                  action: {
-                    label: t("close"),
-                    onClick: () => {
-                      toaster.dismiss();
-                    },
-                  },
                 });
               }}
             >
@@ -336,6 +304,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
           <Contact mt={5} />
         </Box>
       </Box>
+      <Toaster />
     </Container>
   );
 };
