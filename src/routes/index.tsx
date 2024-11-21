@@ -16,10 +16,10 @@ const router = createBrowserRouter([
     path: "/",
     Component: Outlet,
     children: [
-      // {
-      //   path: "/score/:category/:lang",
-      //   Component: Score,
-      // },
+      {
+        path: "/score/:category/:lang",
+        Component: Score,
+      },
       {
         path: "/:category/:lang",
         Component: App,

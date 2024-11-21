@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Text } from "@chakra-ui/react";
+import { Box, Button, Group, Text } from "@chakra-ui/react";
 
 import { convertToTime } from "../utils/convertToTime";
 import { useCountdownTimer } from "../utils/useCountdownTimer";
@@ -15,12 +15,12 @@ export const CountdownTimer = () => {
         </Text>
       </Box>
 
-      <ButtonGroup>
+      <Group>
         <Button
           variant="outline"
           colorScheme="cyan"
           onClick={() => handleStart()}
-          isDisabled={isRunning}
+          disabled={isRunning}
         >
           Start
         </Button>
@@ -38,7 +38,7 @@ export const CountdownTimer = () => {
         >
           Reset
         </Button>
-      </ButtonGroup>
+      </Group>
     </Box>
   );
 };

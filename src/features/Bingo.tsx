@@ -22,9 +22,9 @@ import { useTranslation } from "react-i18next";
 import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { Field } from "../components/ui/field";
 import {
   NumberInputField,
-  NumberInputLabel,
   NumberInputRoot,
 } from "../components/ui/number-input";
 import { Toaster, toaster } from "../components/ui/toaster";
@@ -179,18 +179,19 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             <FormField
               name="seed"
               children={(field) => (
-                <NumberInputRoot
-                  min={1}
-                  max={9999}
-                  name={field.name}
-                  defaultValue={String(field.state.value)}
-                  onValueChange={(e) => {
-                    field.handleChange(Number(e.value));
-                  }}
-                >
-                  <NumberInputLabel>Seed</NumberInputLabel>
-                  <NumberInputField />
-                </NumberInputRoot>
+                <Field label="Seed">
+                  <NumberInputRoot
+                    min={1}
+                    max={9999}
+                    name={field.name}
+                    defaultValue={String(field.state.value)}
+                    onValueChange={(e) => {
+                      field.handleChange(Number(e.value));
+                    }}
+                  >
+                    <NumberInputField />
+                  </NumberInputRoot>
+                </Field>
               )}
             />
 
@@ -236,8 +237,8 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                 copyText(
                   `${location.href.replace(
                     `seed=${seed}`,
-                    `seed=${state.values.seed}`
-                  )}`
+                    `seed=${state.values.seed}`,
+                  )}`,
                 );
                 toaster.create({
                   title: t("copiedNewSeedUrl"),
