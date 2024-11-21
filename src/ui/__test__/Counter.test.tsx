@@ -10,7 +10,7 @@ const setup = () => {
 };
 
 test("Counter", () => {
-  render(<Counter goal={1} marginTop={0} />);
+  render(<Counter goal={1} />);
 
   expect(screen.getByDisplayValue("0")).toBeTruthy();
   expect(screen.getByLabelText("increment")).toBeTruthy();
@@ -18,13 +18,13 @@ test("Counter", () => {
 });
 
 test("Snapshot", () => {
-  const { asFragment } = render(<Counter goal={2} marginTop={0} />);
+  const { asFragment } = render(<Counter goal={2} />);
   expect(asFragment()).toMatchSnapshot();
 });
 
 test("Increment", async () => {
   const { user } = setup();
-  render(<Counter goal={1} marginTop={0} />);
+  render(<Counter goal={1} />);
 
   await user.click(screen.getByLabelText("increment"));
   expect(screen.getByDisplayValue("1")).toBeTruthy();
@@ -32,7 +32,7 @@ test("Increment", async () => {
 
 test("Decrement", async () => {
   const { user } = setup();
-  render(<Counter goal={1} marginTop={0} />);
+  render(<Counter goal={1} />);
 
   await user.click(screen.getByLabelText("increment"));
   await user.click(screen.getByLabelText("decrement"));
@@ -41,7 +41,7 @@ test("Decrement", async () => {
 
 test("not Increment over goal", async () => {
   const { user } = setup();
-  render(<Counter goal={1} marginTop={0} />);
+  render(<Counter goal={1} />);
 
   await user.click(screen.getByLabelText("increment"));
   await user.click(screen.getByLabelText("increment"));
