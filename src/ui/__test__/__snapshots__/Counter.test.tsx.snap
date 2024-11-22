@@ -1,0 +1,88 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot 1`] = `
+<DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
+  <div
+    class="chakra-number-input__root css-0"
+    data-part="root"
+    data-scope="number-input"
+    dir="ltr"
+    id="number-input::r1:"
+  >
+    <div
+      class="chakra-stack css-1x0y7ph"
+    >
+      <button
+        aria-controls="number-input::r1::input"
+        aria-label="decrease value"
+        class="chakra-button chakra-number-input__decrementTrigger css-1tayti9"
+        data-disabled=""
+        data-part="decrement-trigger"
+        data-scope="number-input"
+        dir="ltr"
+        disabled=""
+        id="number-input::r1::dec"
+        tabindex="-1"
+        type="button"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12h14"
+          />
+        </svg>
+      </button>
+      <span
+        class="chakra-number-input__valueText css-17prswh"
+        data-part="value-text"
+        data-scope="number-input"
+        dir="ltr"
+      >
+        0
+      </span>
+      <button
+        aria-controls="number-input::r1::input"
+        aria-label="increment value"
+        class="chakra-button chakra-number-input__incrementTrigger css-1tayti9"
+        data-part="increment-trigger"
+        data-scope="number-input"
+        dir="ltr"
+        id="number-input::r1::inc"
+        tabindex="-1"
+        type="button"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12h14"
+          />
+          <path
+            d="M12 5v14"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

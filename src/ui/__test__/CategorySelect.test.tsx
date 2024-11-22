@@ -1,11 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 
+import { Provider } from "../../Provider";
 import { CategorySelect } from "../CategorySelect";
 
 describe("Category Select languages", () => {
   test("title is English", () => {
-    render(<CategorySelect mode="bingo" category="firstQuest" lang="en" />);
+    render(<CategorySelect mode="bingo" category="firstQuest" lang="en" />, {
+      wrapper: Provider,
+    });
     expect(screen.getByText("Other Categories")).toBeTruthy();
   });
 });
@@ -14,6 +17,7 @@ describe("active category", () => {
   test("1st quest", () => {
     const { asFragment } = render(
       <CategorySelect mode="score" category="firstQuest" lang="en" />,
+      { wrapper: Provider },
     );
 
     expect(screen.getByText("1st Quest")).toBeTruthy();
@@ -23,6 +27,7 @@ describe("active category", () => {
   test("2nd quest", () => {
     const { asFragment } = render(
       <CategorySelect mode="score" category="secondQuest" lang="en" />,
+      { wrapper: Provider },
     );
 
     expect(screen.getByText("2nd Quest")).toBeTruthy();
@@ -32,6 +37,7 @@ describe("active category", () => {
   test("swordless", () => {
     const { asFragment } = render(
       <CategorySelect mode="bingo" category="swordless" lang="en" />,
+      { wrapper: Provider },
     );
 
     expect(screen.getByText("Swordless")).toBeTruthy();

@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot 1`] = `
+<DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-1wdlcwn"
+    >
+      <p
+        class="css-4qgg2w"
+      >
+        0:00:00.000
+      </p>
+    </div>
+    <div
+      class="css-6l0f26"
+    >
+      <button
+        class="chakra-button css-17lj6my"
+        data-first=""
+        data-group-item=""
+        style="--group-count: 3; --group-index: 0;"
+        type="button"
+      >
+        Start
+      </button>
+      <button
+        class="chakra-button css-17lj6my"
+        data-between=""
+        data-group-item=""
+        style="--group-count: 3; --group-index: 1;"
+        type="button"
+      >
+        Pause
+      </button>
+      <button
+        class="chakra-button css-1jdbged"
+        data-group-item=""
+        data-last=""
+        style="--group-count: 3; --group-index: 2;"
+        type="button"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

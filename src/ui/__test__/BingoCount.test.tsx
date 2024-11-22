@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
 
+import { Provider } from "../../Provider";
 import { BingoCount } from "../BingoCount";
 
 test("BingoCount", () => {
@@ -14,6 +15,7 @@ test("BingoCount", () => {
         [false, false, false, false, true],
       ]}
     />,
+    { wrapper: Provider },
   );
 
   expect(screen.getByText("1 line Bingo")).toBeTruthy();
@@ -30,6 +32,7 @@ test("Snapshot", () => {
         [false, false, false, false, true],
       ]}
     />,
+    { wrapper: Provider },
   );
 
   expect(asFragment()).toMatchSnapshot();

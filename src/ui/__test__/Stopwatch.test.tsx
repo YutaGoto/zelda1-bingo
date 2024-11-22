@@ -2,6 +2,7 @@ import { act, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { expect, test } from "vitest";
 
+import { Provider } from "../../Provider";
 import { Stopwatch } from "../Stopwatch";
 
 const setup = () => {
@@ -10,7 +11,7 @@ const setup = () => {
 };
 
 test("Stopwatch", () => {
-  render(<Stopwatch />);
+  render(<Stopwatch />, { wrapper: Provider });
 
   expect(screen.getByText("Start")).toBeTruthy();
   expect(screen.getByText("Pause")).toBeTruthy();
@@ -18,13 +19,13 @@ test("Stopwatch", () => {
 });
 
 test("Snapshot", () => {
-  const { asFragment } = render(<Stopwatch />);
+  const { asFragment } = render(<Stopwatch />, { wrapper: Provider });
   expect(asFragment()).toMatchSnapshot();
 });
 
 test("Start", async () => {
   const { user } = setup();
-  render(<Stopwatch />);
+  render(<Stopwatch />, { wrapper: Provider });
 
   await act(async () => {
     await user.click(screen.getByText("Start"));

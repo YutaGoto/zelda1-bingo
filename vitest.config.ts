@@ -9,6 +9,7 @@ export default defineConfig({
     include: ['src/**/*.test.{ts,tsx}'],
     setupFiles: [
       './tests/setup-i18n.ts',
+      './tests/setup-matchMedia.ts',
     ],
   },
 })

@@ -1,11 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 
+import { Provider } from "../../Provider";
 import { ModeSelect } from "../ModeSelect";
 
 describe("Mode select languages", () => {
   test("title is English", () => {
-    render(<ModeSelect mode="bingo" category="firstQuest" lang="en" />);
+    render(<ModeSelect mode="bingo" category="firstQuest" lang="en" />, {
+      wrapper: Provider,
+    });
 
     expect(screen.getByText("Mode")).toBeTruthy();
   });
@@ -15,6 +18,7 @@ describe("active mode", () => {
   test("bingo", () => {
     const { asFragment } = render(
       <ModeSelect mode="bingo" category="swordless" lang="en" />,
+      { wrapper: Provider },
     );
 
     expect(screen.getByText("Bingo")).toBeTruthy();
@@ -24,6 +28,7 @@ describe("active mode", () => {
   test("score attack", () => {
     const { asFragment } = render(
       <ModeSelect mode="score" category="firstQuest" lang="en" />,
+      { wrapper: Provider },
     );
 
     expect(screen.getByText("Score Attack")).toBeTruthy();
