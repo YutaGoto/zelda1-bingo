@@ -43,7 +43,7 @@ test.describe("firstQuest bingo", () => {
 
     await page.waitForURL(/\/firstQuest\/en/);
     await page.locator("div#bingoCard").waitFor();
-    const bingoCount = page.locator("p.chakra-text.bingo-count");
+    const bingoCount = page.locator("p.bingo-count");
     await expect(bingoCount).toHaveText("0 lines Bingo");
   });
 
@@ -58,7 +58,7 @@ test.describe("firstQuest bingo", () => {
     await page.click("div.cell:nth-child(4)", { position: { x: 5, y: 5 } });
     await page.click("div.cell:nth-child(5)", { position: { x: 5, y: 5 } });
 
-    const bingoCount = page.locator("p.chakra-text.bingo-count");
+    const bingoCount = page.locator("p.bingo-count");
     await expect(bingoCount).toHaveText("1 line Bingo");
   });
 

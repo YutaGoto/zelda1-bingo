@@ -19,34 +19,25 @@ export const Sheet = ({
   toggle,
 }: SheetProps) => {
   return (
-    <Grid id="bingoCard" templateColumns="30px repeat(5, 140px)" gap={0}>
-      <GridItem width={30} height={30} py={1} px={1} borderWidth="1px">
+    <Grid
+      id="bingoCard"
+      h={730}
+      templateColumns="30px repeat(5, 140px)"
+      gap={0}
+    >
+      <GridItem w={30} h={30} py={1} px={1} borderWidth="1px">
         <Center>
           <TbBackslash />
         </Center>
       </GridItem>
       {["A", "B", "C", "D", "E"].map((row) => (
-        <GridItem
-          key={row}
-          width={140}
-          height={30}
-          py={1}
-          px={2}
-          borderWidth="1px"
-        >
+        <GridItem key={row} w={140} h={30} py={1} px={2} borderWidth="1px">
           <Center>{row}</Center>
         </GridItem>
       ))}
       <Box>
         {[1, 2, 3, 4, 5].map((col) => (
-          <GridItem
-            key={col}
-            width={30}
-            height={140}
-            py={1}
-            px={2}
-            borderWidth="1px"
-          >
+          <GridItem key={col} w={30} h={140} py={1} px={2} borderWidth="1px">
             <Center>{col}</Center>
           </GridItem>
         ))}
