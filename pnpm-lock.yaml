@@ -36,8 +36,8 @@ importers:
         specifier: ^0.34.1
         version: 0.34.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       '@tanstack/zod-form-adapter':
-        specifier: ^0.35.0
-        version: 0.35.0(zod@3.23.8)
+        specifier: ^0.37.1
+        version: 0.37.1(zod@3.23.8)
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.4.1(react@18.3.1)
@@ -744,8 +744,8 @@ packages:
   '@tanstack/form-core@0.34.1':
     resolution: {integrity: sha512-W8xRWcvlK5oek9V/JPblUyBf/cRb06nxqJTdEf7wZ6HxPnB0V9nNwZlWxvSfkMrbSkV+/H972Evy3cVc6WBB7g==}
 
-  '@tanstack/form-core@0.35.0':
-    resolution: {integrity: sha512-WNgZ/Fo8OdsqvbHe/M4a9xjL4TU2Q//I2660YA88jeDyavHQXmOuos3vEuqvIW1+CYfONOAcz9AOI2bPBVId9w==}
+  '@tanstack/form-core@0.37.1':
+    resolution: {integrity: sha512-zoWNSBEhopcDmE8/AnoHCHPY5NvbEJXiKE7nTrrmxriXnXJUboD0pmUvzLP0VRGt65AVQJOHWa6rcqauXHB5AQ==}
 
   '@tanstack/react-form@0.34.1':
     resolution: {integrity: sha512-dvEUOHAw3fJuNC3g4lYlKEs/xdVS8ksRj2MDEWCQe6BYajVSv2qjnOTVoiUw0TjLOMxbCo+08S6j/0sM1/je1Q==}
@@ -765,8 +765,8 @@ packages:
   '@tanstack/store@0.5.5':
     resolution: {integrity: sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==}
 
-  '@tanstack/zod-form-adapter@0.35.0':
-    resolution: {integrity: sha512-RGpw7R6hmvRPiupktUIhyw8dApk34TbgWLlEam/NhtaKORivlcwI58VYAB7EUe1I/ZQS0h++zM30tdYCG5M74w==}
+  '@tanstack/zod-form-adapter@0.37.1':
+    resolution: {integrity: sha512-Zp0Fz8BwYR5bQb/u9OG1Pgn5JDu/BK3jD7FTlxXjKN5ImLl/Ln+an9d1wAdZrEkVy6YjxLxvsPDHEz0yeJbw0Q==}
     peerDependencies:
       zod: ^3.x
 
@@ -2408,7 +2408,7 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
-  '@tanstack/form-core@0.35.0':
+  '@tanstack/form-core@0.37.1':
     dependencies:
       '@tanstack/store': 0.5.5
 
@@ -2432,9 +2432,9 @@ snapshots:
 
   '@tanstack/store@0.5.5': {}
 
-  '@tanstack/zod-form-adapter@0.35.0(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.37.1(zod@3.23.8)':
     dependencies:
-      '@tanstack/form-core': 0.35.0
+      '@tanstack/form-core': 0.37.1
       zod: 3.23.8
 
   '@testing-library/dom@10.2.0':
