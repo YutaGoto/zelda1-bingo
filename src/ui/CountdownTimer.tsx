@@ -18,7 +18,8 @@ export const CountdownTimer = () => {
       <Group>
         <Button
           variant="outline"
-          colorScheme="cyan"
+          colorPalette="cyan"
+          fontWeight={"bold"}
           onClick={() => handleStart()}
           disabled={isRunning}
         >
@@ -26,14 +27,16 @@ export const CountdownTimer = () => {
         </Button>
         <Button
           variant="outline"
-          colorScheme="cyan"
+          colorPalette="cyan"
+          fontWeight={"bold"}
           onClick={() => handlePause()}
         >
           Pause
         </Button>
         <Button
           variant="outline"
-          colorScheme="yellow"
+          colorPalette="yellow"
+          fontWeight={"bold"}
           onClick={() => handleReset()}
         >
           Reset

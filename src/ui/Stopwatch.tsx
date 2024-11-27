@@ -16,7 +16,8 @@ export const Stopwatch = () => {
       <Group>
         <Button
           variant="outline"
-          colorScheme="cyan"
+          fontWeight={"bold"}
+          colorPalette="cyan"
           onClick={() => handleStart()}
           disabled={isRunning}
         >
@@ -24,14 +25,16 @@ export const Stopwatch = () => {
         </Button>
         <Button
           variant="outline"
-          colorScheme="cyan"
+          fontWeight={"bold"}
+          colorPalette="cyan"
           onClick={() => handlePause()}
         >
           Pause
         </Button>
         <Button
           variant="outline"
-          colorScheme="yellow"
+          fontWeight={"bold"}
+          colorPalette="yellow"
           onClick={() => handleReset()}
         >
           Reset

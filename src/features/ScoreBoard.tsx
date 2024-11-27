@@ -140,7 +140,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             {t(category)}
           </Heading>
 
-          <Badge colorScheme="green" fontSize="1.2em" variant="subtle">
+          <Badge fontSize="1.2em" variant="subtle" colorPalette={"green"}>
             {seed}
           </Badge>
         </Flex>
@@ -213,13 +213,20 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                 )}
               />
 
-              <Button mt={5} variant="outline" colorScheme="teal" type="submit">
+              <Button
+                mt={5}
+                fontWeight={"bold"}
+                variant="outline"
+                type="submit"
+                colorPalette={"teal"}
+              >
                 {t("updateSeed")}
               </Button>
             </form>
             <Box mt={5}>
               <Button
-                colorScheme="purple"
+                fontWeight={"bold"}
+                colorPalette={"purple"}
                 variant="outline"
                 onClick={() => {
                   copyText(state.values.seed);
@@ -234,7 +241,8 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             </Box>
             <Box mt={5}>
               <Button
-                colorScheme="purple"
+                fontWeight={"bold"}
+                colorPalette={"purple"}
                 variant="outline"
                 onClick={() => {
                   copyText(location.href);
@@ -249,7 +257,8 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             </Box>
             <Box mt={5}>
               <Button
-                colorScheme="purple"
+                fontWeight={"bold"}
+                colorPalette={"purple"}
                 variant="outline"
                 onClick={() => {
                   copyText(
@@ -269,7 +278,8 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             </Box>
             <Box mt={5}>
               <Button
-                colorScheme="yellow"
+                fontWeight={"bold"}
+                colorPalette={"yellow"}
                 variant="outline"
                 onClick={() => resetSeed()}
               >
