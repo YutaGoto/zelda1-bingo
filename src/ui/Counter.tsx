@@ -6,5 +6,12 @@ interface CounterProps {
 }
 
 export const Counter = ({ goal }: CounterProps) => {
-  return <StepperInput defaultValue="0" min={0} max={goal} />;
+  return (
+    <StepperInput
+      defaultValue="0"
+      min={0}
+      max={goal}
+      onClick={(e) => e.stopPropagation()}
+    />
+  );
 };
