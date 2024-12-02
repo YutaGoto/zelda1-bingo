@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Text } from "@chakra-ui/react";
+import { Box, Button, Group, Text } from "@chakra-ui/react";
 
 import { convertToTime } from "../utils/convertToTime";
 import { useStopwatch } from "../utils/useStopwatch";
@@ -13,30 +13,33 @@ export const Stopwatch = () => {
         <Text fontSize="4xl">{convertToTime({ time: elapsedTime })}</Text>
       </Box>
 
-      <ButtonGroup>
+      <Group>
         <Button
           variant="outline"
-          colorScheme="cyan"
+          fontWeight={"bold"}
+          colorPalette="cyan"
           onClick={() => handleStart()}
-          isDisabled={isRunning}
+          disabled={isRunning}
         >
           Start
         </Button>
         <Button
           variant="outline"
-          colorScheme="cyan"
+          fontWeight={"bold"}
+          colorPalette="cyan"
           onClick={() => handlePause()}
         >
           Pause
         </Button>
         <Button
           variant="outline"
-          colorScheme="yellow"
+          fontWeight={"bold"}
+          colorPalette="yellow"
           onClick={() => handleReset()}
         >
           Reset
         </Button>
-      </ButtonGroup>
+      </Group>
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { Box, Button, Link, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Link, SimpleGrid, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import {
   RiBlueskyLine,
@@ -16,37 +16,31 @@ export const Contact = ({ mt }: ContactProps) => {
   return (
     <Box mt={mt}>
       <Text fontSize="lg">{t("contact")}</Text>
-      <SimpleGrid columns={{ lg: 1, md: 3 }} spacing={2} mt={2}>
-        <Button
-          as={Link}
-          variant="outline"
+      <SimpleGrid columns={{ lg: 1, md: 3 }} gap={2} mt={2}>
+        <Link
+          variant="underline"
           href="https://github.com/YutaGoto/zelda1-bingo"
-          leftIcon={<VscGithubAlt />}
-          rightIcon={<RiExternalLinkLine />}
-          isExternal
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          GitHub
-        </Button>
-        <Button
-          as={Link}
-          variant="outline"
+          <VscGithubAlt /> GitHub <RiExternalLinkLine />
+        </Link>
+        <Link
+          variant="underline"
           href="https://twitter.com/gggooottto"
-          leftIcon={<RiTwitterXLine />}
-          rightIcon={<RiExternalLinkLine />}
-          isExternal
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          X(Twitter)
-        </Button>
-        <Button
-          as={Link}
-          variant="outline"
+          <RiTwitterXLine /> X(Twitter) <RiExternalLinkLine />
+        </Link>
+        <Link
+          variant="underline"
           href="https://bsky.app/profile/yougoto.dev"
-          leftIcon={<RiBlueskyLine />}
-          rightIcon={<RiExternalLinkLine />}
-          isExternal
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Bluesky
-        </Button>
+          <RiBlueskyLine /> Bluesky <RiExternalLinkLine />
+        </Link>
       </SimpleGrid>
     </Box>
   );

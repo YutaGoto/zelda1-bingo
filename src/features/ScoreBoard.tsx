@@ -1,41 +1,37 @@
 import {
-  CopyIcon,
-  MoonIcon,
-  RepeatIcon,
-  Search2Icon,
-  SunIcon,
-} from "@chakra-ui/icons";
-import {
   Badge,
   Box,
   Button,
-  Checkbox,
   Container,
   Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
   HStack,
   Heading,
-  IconButton,
-  NumberInput,
-  NumberInputField,
-  Select,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectRoot,
+  SelectTrigger,
+  SelectValueText,
   SimpleGrid,
   Spacer,
-  StackDivider,
   Text,
   VStack,
-  useColorMode,
-  useToast,
+  createListCollection,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
-import { type ChangeEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import { z } from "zod";
 
+import { Checkbox } from "../components/ui/checkbox";
+import { Field } from "../components/ui/field";
+import {
+  NumberInputField,
+  NumberInputRoot,
+} from "../components/ui/number-input";
+import { Toaster, toaster } from "../components/ui/toaster";
 import type { Z1Task } from "../types/Z1Task";
 import { CategorySelect } from "../ui/CategorySelect";
 import { Contact } from "../ui/Contact";
@@ -60,9 +56,12 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
     return sortByScore(taskList);
   }, [taskList]);
 
-  const { colorMode, toggleColorMode } = useColorMode();
-  const toast = useToast();
-  const { handleSubmit, state, Field, Subscribe } = useForm({
+  // const { colorMode, toggleColorMode } = useColorMode();
+  const {
+    handleSubmit,
+    state,
+    Field: FormField,
+  } = useForm({
     defaultValues: {
       seed: seed,
     },
@@ -76,6 +75,13 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
       return;
     },
     validatorAdapter: zodValidator(),
+  });
+
+  const languages = createListCollection({
+    items: [
+      { value: "ja", label: "日本語" },
+      { value: "en", label: "English" },
+    ],
   });
 
   const [hits, setHits] = useState<boolean[]>(new Array(20).fill(false));
@@ -107,11 +113,11 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
     location.reload();
   };
 
-  const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === lang) return;
+  const onChangeLang = (e: string[]) => {
+    if (e[0] === lang) return;
 
-    setMessageLang(e.target.value);
-    navigate(`/score/${category}/${e.target.value}?seed=${seed}`);
+    setMessageLang(e[0]);
+    navigate(`/score/${category}/${e[0]}?seed=${seed}`);
   };
 
   useEffect(() => {
@@ -134,7 +140,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
             {t(category)}
           </Heading>
 
-          <Badge colorScheme="green" fontSize="1.2em" variant="subtle">
+          <Badge fontSize="1.2em" variant="subtle" colorPalette={"green"}>
             {seed}
           </Badge>
         </Flex>
@@ -142,11 +148,11 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
         <Spacer />
 
         <Box>
-          <IconButton
+          {/* <IconButton
             aria-label="change color mode"
             onClick={toggleColorMode}
             icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-          />
+          /> */}
         </Box>
       </Box>
 
@@ -157,12 +163,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
               {t("currentPoint")}: {currentPoint}pts
             </Text>
           </Box>
-          <VStack
-            divider={<StackDivider borderColor="gray.200" />}
-            spacing={2}
-            marginTop={2}
-            align="stretch"
-          >
+          <VStack align="stretch" marginTop={2}>
             {sortedTasks.map((task, i) => (
               <Box key={task.name.en}>
                 <Checkbox onChange={() => toggle(i)}>
@@ -173,22 +174,19 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                         ? task.name[messageLang === "en" ? messageLang : "ja"]
                         : task.name[lang === "en" ? lang : "ja"]}
                     </Box>{" "}
-                    {!!task.count && (
-                      <Counter goal={task.count} marginTop={0} />
-                    )}
+                    {!!task.count && <Counter goal={task.count} />}
                   </HStack>
                 </Checkbox>
               </Box>
             ))}
           </VStack>
         </Box>
-        <Spacer />
         <Box mt={{ md: 5, lg: 0 }} ml={{ md: 0, lg: 6 }}>
           <Box>
             <CountdownTimer />
           </Box>
 
-          <Box>
+          <Box mt={2}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -196,88 +194,72 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                 void handleSubmit();
               }}
             >
-              <Field
+              <FormField
                 name="seed"
-                validators={{
-                  onBlur: z.number().int().min(1).max(9999),
-                }}
                 children={(field) => (
-                  <FormControl isInvalid={field.state.meta.errors.length > 0}>
-                    <FormLabel>Seed</FormLabel>
-                    <NumberInput
-                      name={field.name}
-                      defaultValue={field.state.value}
+                  <Field label="Seed">
+                    <NumberInputRoot
                       min={1}
                       max={9999}
+                      name={field.name}
+                      defaultValue={String(field.state.value)}
+                      onValueChange={(e) => {
+                        field.handleChange(Number(e.value));
+                      }}
                     >
-                      <NumberInputField
-                        onBlur={field.handleBlur}
-                        onChange={(e) =>
-                          field.handleChange(Number(e.target.value))
-                        }
-                        w={24}
-                      />
-                    </NumberInput>
-                    <FormErrorMessage>
-                      {field.state.meta.errors.join(", ")}
-                    </FormErrorMessage>
-                  </FormControl>
+                      <NumberInputField />
+                    </NumberInputRoot>
+                  </Field>
                 )}
               />
-              <Subscribe
-                selector={(state) => [state.isSubmitting]}
-                children={([isSubmitting]) => (
-                  <Button
-                    mt={5}
-                    variant="outline"
-                    colorScheme="teal"
-                    leftIcon={<Search2Icon />}
-                    type="submit"
-                  >
-                    {isSubmitting ? "..." : t("updateSeed")}
-                  </Button>
-                )}
-              />
+
+              <Button
+                mt={5}
+                fontWeight={"bold"}
+                variant="outline"
+                type="submit"
+                colorPalette={"teal"}
+              >
+                {t("updateSeed")}
+              </Button>
             </form>
             <Box mt={5}>
               <Button
-                colorScheme="purple"
+                fontWeight={"bold"}
+                colorPalette={"purple"}
                 variant="outline"
-                leftIcon={<CopyIcon />}
                 onClick={() => {
                   copyText(state.values.seed);
-                  toast({
+                  toaster.create({
                     title: t("copiedSeed"),
-                    status: "success",
-                    isClosable: true,
+                    type: "success",
                   });
                 }}
               >
-                {t("copySeed")}
+                <FaCopy /> {t("copySeed")}
               </Button>
             </Box>
             <Box mt={5}>
               <Button
-                colorScheme="purple"
+                fontWeight={"bold"}
+                colorPalette={"purple"}
                 variant="outline"
-                leftIcon={<CopyIcon />}
                 onClick={() => {
                   copyText(location.href);
-                  toast({
+                  toaster.create({
                     title: t("copiedCurrentUrl"),
-                    status: "success",
-                    isClosable: true,
+                    type: "success",
                   });
                 }}
               >
-                {t("copyCurrentUrl")}
+                <FaCopy /> {t("copyCurrentUrl")}
               </Button>
             </Box>
             <Box mt={5}>
               <Button
-                colorScheme="purple"
+                fontWeight={"bold"}
+                colorPalette={"purple"}
                 variant="outline"
-                leftIcon={<CopyIcon />}
                 onClick={() => {
                   copyText(
                     `${location.href.replace(
@@ -285,55 +267,80 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
                       `seed=${state.values.seed}`,
                     )}`,
                   );
-                  toast({
+                  toaster.create({
                     title: t("copiedNewSeedUrl"),
-                    status: "success",
-                    isClosable: true,
+                    type: "success",
                   });
                 }}
               >
-                {t("copyNewSeedUrl")}
+                <FaCopy /> {t("copyNewSeedUrl")}
               </Button>
             </Box>
             <Box mt={5}>
               <Button
-                colorScheme="yellow"
+                fontWeight={"bold"}
+                colorPalette={"yellow"}
                 variant="outline"
-                leftIcon={<RepeatIcon />}
                 onClick={() => resetSeed()}
               >
-                {t("resetSeed")}
+                <FaCopy /> {t("resetSeed")}
               </Button>
             </Box>
-          </Box>
 
-          <Spacer />
+            <Spacer />
 
-          <SimpleGrid columns={{ lg: 1, md: 2 }} spacing={2} mt={5}>
-            <FormControl>
-              <FormLabel>{t("language")}</FormLabel>
-              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-              </Select>
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("messageLanguage")}</FormLabel>
-              <Select
-                value={messageLang}
-                onChange={(e) => setMessageLang(e.target.value)}
+            <SimpleGrid columns={{ lg: 1, md: 2 }} gap={2} mt={5}>
+              <SelectRoot
+                onValueChange={(e) => onChangeLang(e.value)}
+                collection={languages}
               >
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-              </Select>
-            </FormControl>
-          </SimpleGrid>
+                <SelectLabel>{t("language")}</SelectLabel>
+                <SelectTrigger>
+                  <SelectValueText>
+                    {lang === "en" ? "English" : "日本語"}
+                  </SelectValueText>
+                </SelectTrigger>
+                <SelectContent>
+                  {languages.items.map((item) => (
+                    <SelectItem key={item.value} item={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </SelectRoot>
 
-          <CategorySelect mode="score" lang={lang} category={category} mt={5} />
-          <ModeSelect mode="score" lang={lang} category={category} mt={5} />
+              <SelectRoot
+                onValueChange={(e) => setMessageLang(e.value[0])}
+                collection={languages}
+              >
+                <SelectLabel>{t("messageLanguage")}</SelectLabel>
+                <SelectTrigger>
+                  <SelectValueText>
+                    {messageLang === "en" ? "English" : "日本語"}
+                  </SelectValueText>
+                </SelectTrigger>
+                <SelectContent>
+                  {languages.items.map((item) => (
+                    <SelectItem key={item.value} item={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </SelectRoot>
+            </SimpleGrid>
 
-          <Contact mt={5} />
+            <CategorySelect
+              mode="score"
+              lang={lang}
+              category={category}
+              mt={5}
+            />
+            <ModeSelect mode="score" lang={lang} category={category} mt={5} />
+
+            <Contact mt={5} />
+          </Box>
         </Box>
+        <Toaster />
       </Box>
     </Container>
   );

@@ -1,36 +1,33 @@
 import {
-  CopyIcon,
-  MoonIcon,
-  RepeatIcon,
-  Search2Icon,
-  SunIcon,
-} from "@chakra-ui/icons";
-import {
   Badge,
   Box,
   Button,
   Container,
   Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
   Heading,
-  IconButton,
-  NumberInput,
-  NumberInputField,
-  Select,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectRoot,
+  SelectTrigger,
+  SelectValueText,
   SimpleGrid,
   Spacer,
-  useColorMode,
-  useToast,
+  createListCollection,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
-import { type ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import { z } from "zod";
 
+import { Field } from "../components/ui/field";
+import {
+  NumberInputField,
+  NumberInputRoot,
+} from "../components/ui/number-input";
+import { Toaster, toaster } from "../components/ui/toaster";
 import type { Z1Task } from "../types/Z1Task";
 import { BingoCount } from "../ui/BingoCount";
 import { CategorySelect } from "../ui/CategorySelect";
@@ -50,9 +47,12 @@ const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 
 export const Bingo = ({ category, seed, taskList }: BingoProps) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const toast = useToast();
-  const { handleSubmit, state, Field, Subscribe } = useForm({
+  // const { colorMode, toggleColorMode } = useColorMode();
+  const {
+    handleSubmit,
+    state,
+    Field: FormField,
+  } = useForm({
     defaultValues: {
       seed: seed,
     },
@@ -66,6 +66,13 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
       return;
     },
     validatorAdapter: zodValidator(),
+  });
+
+  const languages = createListCollection({
+    items: [
+      { value: "ja", label: "日本語" },
+      { value: "en", label: "English" },
+    ],
   });
 
   const [hits, setHits] = useState([
@@ -101,11 +108,11 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
     location.reload();
   };
 
-  const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === lang) return;
+  const onChangeLang = (e: string[]) => {
+    if (e[0] === lang) return;
 
-    setMessageLang(e.target.value);
-    navigate(`/${category}/${e.target.value}?seed=${seed}`);
+    setMessageLang(e[0]);
+    navigate(`/${category}/${e[0]}?seed=${seed}`);
   };
 
   useEffect(() => {
@@ -128,20 +135,20 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
             {t(category)}
           </Heading>
 
-          <Badge colorScheme="green" fontSize="1.2em" variant="subtle">
+          <Badge fontSize="1.2em" variant="subtle" colorPalette={"green"}>
             {seed}
           </Badge>
         </Flex>
 
         <Spacer />
 
-        <Box>
+        {/* <Box>
           <IconButton
             aria-label="change color mode"
             onClick={toggleColorMode}
             icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
           />
-        </Box>
+        </Box> */}
       </Box>
 
       <Box display={{ lg: "flex" }}>
@@ -169,88 +176,72 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
               void handleSubmit();
             }}
           >
-            <Field
+            <FormField
               name="seed"
-              validators={{
-                onBlur: z.number().int().min(1).max(9999),
-              }}
               children={(field) => (
-                <FormControl isInvalid={field.state.meta.errors.length > 0}>
-                  <FormLabel>Seed</FormLabel>
-                  <NumberInput
-                    name={field.name}
-                    defaultValue={field.state.value}
+                <Field label="Seed">
+                  <NumberInputRoot
                     min={1}
                     max={9999}
+                    name={field.name}
+                    defaultValue={String(field.state.value)}
+                    onValueChange={(e) => {
+                      field.handleChange(Number(e.value));
+                    }}
                   >
-                    <NumberInputField
-                      onBlur={field.handleBlur}
-                      onChange={(e) =>
-                        field.handleChange(Number(e.target.value))
-                      }
-                      w={24}
-                    />
-                  </NumberInput>
-                  <FormErrorMessage>
-                    {field.state.meta.errors.join(", ")}
-                  </FormErrorMessage>
-                </FormControl>
+                    <NumberInputField />
+                  </NumberInputRoot>
+                </Field>
               )}
             />
-            <Subscribe
-              selector={(state) => [state.isSubmitting]}
-              children={([isSubmitting]) => (
-                <Button
-                  mt={5}
-                  variant="outline"
-                  colorScheme="teal"
-                  leftIcon={<Search2Icon />}
-                  type="submit"
-                >
-                  {isSubmitting ? "..." : t("updateSeed")}
-                </Button>
-              )}
-            />
+
+            <Button
+              mt={5}
+              fontWeight={"bold"}
+              variant="outline"
+              type="submit"
+              colorPalette={"teal"}
+            >
+              {t("updateSeed")}
+            </Button>
           </form>
           <Box mt={5}>
             <Button
-              colorScheme="purple"
+              fontWeight={"bold"}
+              colorPalette={"purple"}
               variant="outline"
-              leftIcon={<CopyIcon />}
               onClick={() => {
                 copyText(state.values.seed);
-                toast({
+                toaster.create({
                   title: t("copiedSeed"),
-                  status: "success",
-                  isClosable: true,
+                  type: "success",
                 });
               }}
             >
-              {t("copySeed")}
+              <FaCopy /> {t("copySeed")}
             </Button>
           </Box>
           <Box mt={5}>
             <Button
-              colorScheme="purple"
+              fontWeight={"bold"}
+              colorPalette={"purple"}
               variant="outline"
-              leftIcon={<CopyIcon />}
               onClick={() => {
                 copyText(location.href);
-                toast({
+                toaster.create({
                   title: t("copiedCurrentUrl"),
-                  status: "success",
-                  isClosable: true,
+                  type: "success",
                 });
               }}
             >
-              {t("copyCurrentUrl")}
+              <FaCopy /> {t("copyCurrentUrl")}
             </Button>
           </Box>
           <Box mt={5}>
             <Button
-              colorScheme="purple"
+              fontWeight={"bold"}
+              colorPalette={"purple"}
               variant="outline"
-              leftIcon={<CopyIcon />}
               onClick={() => {
                 copyText(
                   `${location.href.replace(
@@ -258,45 +249,64 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
                     `seed=${state.values.seed}`,
                   )}`,
                 );
-                toast({
+                toaster.create({
                   title: t("copiedNewSeedUrl"),
-                  status: "success",
-                  isClosable: true,
+                  type: "success",
                 });
               }}
             >
-              {t("copyNewSeedUrl")}
+              <FaCopy /> {t("copyNewSeedUrl")}
             </Button>
           </Box>
           <Box mt={5}>
             <Button
-              colorScheme="yellow"
+              fontWeight={"bold"}
+              colorPalette={"yellow"}
               variant="outline"
-              leftIcon={<RepeatIcon />}
               onClick={() => resetSeed()}
             >
-              {t("resetSeed")}
+              <FaCopy /> {t("resetSeed")}
             </Button>
           </Box>
 
-          <SimpleGrid columns={{ lg: 1, md: 2 }} spacing={2} mt={5}>
-            <FormControl>
-              <FormLabel>{t("language")}</FormLabel>
-              <Select defaultValue={lang} onChange={(e) => onChangeLang(e)}>
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-              </Select>
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("messageLanguage")}</FormLabel>
-              <Select
-                value={messageLang}
-                onChange={(e) => setMessageLang(e.target.value)}
-              >
-                <option value="ja">日本語</option>
-                <option value="en">English</option>
-              </Select>
-            </FormControl>
+          <SimpleGrid columns={{ lg: 1, md: 2 }} gap={2} mt={5}>
+            <SelectRoot
+              onValueChange={(e) => onChangeLang(e.value)}
+              collection={languages}
+            >
+              <SelectLabel>{t("language")}</SelectLabel>
+              <SelectTrigger>
+                <SelectValueText>
+                  {lang === "en" ? "English" : "日本語"}
+                </SelectValueText>
+              </SelectTrigger>
+              <SelectContent>
+                {languages.items.map((item) => (
+                  <SelectItem key={item.value} item={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectRoot>
+
+            <SelectRoot
+              onValueChange={(e) => setMessageLang(e.value[0])}
+              collection={languages}
+            >
+              <SelectLabel>{t("messageLanguage")}</SelectLabel>
+              <SelectTrigger>
+                <SelectValueText>
+                  {messageLang === "en" ? "English" : "日本語"}
+                </SelectValueText>
+              </SelectTrigger>
+              <SelectContent>
+                {languages.items.map((item) => (
+                  <SelectItem key={item.value} item={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectRoot>
           </SimpleGrid>
 
           <CategorySelect mode="bingo" lang={lang} category={category} mt={5} />
@@ -305,6 +315,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
           <Contact mt={5} />
         </Box>
       </Box>
+      <Toaster />
     </Container>
   );
 };

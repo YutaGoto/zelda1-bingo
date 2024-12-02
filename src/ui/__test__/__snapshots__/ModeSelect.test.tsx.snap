@@ -2,36 +2,32 @@
 
 exports[`active mode > bingo 1`] = `
 <DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
   <div
-    class="css-zv7ju9"
+    class="css-8f2oos"
   >
     <p
-      class="chakra-text css-1ezsviu"
+      class="css-uok8h6"
     >
       Mode
     </p>
     <div
-      class="css-k5oabe"
+      class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link chakra-link css-1gf4k3u"
         href="/swordless/en"
       >
         Bingo
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-1allaid"
         href="/score/swordless/en"
       >
         Score Attack
       </a>
-      <button
-        class="chakra-button css-4xx2wk"
-        disabled=""
-        type="button"
-      >
-        Single Tasking
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -39,36 +35,32 @@ exports[`active mode > bingo 1`] = `
 
 exports[`active mode > score attack 1`] = `
 <DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
   <div
-    class="css-zv7ju9"
+    class="css-8f2oos"
   >
     <p
-      class="chakra-text css-1ezsviu"
+      class="css-uok8h6"
     >
       Mode
     </p>
     <div
-      class="css-k5oabe"
+      class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link chakra-link css-uy4ttg"
         href="/firstQuest/en"
       >
         Bingo
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-117rn0d"
         href="/score/firstQuest/en"
       >
         Score Attack
       </a>
-      <button
-        class="chakra-button css-4xx2wk"
-        disabled=""
-        type="button"
-      >
-        Single Tasking
-      </button>
     </div>
   </div>
 </DocumentFragment>

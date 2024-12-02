@@ -2,31 +2,34 @@
 
 exports[`active category > 1st quest 1`] = `
 <DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
   <div
-    class="css-zv7ju9"
+    class="css-8f2oos"
   >
     <p
-      class="chakra-text css-1ezsviu"
+      class="css-uok8h6"
     >
       Other Categories
     </p>
     <div
-      class="css-k5oabe"
+      class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-trbbt2"
         href="/score/firstQuest/en"
       >
         1st Quest
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-1ejw2rc"
         href="/score/secondQuest/en"
       >
         2nd Quest
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-1erwuv3"
         href="/score/swordless/en"
       >
         Swordless
@@ -38,31 +41,34 @@ exports[`active category > 1st quest 1`] = `
 
 exports[`active category > 2nd quest 1`] = `
 <DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
   <div
-    class="css-zv7ju9"
+    class="css-8f2oos"
   >
     <p
-      class="chakra-text css-1ezsviu"
+      class="css-uok8h6"
     >
       Other Categories
     </p>
     <div
-      class="css-k5oabe"
+      class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-9dfuuy"
         href="/score/firstQuest/en"
       >
         1st Quest
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-cbo3vp"
         href="/score/secondQuest/en"
       >
         2nd Quest
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-1erwuv3"
         href="/score/swordless/en"
       >
         Swordless
@@ -74,31 +80,34 @@ exports[`active category > 2nd quest 1`] = `
 
 exports[`active category > swordless 1`] = `
 <DocumentFragment>
+  <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if('system'===e||(!e&&true)){var t='(prefers-color-scheme: dark)',m=window.matchMedia(t);if(m.media!==t||m.matches){d.style.colorScheme = 'dark';c.add('dark')}else{d.style.colorScheme = 'light';c.add('light')}}else if(e){c.add(e|| '')}if(e==='light'||e==='dark')d.style.colorScheme=e}catch(e){}}()
+  </script>
   <div
-    class="css-zv7ju9"
+    class="css-8f2oos"
   >
     <p
-      class="chakra-text css-1ezsviu"
+      class="css-uok8h6"
     >
       Other Categories
     </p>
     <div
-      class="css-k5oabe"
+      class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-9dfuuy"
         href="/firstQuest/en"
       >
         1st Quest
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-1ejw2rc"
         href="/secondQuest/en"
       >
         2nd Quest
       </a>
       <a
-        class="chakra-link chakra-button css-1ncwzw6"
+        class="chakra-link css-dbk65j"
         href="/swordless/en"
       >
         Swordless

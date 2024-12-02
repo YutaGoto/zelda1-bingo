@@ -2,6 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { expect, test, vi } from "vitest";
 
+import { Provider } from "../../Provider";
 import {
   factoryZ1MessageTask,
   factoryZ1Task,
@@ -22,6 +23,7 @@ test("English Cell", () => {
       messageLang="en"
       onClick={() => {}}
     />,
+    { wrapper: Provider },
   );
 
   expect(screen.getByText("test")).toBeTruthy();
@@ -36,6 +38,7 @@ test("Japanese Cell", () => {
       messageLang="ja"
       onClick={() => {}}
     />,
+    { wrapper: Provider },
   );
 
   expect(screen.getByText("テスト")).toBeTruthy();
@@ -50,6 +53,7 @@ test("English Cell with Japanese message", () => {
       messageLang="en"
       onClick={() => {}}
     />,
+    { wrapper: Provider },
   );
 
   expect(screen.getByText("テスト")).toBeTruthy();
@@ -64,6 +68,7 @@ test("Japanese Cell with English message", () => {
       messageLang="en"
       onClick={() => {}}
     />,
+    { wrapper: Provider },
   );
 
   expect(screen.getByText("test")).toBeTruthy();
@@ -80,6 +85,7 @@ test("on click then hit", async () => {
       messageLang="en"
       onClick={onClick}
     />,
+    { wrapper: Provider },
   );
 
   await waitFor(() => user.click(screen.getByText("test")));

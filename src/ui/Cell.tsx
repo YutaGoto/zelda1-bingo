@@ -1,4 +1,4 @@
-import { Box, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import type { Z1Task } from "../types/Z1Task";
 import { Counter } from "./Counter";
 
@@ -11,16 +11,14 @@ interface CellProps {
 }
 
 export const Cell = ({ task, hit, lang, messageLang, onClick }: CellProps) => {
-  const { colorMode } = useColorMode();
-
   return (
     <Box
-      bg={hit ? (colorMode === "dark" ? "green.600" : "green.300") : ""}
+      bg={hit ? "green.600" : ""}
       width={140}
       height={140}
       py={2}
       px={3}
-      border="1px"
+      borderWidth="1px"
       onClick={onClick}
       whiteSpace="unset"
       className="cell"
@@ -30,7 +28,7 @@ export const Cell = ({ task, hit, lang, messageLang, onClick }: CellProps) => {
           ? task.name[messageLang === "en" ? messageLang : "ja"]
           : task.name[lang === "en" ? lang : "ja"]}
       </Text>
-      {!!task.count && <Counter goal={task.count} marginTop={5} />}
+      {!!task.count && <Counter goal={task.count} />}
     </Box>
   );
 };

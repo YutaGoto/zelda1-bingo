@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, Text } from "@chakra-ui/react";
+import { Box, Grid, Link, Text } from "@chakra-ui/react";
 import { t } from "i18next";
 
 interface ModeSelectProps {
@@ -22,31 +22,28 @@ export const ModeSelect = ({
         gap={2}
         mt={2}
       >
-        <Button
+        <Link
           as={Link}
           href={`/${category}/${lang}`}
-          variant={mode === "bingo" ? "solid" : "outline"}
+          variant={mode === "bingo" ? "plain" : "underline"}
           colorScheme="cyan"
         >
           {t("bingo")}
-        </Button>
-        <Button
-          as={Link}
+        </Link>
+        <Link
           href={`/score/${category}/${lang}`}
           colorScheme="yellow"
-          variant={mode === "score" ? "solid" : "outline"}
+          variant={mode === "score" ? "plain" : "underline"}
         >
           {t("score")}
-        </Button>
-        <Button
-          // as={Link}
-          isDisabled={true}
-          // href={`/single/${category}/${lang}`}
+        </Link>
+        {/* <Link
+          href={`/single/${category}/${lang}`}
           colorScheme="red"
-          variant={mode === "single" ? "solid" : "outline"}
+          variant={mode === "single" ? "plain" : "underline"}
         >
           {t("singleTasking")}
-        </Button>
+        </Link> */}
       </Grid>
     </Box>
   );
