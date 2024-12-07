@@ -1,9 +1,9 @@
 {
   "name": "zelda1-bingo",
   "private": true,
-  "version": "3.4.1",
+  "version": "3.5.0",
   "type": "module",
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
