@@ -22,6 +22,7 @@ import { useTranslation } from "react-i18next";
 import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { ColorModeButton } from "../components/ui/color-mode";
 import { Field } from "../components/ui/field";
 import {
   NumberInputField,
@@ -47,7 +48,6 @@ const url = new URL(location.href);
 const params = new URLSearchParams(url.search);
 
 export const Bingo = ({ category, seed, taskList }: BingoProps) => {
-  // const { colorMode, toggleColorMode } = useColorMode();
   const {
     handleSubmit,
     state,
@@ -142,13 +142,7 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
 
         <Spacer />
 
-        {/* <Box>
-          <IconButton
-            aria-label="change color mode"
-            onClick={toggleColorMode}
-            icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-          />
-        </Box> */}
+        <ColorModeButton />
       </Box>
 
       <Box display={{ lg: "flex" }}>

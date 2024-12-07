@@ -26,6 +26,7 @@ import { FaCopy } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Checkbox } from "../components/ui/checkbox";
+import { ColorModeButton } from "../components/ui/color-mode";
 import { Field } from "../components/ui/field";
 import {
   NumberInputField,
@@ -148,11 +149,7 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
         <Spacer />
 
         <Box>
-          {/* <IconButton
-            aria-label="change color mode"
-            onClick={toggleColorMode}
-            icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-          /> */}
+          <ColorModeButton />
         </Box>
       </Box>
 

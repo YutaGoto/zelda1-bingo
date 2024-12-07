@@ -1,4 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
+
+import { useColorMode } from "../components/ui/color-mode";
 import type { Z1Task } from "../types/Z1Task";
 import { Counter } from "./Counter";
 
@@ -11,9 +13,11 @@ interface CellProps {
 }
 
 export const Cell = ({ task, hit, lang, messageLang, onClick }: CellProps) => {
+  const { colorMode } = useColorMode();
+
   return (
     <Box
-      bg={hit ? "green.600" : ""}
+      bg={hit ? (colorMode === "dark" ? "green.600" : "green.300") : ""}
       width={140}
       height={140}
       py={2}
