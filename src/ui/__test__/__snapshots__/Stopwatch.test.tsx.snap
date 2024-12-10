@@ -21,7 +21,7 @@ exports[`Snapshot 1`] = `
       class="css-6l0f26"
     >
       <button
-        class="chakra-button css-bjk81k"
+        class="chakra-button css-6md3x5"
         data-first=""
         data-group-item=""
         style="--group-count: 3; --group-index: 0;"
@@ -30,7 +30,7 @@ exports[`Snapshot 1`] = `
         Start
       </button>
       <button
-        class="chakra-button css-bjk81k"
+        class="chakra-button css-6md3x5"
         data-between=""
         data-group-item=""
         style="--group-count: 3; --group-index: 1;"
@@ -39,7 +39,7 @@ exports[`Snapshot 1`] = `
         Pause
       </button>
       <button
-        class="chakra-button css-16ma5ga"
+        class="chakra-button css-1nwy3da"
         data-group-item=""
         data-last=""
         style="--group-count: 3; --group-index: 2;"
