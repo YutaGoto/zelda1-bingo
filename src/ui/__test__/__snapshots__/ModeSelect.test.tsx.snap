@@ -17,13 +17,13 @@ exports[`active mode > bingo 1`] = `
       class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-link css-1gf4k3u"
+        class="chakra-link chakra-link css-1oknjek"
         href="/swordless/en"
       >
         Bingo
       </a>
       <a
-        class="chakra-link css-1allaid"
+        class="chakra-link css-1eyxdc6"
         href="/score/swordless/en"
       >
         Score Attack
@@ -50,13 +50,13 @@ exports[`active mode > score attack 1`] = `
       class="css-12atwa6"
     >
       <a
-        class="chakra-link chakra-link css-uy4ttg"
+        class="chakra-link chakra-link css-27epf0"
         href="/firstQuest/en"
       >
         Bingo
       </a>
       <a
-        class="chakra-link css-117rn0d"
+        class="chakra-link css-lb2u85"
         href="/score/firstQuest/en"
       >
         Score Attack

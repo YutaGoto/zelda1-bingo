@@ -17,19 +17,19 @@ exports[`active category > 1st quest 1`] = `
       class="css-12atwa6"
     >
       <a
-        class="chakra-link css-trbbt2"
+        class="chakra-link css-s1xldg"
         href="/score/firstQuest/en"
       >
         1st Quest
       </a>
       <a
-        class="chakra-link css-1ejw2rc"
+        class="chakra-link css-9q1s09"
         href="/score/secondQuest/en"
       >
         2nd Quest
       </a>
       <a
-        class="chakra-link css-1erwuv3"
+        class="chakra-link css-qk0x5r"
         href="/score/swordless/en"
       >
         Swordless
@@ -56,19 +56,19 @@ exports[`active category > 2nd quest 1`] = `
       class="css-12atwa6"
     >
       <a
-        class="chakra-link css-9dfuuy"
+        class="chakra-link css-1matpa1"
         href="/score/firstQuest/en"
       >
         1st Quest
       </a>
       <a
-        class="chakra-link css-cbo3vp"
+        class="chakra-link css-14wtpmz"
         href="/score/secondQuest/en"
       >
         2nd Quest
       </a>
       <a
-        class="chakra-link css-1erwuv3"
+        class="chakra-link css-qk0x5r"
         href="/score/swordless/en"
       >
         Swordless
@@ -95,19 +95,19 @@ exports[`active category > swordless 1`] = `
       class="css-12atwa6"
     >
       <a
-        class="chakra-link css-9dfuuy"
+        class="chakra-link css-1matpa1"
         href="/firstQuest/en"
       >
         1st Quest
       </a>
       <a
-        class="chakra-link css-1ejw2rc"
+        class="chakra-link css-9q1s09"
         href="/secondQuest/en"
       >
         2nd Quest
       </a>
       <a
-        class="chakra-link css-dbk65j"
+        class="chakra-link css-vg267u"
         href="/swordless/en"
       >
         Swordless
