@@ -73,8 +73,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
       '@vitejs/plugin-react-swc':
-        specifier: ^3.7.1
-        version: 3.7.1(@swc/helpers@0.5.13)(vite@5.4.10(@types/node@22.9.0))
+        specifier: ^3.7.2
+        version: 3.7.2(@swc/helpers@0.5.13)(vite@5.4.10(@types/node@22.9.0))
       i18next:
         specifier: ^23.16.4
         version: 23.16.4
@@ -855,10 +855,10 @@ packages:
       vue-router:
         optional: true
 
-  '@vitejs/plugin-react-swc@3.7.1':
-    resolution: {integrity: sha512-vgWOY0i1EROUK0Ctg1hwhtC3SdcDjZcdit4Ups4aPkDcB1jYhmo+RMYWY87cmXMhvtD5uf8lV89j2w16vkdSVg==}
+  '@vitejs/plugin-react-swc@3.7.2':
+    resolution: {integrity: sha512-y0byko2b2tSVVf5Gpng1eEhX1OvPC7x8yns1Fx8jDzlJp4LS6CMkCPfLw47cjyoMrshQDoQw4qcgjsU9VvlCew==}
     peerDependencies:
-      vite: ^4 || ^5
+      vite: ^4 || ^5 || ^6
 
   '@vitest/expect@2.1.5':
     resolution: {integrity: sha512-nZSBTW1XIdpZvEJyoP/Sy8fUg0b8od7ZpGDkTUcfJ7wz/VoZAFzFfLyxVxGFhUjJzhYqSbIpfMtl/+k/dpWa3Q==}
@@ -2892,7 +2892,7 @@ snapshots:
     optionalDependencies:
       react: 18.3.1
 
-  '@vitejs/plugin-react-swc@3.7.1(@swc/helpers@0.5.13)(vite@5.4.10(@types/node@22.9.0))':
+  '@vitejs/plugin-react-swc@3.7.2(@swc/helpers@0.5.13)(vite@5.4.10(@types/node@22.9.0))':
     dependencies:
       '@swc/core': 1.7.26(@swc/helpers@0.5.13)
       vite: 5.4.10(@types/node@22.9.0)
