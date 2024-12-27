@@ -31,7 +31,7 @@ importers:
         version: 0.39.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)
       '@tanstack/zod-form-adapter':
         specifier: ^0.40.4
-        version: 0.40.4(zod@3.23.8)
+        version: 0.40.4(zod@3.24.1)
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.4.1(react@18.3.1)
@@ -48,8 +48,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       zod:
-        specifier: ^3.23.8
-        version: 3.23.8
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -1921,8 +1921,8 @@ packages:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
 
-  zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+  zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
 
 snapshots:
 
@@ -2599,10 +2599,10 @@ snapshots:
 
   '@tanstack/store@0.6.0': {}
 
-  '@tanstack/zod-form-adapter@0.40.4(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.40.4(zod@3.24.1)':
     dependencies:
       '@tanstack/form-core': 0.40.4
-      zod: 3.23.8
+      zod: 3.24.1
 
   '@testing-library/dom@10.2.0':
     dependencies:
@@ -3982,4 +3982,4 @@ snapshots:
 
   yaml@1.10.2: {}
 
-  zod@3.23.8: {}
+  zod@3.24.1: {}
