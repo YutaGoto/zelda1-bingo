@@ -27,8 +27,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       '@tanstack/react-form':
-        specifier: ^0.39.0
-        version: 0.39.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)
+        specifier: ^0.41.0
+        version: 0.41.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)
       '@tanstack/zod-form-adapter':
         specifier: ^0.40.4
         version: 0.40.4(zod@3.24.1)
@@ -287,9 +287,6 @@ packages:
     resolution: {integrity: sha512-jUPLT0JzRMWxpdzH6c+t0YMJYrvc5CLericgITV3zDSXblkfx3DsYXqU11DJTSGZI9dUKzM1Wd0Wswn4eJwvFQ==}
     peerDependencies:
       react: '>=16.8.0'
-
-  '@emotion/babel-plugin@11.12.0':
-    resolution: {integrity: sha512-y2WQb+oP8Jqvvclh8Q55gLUyb7UFvgv7eJfsj7td5TToBrIUtPay2kMrZi4xjq9qw2vD0ZR5fSho0yqoFgX7Rw==}
 
   '@emotion/babel-plugin@11.13.5':
     resolution: {integrity: sha512-pxHCpT2ex+0q+HH91/zsdHkw/lXd468DIN2zvfvLtPKLLMo6gQj7oLObq8PhkrxOZb/gGCq03S3Z7PDhS8pduQ==}
@@ -734,14 +731,14 @@ packages:
   '@swc/types@0.1.12':
     resolution: {integrity: sha512-wBJA+SdtkbFhHjTMYH+dEH1y4VpfGdAc2Kw/LK09i9bXd/K6j6PkDcFCEzb6iVfZMkPRrl/q0e3toqTAJdkIVA==}
 
-  '@tanstack/form-core@0.39.0':
-    resolution: {integrity: sha512-Lebrc3FlKGyqNnTZP9h3UF2gKFyeOr1ORoG+5UCYPxUbHbgjJyp6vEuDHQqpocK1Lyh3zR/o9Ivzu4zEKUFvkg==}
-
   '@tanstack/form-core@0.40.4':
     resolution: {integrity: sha512-tmqQd9guHfIVHC2UmfHyFw76dtbtWzU5I9Gv4at3DQGpcM52pMOb5LfsdoBO6muFN5mvsYuZHp4UM6YnZ2gTSQ==}
 
-  '@tanstack/react-form@0.39.0':
-    resolution: {integrity: sha512-QyGAAUUB7VR6v6MolsZwCRa+SeF4dgNBR6j76W5STdFB6+sLUh7lSfRHlrRS7lyzf0JcNX3tbJSD8TTzgCcPhQ==}
+  '@tanstack/form-core@0.41.0':
+    resolution: {integrity: sha512-626Xfi0C2xB9StzykIOXR/ugx/dUiwY/nY5opCovgXwBNqPEPrN3vMepC//rnGt1/jZmm3/7MW+02Ntc64UAmw==}
+
+  '@tanstack/react-form@0.41.0':
+    resolution: {integrity: sha512-ijz/GFljdy+dz8JzfHpUO91Q2LBVKnMa7Q2clH1EiuTL5uvOq68MKeoYb9UhzYvFTXPqJZ4GMHhJEqy7cix9LQ==}
     peerDependencies:
       '@tanstack/start': ^1.43.13
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -749,17 +746,17 @@ packages:
       '@tanstack/start':
         optional: true
 
-  '@tanstack/react-store@0.5.6':
-    resolution: {integrity: sha512-SitIpS5jTj28DajjLpWbIX+YetmJL+6PRY0DKKiCGBKfYIqj3ryODQYF3jB3SNoR9ifUA/jFkqbJdBKFtWd+AQ==}
+  '@tanstack/react-store@0.7.0':
+    resolution: {integrity: sha512-S/Rq17HaGOk+tQHV/yrePMnG1xbsKZIl/VsNWnNXt4XW+tTY8dTlvpJH2ZQ3GRALsusG5K6Q3unAGJ2pd9W/Ng==}
     peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-
-  '@tanstack/store@0.5.5':
-    resolution: {integrity: sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==}
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@tanstack/store@0.6.0':
     resolution: {integrity: sha512-+m2OBglsjXcLmmKOX6/9v8BDOCtyxhMmZLsRUDswOOSdIIR9mvv6i0XNKsmTh3AlYU8c1mRcodC8/Vyf+69VlQ==}
+
+  '@tanstack/store@0.7.0':
+    resolution: {integrity: sha512-CNIhdoUsmD2NolYuaIs8VfWM467RK6oIBAW4nPEKZhg1smZ+/CwtCdpURgp7nxSqOaV9oKkzdWD80+bC66F/Jg==}
 
   '@tanstack/zod-form-adapter@0.40.4':
     resolution: {integrity: sha512-omGATFgy+r9U3LiWO5UfJsdiI6LkQqqrLuZJ7tVsDHGjSh6ZYcl6m+hxi42xxLAMSeGSBqypaUvfPiYCFWXnlQ==}
@@ -1755,10 +1752,10 @@ packages:
   uqr@0.1.2:
     resolution: {integrity: sha512-MJu7ypHq6QasgF5YRTjqscSzQp/W11zoUk6kvmlH+fmWEs63Y0Eib13hYFwAzagRJcVY8WVnlV+eBDUGMJ5IbA==}
 
-  use-sync-external-store@1.2.2:
-    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
+  use-sync-external-store@1.4.0:
+    resolution: {integrity: sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   util@0.12.5:
     resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
@@ -2162,22 +2159,6 @@ snapshots:
       lodash.mergewith: 4.6.2
       react: 18.3.1
 
-  '@emotion/babel-plugin@11.12.0':
-    dependencies:
-      '@babel/helper-module-imports': 7.24.7
-      '@babel/runtime': 7.26.0
-      '@emotion/hash': 0.9.2
-      '@emotion/memoize': 0.9.0
-      '@emotion/serialize': 1.3.2
-      babel-plugin-macros: 3.1.0
-      convert-source-map: 1.9.0
-      escape-string-regexp: 4.0.0
-      find-root: 1.1.0
-      source-map: 0.5.7
-      stylis: 4.2.0
-    transitivePeerDependencies:
-      - supports-color
-
   '@emotion/babel-plugin@11.13.5':
     dependencies:
       '@babel/helper-module-imports': 7.24.7
@@ -2247,12 +2228,12 @@ snapshots:
   '@emotion/styled@11.13.0(@emotion/react@11.14.0(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.26.0
-      '@emotion/babel-plugin': 11.12.0
+      '@emotion/babel-plugin': 11.13.5
       '@emotion/is-prop-valid': 1.3.1
       '@emotion/react': 11.14.0(@types/react@18.3.12)(react@18.3.1)
-      '@emotion/serialize': 1.3.2
-      '@emotion/use-insertion-effect-with-fallbacks': 1.1.0(react@18.3.1)
-      '@emotion/utils': 1.4.1
+      '@emotion/serialize': 1.3.3
+      '@emotion/use-insertion-effect-with-fallbacks': 1.2.0(react@18.3.1)
+      '@emotion/utils': 1.4.2
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.12
@@ -2547,35 +2528,35 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tanstack/form-core@0.39.0':
-    dependencies:
-      '@tanstack/store': 0.5.5
-
   '@tanstack/form-core@0.40.4':
     dependencies:
       '@tanstack/store': 0.6.0
 
-  '@tanstack/react-form@0.39.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)':
+  '@tanstack/form-core@0.41.0':
+    dependencies:
+      '@tanstack/store': 0.7.0
+
+  '@tanstack/react-form@0.41.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)':
     dependencies:
       '@remix-run/node': 2.15.0(typescript@5.7.2)
-      '@tanstack/form-core': 0.39.0
-      '@tanstack/react-store': 0.5.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/form-core': 0.41.0
+      '@tanstack/react-store': 0.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       decode-formdata: 0.8.0
       react: 18.3.1
     transitivePeerDependencies:
       - react-dom
       - typescript
 
-  '@tanstack/react-store@0.5.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-store@0.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/store': 0.5.5
+      '@tanstack/store': 0.7.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      use-sync-external-store: 1.2.2(react@18.3.1)
-
-  '@tanstack/store@0.5.5': {}
+      use-sync-external-store: 1.4.0(react@18.3.1)
 
   '@tanstack/store@0.6.0': {}
+
+  '@tanstack/store@0.7.0': {}
 
   '@tanstack/zod-form-adapter@0.40.4(zod@3.24.1)':
     dependencies:
@@ -3807,7 +3788,7 @@ snapshots:
 
   uqr@0.1.2: {}
 
-  use-sync-external-store@1.2.2(react@18.3.1):
+  use-sync-external-store@1.4.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
