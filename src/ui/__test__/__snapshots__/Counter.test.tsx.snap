@@ -8,19 +8,19 @@ exports[`Snapshot 1`] = `
     ((e,r,s,u,d,m,l,h)=&gt;{let c=document.documentElement,v=["light","dark"];function p(i){(Array.isArray(e)?e:[e]).forEach(y=&gt;{let k=y==="class",S=k&&m?d.map(f=&gt;m[f]||f):d;k?(c.classList.remove(...S),c.classList.add(i)):c.setAttribute(y,i)}),R(i)}function R(i){h&&v.includes(i)&&(c.style.colorScheme=i)}function a(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}if(u)p(u);else try{let i=localStorage.getItem(r)||s,y=l&&i==="system"?a():i;p(y)}catch(i){}})("class","theme","system",null,["light","dark"],null,true,true)
   </script>
   <div
-    class="chakra-number-input__root css-0"
+    class="chakra-number-input__root css-1da1ewu"
     data-part="root"
     data-scope="number-input"
     dir="ltr"
     id="number-input::r1:"
   >
     <div
-      class="chakra-stack css-1x0y7ph"
+      class="chakra-stack css-6cpqb8"
     >
       <button
         aria-controls="number-input::r1::input"
         aria-label="decrease value"
-        class="chakra-button chakra-number-input__decrementTrigger css-1nyh6bz"
+        class="chakra-button chakra-number-input__decrementTrigger css-u3ytla"
         data-disabled=""
         data-part="decrement-trigger"
         data-scope="number-input"
@@ -47,7 +47,7 @@ exports[`Snapshot 1`] = `
         </svg>
       </button>
       <span
-        class="chakra-number-input__valueText css-17prswh"
+        class="chakra-number-input__valueText css-n812c4"
         data-part="value-text"
         data-scope="number-input"
         dir="ltr"
@@ -57,7 +57,7 @@ exports[`Snapshot 1`] = `
       <button
         aria-controls="number-input::r1::input"
         aria-label="increment value"
-        class="chakra-button chakra-number-input__incrementTrigger css-1nyh6bz"
+        class="chakra-button chakra-number-input__incrementTrigger css-u3ytla"
         data-part="increment-trigger"
         data-scope="number-input"
         dir="ltr"
