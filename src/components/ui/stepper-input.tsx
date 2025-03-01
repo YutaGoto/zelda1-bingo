@@ -19,7 +19,7 @@ export const StepperInput = forwardRef<HTMLDivElement, StepperInputProps>(
         </HStack>
       </NumberInput.Root>
     );
-  }
+  },
 );
 
 const DecrementTrigger = forwardRef<
