@@ -12,9 +12,9 @@ export const StepperInput = forwardRef<HTMLDivElement, StepperInputProps>(
     return (
       <NumberInput.Root {...rest} unstyled ref={ref}>
         {label && <NumberInput.Label>{label}</NumberInput.Label>}
-        <HStack gap="2">
+        <HStack gap="1">
           <DecrementTrigger />
-          <NumberInput.ValueText textAlign="center" fontSize="lg" minW="3ch" />
+          <NumberInput.ValueText textAlign="center" fontSize="sm" minW="2ch" />
           <IncrementTrigger />
         </HStack>
       </NumberInput.Root>
@@ -28,7 +28,7 @@ const DecrementTrigger = forwardRef<
 >(function DecrementTrigger(props, ref) {
   return (
     <NumberInput.DecrementTrigger {...props} asChild ref={ref}>
-      <IconButton variant="outline" size="sm">
+      <IconButton variant="outline" size="xs">
         <LuMinus />
       </IconButton>
     </NumberInput.DecrementTrigger>
@@ -41,7 +41,7 @@ const IncrementTrigger = forwardRef<
 >(function IncrementTrigger(props, ref) {
   return (
     <NumberInput.IncrementTrigger {...props} asChild ref={ref}>
-      <IconButton variant="outline" size="sm">
+      <IconButton variant="outline" size="xs">
         <LuPlus />
       </IconButton>
     </NumberInput.IncrementTrigger>

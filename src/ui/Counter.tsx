@@ -1,4 +1,3 @@
-// import { StepperInput } from "../../../components/ui/stepper-input";
 import { StepperInput } from "../components/ui/stepper-input";
 
 interface CounterProps {
@@ -8,6 +7,8 @@ interface CounterProps {
 export const Counter = ({ goal }: CounterProps) => {
   return (
     <StepperInput
+      mt={1}
+      size="xs"
       defaultValue="0"
       min={0}
       max={goal}
