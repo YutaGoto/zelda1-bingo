@@ -19,7 +19,6 @@ import {
   createListCollection,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
-import { zodValidator } from "@tanstack/zod-form-adapter";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCopy } from "react-icons/fa";
@@ -75,7 +74,6 @@ export const ScoreBoard = ({ category, seed, taskList }: ScoreBoardProps) => {
       location.reload();
       return;
     },
-    validatorAdapter: zodValidator(),
   });
 
   const languages = createListCollection({

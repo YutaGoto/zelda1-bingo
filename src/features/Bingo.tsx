@@ -16,7 +16,6 @@ import {
   createListCollection,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
-import { zodValidator } from "@tanstack/zod-form-adapter";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCopy } from "react-icons/fa";
@@ -65,7 +64,6 @@ export const Bingo = ({ category, seed, taskList }: BingoProps) => {
       location.reload();
       return;
     },
-    validatorAdapter: zodValidator(),
   });
 
   const languages = createListCollection({
