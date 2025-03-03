@@ -20,7 +20,7 @@
     "@chakra-ui/system": "^2.6.2",
     "@chakra-ui/theme-tools": "^2.2.6",
     "@emotion/react": "^11.14.0",
-    "@fontsource-variable/noto-sans-jp": "^5.1.1",
+    "@fontsource-variable/noto-sans-jp": "^5.2.5",
     "@tanstack/react-form": "^0.46.0",
     "@tanstack/zod-form-adapter": "^0.41.3",
     "@vercel/analytics": "^1.5.0",
