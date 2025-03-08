@@ -28,7 +28,7 @@ importers:
         version: 5.2.5
       '@tanstack/react-form':
         specifier: ^0.46.0
-        version: 0.46.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
+        version: 0.46.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
       '@tanstack/zod-form-adapter':
         specifier: ^0.41.3
         version: 0.41.3(zod@3.24.2)
@@ -77,19 +77,19 @@ importers:
         version: 3.8.0(@swc/helpers@0.5.15)(vite@6.2.0(@types/node@22.13.5))
       i18next:
         specifier: ^24.2.2
-        version: 24.2.2(typescript@5.7.3)
+        version: 24.2.2(typescript@5.8.2)
       jsdom:
         specifier: ^26.0.0
         version: 26.0.0
       react-i18next:
         specifier: ^15.4.1
-        version: 15.4.1(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 15.4.1(i18next@24.2.2(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.0.0)
       typescript:
-        specifier: ^5.7.3
-        version: 5.7.3
+        specifier: ^5.8.2
+        version: 5.8.2
       vite:
         specifier: ^6.2.0
         version: 6.2.0(@types/node@22.13.5)
@@ -1800,8 +1800,8 @@ packages:
   turbo-stream@2.4.0:
     resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
 
-  typescript@5.7.3:
-    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2475,9 +2475,9 @@ snapshots:
     dependencies:
       playwright: 1.50.1
 
-  '@remix-run/node@2.16.0(typescript@5.7.3)':
+  '@remix-run/node@2.16.0(typescript@5.8.2)':
     dependencies:
-      '@remix-run/server-runtime': 2.16.0(typescript@5.7.3)
+      '@remix-run/server-runtime': 2.16.0(typescript@5.8.2)
       '@remix-run/web-fetch': 4.4.2
       '@web3-storage/multipart-parser': 1.0.0
       cookie-signature: 1.2.2
@@ -2485,11 +2485,11 @@ snapshots:
       stream-slice: 0.1.2
       undici: 6.21.1
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   '@remix-run/router@1.23.0': {}
 
-  '@remix-run/server-runtime@2.16.0(typescript@5.7.3)':
+  '@remix-run/server-runtime@2.16.0(typescript@5.8.2)':
     dependencies:
       '@remix-run/router': 1.23.0
       '@types/cookie': 0.6.0
@@ -2499,7 +2499,7 @@ snapshots:
       source-map: 0.7.4
       turbo-stream: 2.4.0
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   '@remix-run/web-blob@3.1.0':
     dependencies:
@@ -2651,9 +2651,9 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.7.0
 
-  '@tanstack/react-form@0.46.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)':
+  '@tanstack/react-form@0.46.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)':
     dependencies:
-      '@remix-run/node': 2.16.0(typescript@5.7.3)
+      '@remix-run/node': 2.16.0(typescript@5.8.2)
       '@tanstack/form-core': 0.45.1
       '@tanstack/react-store': 0.7.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       decode-formdata: 0.8.0
@@ -3532,11 +3532,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  i18next@24.2.2(typescript@5.7.3):
+  i18next@24.2.2(typescript@5.8.2):
     dependencies:
       '@babel/runtime': 7.26.7
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.2
 
   iconv-lite@0.6.3:
     dependencies:
@@ -3715,11 +3715,11 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
-  react-i18next@15.4.1(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-i18next@15.4.1(i18next@24.2.2(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@babel/runtime': 7.26.9
       html-parse-stringify: 3.0.1
-      i18next: 24.2.2(typescript@5.7.3)
+      i18next: 24.2.2(typescript@5.8.2)
       react: 19.0.0
     optionalDependencies:
       react-dom: 19.0.0(react@19.0.0)
@@ -3877,7 +3877,7 @@ snapshots:
 
   turbo-stream@2.4.0: {}
 
-  typescript@5.7.3: {}
+  typescript@5.8.2: {}
 
   undici-types@6.20.0: {}
 
