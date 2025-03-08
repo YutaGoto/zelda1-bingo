@@ -27,8 +27,8 @@ importers:
         specifier: ^5.2.5
         version: 5.2.5
       '@tanstack/react-form':
-        specifier: ^0.46.0
-        version: 0.46.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
+        specifier: ^1.0.1
+        version: 1.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
       '@tanstack/zod-form-adapter':
         specifier: ^0.41.3
         version: 0.41.3(zod@3.24.2)
@@ -789,11 +789,11 @@ packages:
   '@tanstack/form-core@0.41.3':
     resolution: {integrity: sha512-ifGRimfnYgc+SQikx8ngWGhIxs5UHutSwUQ1IPFHZ6PRAfCTEEqDtXqaWZGkuzvf8itoxXdwsR+chEdwiPtsPA==}
 
-  '@tanstack/form-core@0.45.1':
-    resolution: {integrity: sha512-9JKWBgj4JbOUab7iWWDcFPmqAPaPnrryapQyiIfnd038J/g9wngM291yx4MrdvEP0txUp+aDr1i52L/mUZVjBQ==}
+  '@tanstack/form-core@1.0.0':
+    resolution: {integrity: sha512-GHYjF9m+FjXbIMpbMP1Ru8XzTJnQDva9wkw3E/fXUIPAtx0NmTGrefxUGqs7/aCT2uSqdrmzRyVFUJObemx51Q==}
 
-  '@tanstack/react-form@0.46.0':
-    resolution: {integrity: sha512-fiI1c2NDmuVZjt42ugMA43NU1UhRWuxe6VoFa3gtpY1scGR8L0R9IBZKBhOvN0yTtX0Cto2ZbfnrHVAfiN807w==}
+  '@tanstack/react-form@1.0.1':
+    resolution: {integrity: sha512-rdXVibPRXD0S2TdjONmOdSu8F4HKpn/TVDahLy5pueI7vZC2hHGVFvaC27S9Trh4Lc4nrzgbFpjh6wFVf8Yz9w==}
     peerDependencies:
       '@tanstack/react-start': ^1.112.0
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -1195,8 +1195,8 @@ packages:
     resolution: {integrity: sha512-oKlSFMcMwpUg2ednkhQ454wfWiU/ul3CkJe/PEHcTKuiX6RpbehUiFMXu13HalGZxfUwCQzZG747YXBn1im9ww==}
     engines: {node: '>= 0.4'}
 
-  call-bound@1.0.3:
-    resolution: {integrity: sha512-YTd+6wGlNlPxSuri7Y6X8tY2dmm12UMH66RpKMhiX6rsk5wXXnYgbUcOt8kiS31/AjfoTOvCsE+w8nZQLQnzHA==}
+  call-bound@1.0.4:
+    resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
   callsites@3.1.0:
@@ -2647,14 +2647,14 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.7.0
 
-  '@tanstack/form-core@0.45.1':
+  '@tanstack/form-core@1.0.0':
     dependencies:
       '@tanstack/store': 0.7.0
 
-  '@tanstack/react-form@0.46.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)':
+  '@tanstack/react-form@1.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)':
     dependencies:
       '@remix-run/node': 2.16.0(typescript@5.7.3)
-      '@tanstack/form-core': 0.45.1
+      '@tanstack/form-core': 1.0.0
       '@tanstack/react-store': 0.7.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       decode-formdata: 0.8.0
       react: 19.0.0
@@ -3292,7 +3292,7 @@ snapshots:
       get-intrinsic: 1.3.0
       set-function-length: 1.2.2
 
-  call-bound@1.0.3:
+  call-bound@1.0.4:
     dependencies:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
@@ -3551,7 +3551,7 @@ snapshots:
 
   is-arguments@1.2.0:
     dependencies:
-      call-bound: 1.0.3
+      call-bound: 1.0.4
       has-tostringtag: 1.0.2
 
   is-arrayish@0.2.1: {}
@@ -3564,7 +3564,7 @@ snapshots:
 
   is-generator-function@1.1.0:
     dependencies:
-      call-bound: 1.0.3
+      call-bound: 1.0.4
       get-proto: 1.0.1
       has-tostringtag: 1.0.2
       safe-regex-test: 1.1.0
@@ -3573,7 +3573,7 @@ snapshots:
 
   is-regex@1.2.1:
     dependencies:
-      call-bound: 1.0.3
+      call-bound: 1.0.4
       gopd: 1.2.0
       has-tostringtag: 1.0.2
       hasown: 2.0.2
@@ -3789,7 +3789,7 @@ snapshots:
 
   safe-regex-test@1.1.0:
     dependencies:
-      call-bound: 1.0.3
+      call-bound: 1.0.4
       es-errors: 1.3.0
       is-regex: 1.2.1
 
@@ -3997,7 +3997,7 @@ snapshots:
     dependencies:
       available-typed-arrays: 1.0.7
       call-bind: 1.0.8
-      call-bound: 1.0.3
+      call-bound: 1.0.4
       for-each: 0.3.5
       gopd: 1.2.0
       has-tostringtag: 1.0.2
