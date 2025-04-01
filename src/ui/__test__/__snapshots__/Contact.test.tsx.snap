@@ -8,7 +8,7 @@ exports[`Snapshot 1`] = `
     ((e,r,s,u,d,m,l,h)=&gt;{let c=document.documentElement,v=["light","dark"];function p(i){(Array.isArray(e)?e:[e]).forEach(y=&gt;{let k=y==="class",S=k&&m?d.map(f=&gt;m[f]||f):d;k?(c.classList.remove(...S),c.classList.add(i)):c.setAttribute(y,i)}),R(i)}function R(i){h&&v.includes(i)&&(c.style.colorScheme=i)}function a(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}if(u)p(u);else try{let i=localStorage.getItem(r)||s,y=l&&i==="system"?a():i;p(y)}catch(i){}})("class","theme","system",null,["light","dark"],null,true,true)
   </script>
   <div
-    class="css-8f2oos"
+    class="css-8kn4zf"
   >
     <p
       class="css-uok8h6"
@@ -16,7 +16,7 @@ exports[`Snapshot 1`] = `
       Contact
     </p>
     <div
-      class="css-1eipufp"
+      class="css-4ahi23"
     >
       <a
         class="chakra-link css-1kxvchm"
