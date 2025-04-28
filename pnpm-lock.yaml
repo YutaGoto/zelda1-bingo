@@ -76,14 +76,14 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1(@swc/helpers@0.5.17)(vite@6.3.3(@types/node@22.13.14))
       i18next:
-        specifier: ^25.0.0
-        version: 25.0.0(typescript@5.8.3)
+        specifier: ^25.0.1
+        version: 25.0.1(typescript@5.8.3)
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
       react-i18next:
         specifier: ^15.4.1
-        version: 15.4.1(i18next@25.0.0(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 15.4.1(i18next@25.0.1(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.1.0)
@@ -1310,8 +1310,8 @@ packages:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
 
-  i18next@25.0.0:
-    resolution: {integrity: sha512-POPvwjOPR1GQvRnbikTMPEhQD+ekd186MHE6NtVxl3Lby+gPp0iq60eCqGrY6wfRnp1lejjFNu0EKs1afA322w==}
+  i18next@25.0.1:
+    resolution: {integrity: sha512-8S8PyZbrymJZn3DaN70/34JYWNhsqrU6yA4MuzcygJBv+41dgNMocEA8h+kV1P7MCc1ll03lOTOIXE7mpNCicw==}
     peerDependencies:
       typescript: ^5
     peerDependenciesMeta:
@@ -3207,7 +3207,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  i18next@25.0.0(typescript@5.8.3):
+  i18next@25.0.1(typescript@5.8.3):
     dependencies:
       '@babel/runtime': 7.27.0
     optionalDependencies:
@@ -3352,11 +3352,11 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
-  react-i18next@15.4.1(i18next@25.0.0(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-i18next@15.4.1(i18next@25.0.1(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@babel/runtime': 7.26.9
       html-parse-stringify: 3.0.1
-      i18next: 25.0.0(typescript@5.8.3)
+      i18next: 25.0.1(typescript@5.8.3)
       react: 19.1.0
     optionalDependencies:
       react-dom: 19.1.0(react@19.1.0)
