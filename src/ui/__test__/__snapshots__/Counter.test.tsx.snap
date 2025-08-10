@@ -20,7 +20,7 @@ exports[`Snapshot 1`] = `
       <button
         aria-controls="number-input:«r1»:input"
         aria-label="decrease value"
-        class="chakra-button chakra-number-input__decrementTrigger css-u3ytla"
+        class="chakra-button chakra-number-input__decrementTrigger css-7rhfal"
         data-disabled=""
         data-part="decrement-trigger"
         data-scope="number-input"
@@ -57,7 +57,7 @@ exports[`Snapshot 1`] = `
       <button
         aria-controls="number-input:«r1»:input"
         aria-label="increment value"
-        class="chakra-button chakra-number-input__incrementTrigger css-u3ytla"
+        class="chakra-button chakra-number-input__incrementTrigger css-7rhfal"
         data-part="increment-trigger"
         data-scope="number-input"
         dir="ltr"
