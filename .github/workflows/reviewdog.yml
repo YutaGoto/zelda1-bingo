@@ -8,7 +8,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: mongolyy/reviewdog-action-biome@v2
         with:
           github_token: ${{ secrets.github_token }}
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: misspell
         uses: reviewdog/action-misspell@v1
         with:
