@@ -1,12 +1,11 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { expect, test, vi } from "vitest";
-
-import { Provider } from "../../Provider";
 import {
   factoryZ1MessageTask,
   factoryZ1Task,
 } from "../../__test__/factory/Z1Task";
+import { Provider } from "../../Provider";
 import { Cell } from "../Cell";
 
 const setup = () => {
