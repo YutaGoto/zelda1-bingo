@@ -3,9 +3,10 @@ import {
   Box,
   Button,
   Container,
+  createListCollection,
   Flex,
-  HStack,
   Heading,
+  HStack,
   SelectContent,
   SelectItem,
   SelectLabel,
@@ -16,7 +17,6 @@ import {
   Spacer,
   Text,
   VStack,
-  createListCollection,
 } from "@chakra-ui/react";
 import { useForm } from "@tanstack/react-form";
 import { useEffect, useMemo, useState } from "react";

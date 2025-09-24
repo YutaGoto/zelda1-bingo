@@ -1,8 +1,8 @@
 import {
+  createBrowserRouter,
   Navigate,
   Outlet,
   RouterProvider,
-  createBrowserRouter,
 } from "react-router-dom";
 import App from "../App";
 import Score from "../Score";
