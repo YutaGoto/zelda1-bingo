@@ -12,13 +12,13 @@ exports[`Snapshot 1`] = `
     data-part="root"
     data-scope="number-input"
     dir="ltr"
-    id="number-input:«r1»"
+    id="number-input:_r_1_"
   >
     <div
       class="chakra-stack css-6cpqb8"
     >
       <button
-        aria-controls="number-input:«r1»:input"
+        aria-controls="number-input:_r_1_:input"
         aria-label="decrease value"
         class="chakra-button chakra-number-input__decrementTrigger css-7rhfal"
         data-disabled=""
@@ -26,7 +26,7 @@ exports[`Snapshot 1`] = `
         data-scope="number-input"
         dir="ltr"
         disabled=""
-        id="number-input:«r1»:dec"
+        id="number-input:_r_1_:dec"
         tabindex="-1"
         type="button"
       >
@@ -55,13 +55,13 @@ exports[`Snapshot 1`] = `
         0
       </span>
       <button
-        aria-controls="number-input:«r1»:input"
+        aria-controls="number-input:_r_1_:input"
         aria-label="increment value"
         class="chakra-button chakra-number-input__incrementTrigger css-7rhfal"
         data-part="increment-trigger"
         data-scope="number-input"
         dir="ltr"
-        id="number-input:«r1»:inc"
+        id="number-input:_r_1_:inc"
         tabindex="-1"
         type="button"
       >
