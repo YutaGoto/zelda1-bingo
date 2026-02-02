@@ -13,7 +13,7 @@ jobs:
     name: Lint check
     runs-on: ubuntu-latest
     steps:
-      - uses: Kesin11/actions-timeline@v2
+      - uses: Kesin11/actions-timeline@v3
       - name: Checkout your repository using git
         uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
